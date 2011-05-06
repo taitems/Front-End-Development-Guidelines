@@ -129,7 +129,7 @@
 			<h2>Images Need &lsquo;Alt&rsquo; Text</h2>
 			
 			<p>
-				The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of the course the image is not critical. 
+				The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
 			</p>
 			<p>
 				If the image is of a list bullet or other trivial icons, it is recommended to simply leave the <code>alt</code> attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
@@ -250,7 +250,7 @@
 				}
 			]]></script>
 			
-			<h3>Always Using Parenthesis</h3>
+			<h3>Always Using Braces</h3>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				// Bad
@@ -277,7 +277,7 @@
 			<h2>Commenting</h2>
 			
 			<p>
-				Javascript code requires regular commenting in order to make it easily understandable. The general rule of thumb for javascript is to use single line comments where possible to
+				JavaScript code requires regular commenting in order to make it easily understandable. The general rule of thumb for JavaScript is to use single line comments where possible to
 				quickly and concisely describe what a particular line or block of code is meant to do. If you need to be a little more descriptive eg, describing what a function is meant to do,
 				then the long comment syntax is better.
 			</p>
@@ -305,8 +305,8 @@
 			<h2>Always Use === Comparison</h2>
 			
 			<p>
-				The use of the == equality operator allows for frustrating bugs to slip through almost undetected. It allows for weak typing that is best explained by <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">Javascript Garden</a>.
-				The use of the strict equality operator === does not run type coercion and therefore strictly evaluates the difference between two objects. Again, consult <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">Javascript Garden</a> for more information
+				The use of the == equality operator allows for frustrating bugs to slip through almost undetected. It allows for weak typing that is best explained by <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a>.
+				The use of the strict equality operator === does not run type coercion and therefore strictly evaluates the difference between two objects. Again, consult <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a> for more information
 			</p>
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				var zeroAsAString = "0";
@@ -708,7 +708,7 @@
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				if ($.browser.msie) {
-					// no it doesn’t
+					// no it doesnï¿½t
 				}				
 			]]></script>
 			
@@ -728,7 +728,7 @@
 			<p>
 				In steps <a href="http://www.modernizr.com" target="_blank">Modernizr</a>, a JavaScript library developed in part by industry dream-boat Paul Irish. 
 				With wide adoption, tiny file-size and plenty of <a href="http://www.modernizr.com/docs/#s1" target="_blank">documentation</a>: implementing it is a no-brainer. 
-				It creates a <code>Modernizr</code> object that contains the results of it's detection tests, so checking feature support is as simple as the following:
+				It creates a <code>Modernizr</code> object that contains the results of its detection tests, so checking feature support is as simple as the following:
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
@@ -765,7 +765,7 @@
 			<h2>Chain Like a Sick Bitch</h2>
 			
 			<p>
-				One of the best parts of jQuery is it's function chaining. You've probably used it a bit, maybe a few simple calls... but have you ever traversed the DOM like a sick bitch? Take some time to familiarise yourself with the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function. It is critical for when you begin stepping up and down the DOM tree from your original selector.
+				One of the best parts of jQuery is its function chaining. You've probably used it a bit, maybe a few simple calls... but have you ever traversed the DOM like a sick bitch? Take some time to familiarise yourself with the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function. It is critical for when you begin stepping up and down the DOM tree from your original selector.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
@@ -800,7 +800,7 @@
 			
 			<p>
 				When using <code>$.animate</code>, <code>queue: false</code> can be added to the parameters to prevent chaining. Animation shortcuts such as <code>$.fadeIn</code> or <code>$.slideDown</code> do not take <code>queue</code> settings.
-				Instead you have to pre-empt these animations with the <code>$.stop</code> method of pausing currently executing animations. Certain scenarios require the animation to stop dead in it's tracks, or to jump to the end of the transition. 
+				Instead you have to pre-empt these animations with the <code>$.stop</code> method of pausing currently executing animations. Certain scenarios require the animation to stop dead in its tracks, or to jump to the end of the transition. 
 				It is recommended you familiarise yourself with the <a href="http://api.jquery.com/stop/" target="_blank">documentation</a> of the parameters <code>clearQueue</code> and <code>jumpToEnd</code>, because god knows I can't help you there.
 			</p>
 			
@@ -833,7 +833,7 @@
 			
 			<p>
 				jQuery is pretty chill. It can do pretty much everything but make you coffee, and I hear that's in the roadmap for 2.0. One thing you have to be careful about is abusing the power that is the <a href="http://sizzlejs.com/" target="_blank">sizzleJS</a> selector engine.
-				There are two strategies to overcome this: <em>caching the selectors results</em> and <em>using efficient selectors</em>.
+				There are two strategies to overcome this: <em>caching the selector results</em> and <em>using efficient selectors</em>.
 			</p>
 			
 			<h3>Caching Selector Results</h3>
@@ -1032,7 +1032,7 @@
 			<h3>From 0px to Hero</h3>
 			
 			<p>
-				Assigning a unit type to a properties value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
+				Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
@@ -1057,10 +1057,10 @@
 		
 		
 		<div class="entry">
-			<h2>Clearing floats</h2>
+			<h2>Clearing Floats</h2>
 			
 			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it's "auto") and an overflow value of either auto or hidden. 
+				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if its "auto") and an overflow value of either auto or hidden. 
 				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
 			</p>
 			
@@ -1130,8 +1130,8 @@
 			<h2>You're Not !important</h2>
 			
 			<p>
-				A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrent its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
-				Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
+				A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
+				Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used as a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
 			</p>
 			
 			<p>
