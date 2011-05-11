@@ -1,5 +1,6 @@
 body {
-    font-family: 'GothamBookRegular', Arial, sans-serif;
+    font-family: Calibri, Arial, sans-serif;
+	font-size: 14px;
 	background: url('../images/bg_tile.gif');
 	margin: 0;
 }
@@ -14,34 +15,10 @@ body {
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'GothamBlackRegular';
-    src: url('fonts/gotham-black-webfont.eot');
-    src: url('fonts/gotham-black-webfont.eot?#iefix') format('eot'),
-         url('fonts/gotham-black-webfont.woff') format('woff'),
-         url('fonts/gotham-black-webfont.svg#webfontUCMzTaiD') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'GothamBookRegular';
-    src: url('fonts/gotham-book-webfont.eot');
-    src: url('fonts/gotham-book-webfont.eot?#iefix') format('eot'),
-         url('fonts/gotham-book-webfont.woff') format('woff'),
-         url('fonts/gotham-book-webfont.ttf') format('truetype'),
-         url('fonts/gotham-book-webfont.svg#webfonteMFh7whd') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
 
 
 h1, h2, h3, h4, h5 {
-	/*font-family: 'TodaySHOP-BoldRegular';*/
-	font-family: 'GothamBlackRegular';
+	font-family: 'TodaySHOP-BoldRegular';
 	color: #23262d;
 	text-shadow: 0 1px 0 #FFF;
 }
@@ -55,22 +32,23 @@ h1 {
 h2 {
 	padding-bottom: 4px;
 	border-bottom: 2px solid #23262d;
-	font-size: 1.3em;
+	font-size: 1.7em;
 }
 
 h3 {
 	text-transform: uppercase;
-	font-size: .9em;
+	font-size: 1em;
 	margin: 1.2em 0;
 }
 
 p {
-	font-size: .95em;
+	font-size: 1.1em;
 	margin: 1.3em 0;
 	line-height: 1.7em;
 }
 
 li {
+	font-size: 1.1em;
 	line-height: 2em;
 }
 
@@ -104,11 +82,11 @@ p code {
 	padding: 0 15px;
 }
 #toc a {
-	font-family: "GothamBookRegular";
 	display: block;
 	margin-bottom: 1em;
 	color: #b1bcc9;
 	text-decoration: none;
+	font-size: 1.1em;
 }
 #toc a:hover {
 	color: #e5ecf5;

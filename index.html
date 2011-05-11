@@ -192,7 +192,7 @@
 			
 			<p>
 				jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
-				jQuery UI is designed to be WAI WCAG 2.0 and WAI ARI compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
+				jQuery UI is designed to be WAI WCAG 2.0 and WAI ARIA compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
 			</p>
 		</div>
 		
@@ -345,18 +345,13 @@
 			<h2>Always Specify the Second &lsquo;radix&rsquo; Parameter When Using .parseInt()</h2>
 			
 			<p>
-				When parsing a string to an integer, it is considered good practice to specify the second 'radix' parameter - which determines to what base the string should be converted to. It is, by default, octal/binary - so you will run into some problems.
+				When parsing a string to an integer, it is considered good practice to specify the second 'radix' parameter - which determines to what base the string should be converted to. 
+				The default setting will trigger a radix of 16 whenever the string is lead by a <code>0</code>. Most beginner and intermediate users are only ever going to be using a radix of <code>10</code>. Thanks to Jo&atilde;o Moreno for logging the <a href="https://github.com/taitems/Front-End-Development-Guidelines/issues/23" target="_blank">correction</a>.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[				
-				alert( parseInt("08") ); // alerts: 2				
-			]]></script>
-			
-			<p>
-				It is suggested you always send a value of <code>10</code>, as base 10 is generally what we'll be using.
-			</p>
-			
-			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[				
+				alert( parseInt("08") ); // alerts: 2
+				
 				alert( parseInt("08", 10) ); // alerts: 8				
 			]]></script>
 			
@@ -377,7 +372,7 @@
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				if (foo === true) {
-					// good that they're using triple equals, bad as it's ambiguous
+					// good that they're using triple equals, bad as it's redundant
 				}
 				
 				if (foo) {
@@ -505,7 +500,7 @@
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
-				var toLoop = ["1000 items"];
+				var toLoop = new Array(1000);
 				
 				for (var i = 0; i < toLoop.length; i++) {
 					// BAD - the length has to be evaluated 1000 times
@@ -543,7 +538,7 @@
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
-				var bigArray = ["1000 items"];
+				var bigArray = new Array(1000);
 				
 				for (var i = 0, len = bigArray.length; i < len; i++) {
 					if (i === 500) {
@@ -559,7 +554,7 @@
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
-				var bigArray = ["1000 items"];
+				var bigArray = new Array(1000);
 				
 				for (var i = 0, len = bigArray.length; i < len; i++) {
 					if (condition) {
@@ -708,7 +703,7 @@
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
 				if ($.browser.msie) {
-					// no it doesn�t
+					// no it doesn't
 				}				
 			]]></script>
 			
@@ -1060,7 +1055,7 @@
 			<h2>Clearing Floats</h2>
 			
 			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if its "auto") and an overflow value of either auto or hidden. 
+				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
 				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
 			</p>
 			
@@ -1311,7 +1306,7 @@
 					<a href="http://www.raphaeljs.com" target="_blank">
 						RaphaelJS
 					</a>
-					 easy cross browser canvas drawing
+					 easy cross browser vector drawing
 				</li>
 			</ul>
 			
