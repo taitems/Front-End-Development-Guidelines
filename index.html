@@ -5,6 +5,7 @@
 <head>
 
 	<title>Front End Development Guidelines</title>
+	<meta charset="utf-8" />
 	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 	<link href="includes/styles.css" rel="stylesheet" type="text/css" />
 	<script src="http://code.jquery.com/jquery-1.5.2.min.js" type="text/javascript"></script>
@@ -277,27 +278,44 @@
 			<h2>Commenting</h2>
 			
 			<p>
-				JavaScript code requires regular commenting in order to make it easily understandable. The general rule of thumb for JavaScript is to use single line comments where possible to
-				quickly and concisely describe what a particular line or block of code is meant to do. If you need to be a little more descriptive eg, describing what a function is meant to do,
-				then the long comment syntax is better.
+				The requirement to comment code obsessively was pioneered by managers, team leaders and other people that interact with code infrequently. 
+				It is sought merely as a check box for an employee's <abbr title="Key Performance Indicators">KPI</abbr>s, and provides little return for the time spent doing so.
 			</p>
+			
+			<p>
+				If a best-practice oriented developer follows the guidelines established in this document, their code should become so readable and obvious that the need to comment what it is doing is embarassingly redundant.
+				Consider the following example. In this: booleans are posed as questions, and functions are named intuitively.
+			</p>
+			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
-				var zeroAsAString = "0";
 				
-				// Checks if zeroString is 0 and then runs function doHeapsOfStuff()
-				if (zeroAsAString === 0) {
-					doHeapsOfStuff(param1, param2)
-				}
-				
-				/* 
-					Initiated When: zeroAsAString === 0 
-					Parameters: param1, param2
-				*/
-				function doHeapsOfStuff() {
+				if (user.hasPermission) {
+					
+					editPage();
 					
 				}
 				
 			]]></script>
+			
+			<p>
+				Commenting, in this scenario at least, is completely unnecessary.
+			</p>
+			
+			<h3>SITUATIONS WHERE COMMENTING IS IMPORTANT</h3>
+			
+			<p>
+				Some parts of a project will never be easy to scan and understand. Consider a complicated regular expression, or a math function calculating angles or switching between degrees and radians.
+				Without the comment above, beginner and intermediate readers will be fairly clueless to the scripts' meaning.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
+			
+				// RegEx for validating US phone numbers, can be (XXX) XXX-XXXX (with or without dashes, spaces or brackets)
+				var phoneRegEx = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+				
+			]]></script>
+			
+			
 		</div>
 		
 		
@@ -453,12 +471,16 @@
 			<h2>Camel Case Variables</h2>
 			
 			<p>
-				Shouldn't have to explain this one:
+				The camel casing (or <em>camelCasing</em>) of JavaScript variables is accepted as the standard in most coding environments.
+				The only exception that was raised in the comment section is the use of uppercase and underscores to denote contants.
 			</p>
 			
 			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
-				var MOUSE_TIMEOUT = 30; // bad
-				var mouseTimeout = 30; // good :)
+				var X_Position = obj.scrollLeft;
+				
+				var xPosition = obj.scrollLeft; // tidier
+				
+				SCENE_GRAVITY = 1; // constant
 			]]></script>
 		</div>
 		
@@ -635,9 +657,10 @@
 			</p>
 			
 			<p>
-				It's not incredibly difficult to understand how the scope of <code>this</code> changes. <!--Learning how to correctly use <code>call()</code> and <code>apply()</code> is, on the other hand, a much more complicated manner for my puney designer brain. 
-				While some people would suggest this as a better way of managing those sticky situations,--> I believe the solution is to remap the value of <code>this</code>	to <code>self</code>. 
-				This opinion is re-inforced by the jQuery source code, which frequently remaps <code>this</code> throughout its functions.
+				The solution is to remap the value of <code>this</code> to either <code>self</code> or <code>_self</code>. 
+				While <code>self</code> (sans underscore) is not exactly a <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words" target="_blank">reserved keyword</a>, it <em>is</em> a property of the <code>window</code> object.
+				Although my use of <code>self</code> was picked up from the jQuery source code, they have realised their mistake and are attempting to <a href="http://bugs.jqueryui.com/ticket/5404" target="_blank">rectify the situation</a> and instead use <code>_self</code>.
+				Personally, I prefer the use of <code>self</code> for the sheer cleanliness - but it can throw some pretty confusing bugs for people. Tread carefully.
 			</p>
 			
 			<p>
@@ -651,9 +674,9 @@
 				Person.prototype.findFriend = function(toFind) {
 				
 					// the only time "this" is used
-					var self = this; 
+					var _self = this; 
 					
-					$(self.friends).each(function(i,item) {
+					$(_self.friends).each(function(i,item) {
 						if (item.name === toFind) {
 							return item;
 						}
@@ -1048,6 +1071,36 @@
 		
 		
 		
+		<div id="cssCommenting" class="entry">
+			<h2>Commenting Blocks</h2>
+			
+			<p>
+				Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
+				Obviously it works better with single line CSS styles, but the effect is not entirely lost on multi-line either.
+				The use of dashes versus equals versus underscores are all up the individual, but this is how I like to manage my stylesheets.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+					/* === HORIZONTAL NAV === */
+					#horizNav { width: 100%; display: block; }
+					#horizNav li { display: block; float: left; position: relative; }
+					#horizNav li a { display: block; height: 30px; text-decoration: none; }
+					#horizNav li ul { display: none; position: absolute; top: 30; left: 0; }
+					
+					/* === HOME PAGE - CAROUSEL === */
+					#carousel { width: 960px; height: 150px; position: relative; }
+					#carousel img { display: none; }
+					#carousel .buttons { position: absolute; right: 10px; bottom: 10px; }
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -1083,6 +1136,14 @@
 					float: left;
 				}
 			]]></script>
+			
+			<p>
+				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
+				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
+				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
+				It also prevents top margins from collapsing which is an absolute life saver.
+			</p>
+			
 		</div>
 		
 		
