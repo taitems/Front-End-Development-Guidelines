@@ -1,17 +1,20 @@
 $(function() {
 
 	var tocWrapper = $("#toc .wrapper");
-
-	$("#mainContainer h1").each(function(i,item) {
 	
-		$("<a />")
-			.text( $(item).text() )
-			.attr("href","#")
-			.data("scrollTo",item)
-			.appendTo(tocWrapper)
+	$("#mainContainer")
+		.find("h1").each(function(i,item) {
+			$(item).append("<a class='deepLink' href='#" + item.id + "'></a>");	
+			$("<a />")
+				.text( $(item).text() )
+				.attr("href","#")
+				.data("scrollTo",item)
+				.appendTo(tocWrapper);
+		}).end()
+		.find("h2").each(function(i,item) {
+			$(item).append("<a class='deepLink' href='#" + item.parentNode.id + "'></a>");	
+		});
 	
-	});
-
 });
 
 $("#toc a").live("click", function(e) {

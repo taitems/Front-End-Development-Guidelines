@@ -1152,6 +1152,114 @@
 		
 		
 		
+		
+		
+		
+		<div id="cssClearingFloats" class="entry">
+			<h2>Clearing Floats</h2>
+			
+			<p>
+				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
+				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
+			</p>
+			
+			<h3>The HTML:</h3>
+			
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				
+				<div class="parentElement">
+					<div class="childElement">
+						I'm floated left!
+					</div>
+					I'm normal text that wraps around the float
+				</div>
+				
+			]]></script>
+			
+			<h3>The CSS:</h3>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.parentElement {
+					width: 100%;
+					overflow: hidden;
+				}
+				.childElement {
+					float: left;
+				}
+			]]></script>
+			
+			<p>
+				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
+				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
+				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
+				It also prevents top margins from collapsing which is an absolute life saver.
+			</p>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="cssCentering" class="entry">
+			<h2>Vertical &amp; Horizontal Centering</h2>
+			
+			<p>
+				Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.class {
+					width: 960px;
+					margin: 0 auto;
+				}
+			]]></script>
+			
+			<p>
+				Front end devs have been using this snippet for a long time, without fully understanding why it didn't work vertically. From my understanding, it's important to remember that the parent element will generally have a <code>height: auto;</code> on it, and that there is no 100% height in which to vertically center the element. Applying the <code>position: absolute;</code> effectively moves the element out into position mode and responds to the pushing and pulling of auto margins and no specific location. 
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				.exactMiddle {
+					width: 100px;
+					height: 100px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+				}
+			]]></script>
+			
+			<p>
+				The downsides of this method include its lack of support in IE6 and IE7, and the absence of a scroll bar if the browser is resized to be smaller than the centered object. There are more methods on <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">this page</a> (this is Method 4), but this is by far the best.
+			</p> 
+			
+			<p>
+				The vertical centering of text in an element is also straightforward. If the text is on a single line, like a horizontal navigation item, you can set the <code>line-height</code> to be that of the element's physical height.
+			</p> 
+			
+			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
+				#horizNav li {
+					height: 32px;
+					line-height: 32px;
+				}
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
 		<div id="cssFeatureSniff" class="entry">
 			<h2>Feature Sniff, Don't Browser Sniff</h2>
 			
