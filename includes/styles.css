@@ -20,7 +20,8 @@ body {
 h1, h2, h3, h4, h5 {
 	font-family: 'TodaySHOP-BoldRegular';
 	color: #23262d;
-	text-shadow: 0 1px 0 #FFF;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.01);
+	position: relative;
 }
 
 h1 {
@@ -70,6 +71,41 @@ p code {
 	margin-bottom: 5em;
 }
 
+
+
+/* === DEEP LINKING === */
+.deepLink {
+	position: absolute;
+	top: 50%;
+	display: block;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+		-webkit-transition: opacity 0.5s linear;
+		-moz-transition: opacity 0.5s linear;
+		transition: opacity 0.5s linear;
+}
+.deepLink:hover {
+	opacity: 0.75;
+	filter: alpha(opacity=10);
+}
+h1 .deepLink {
+	background: url(../images/link_32.png);
+	width: 32px;
+	height: 32px;
+	margin-top: -20px;
+	/*left: -48px;*/
+	right: 0;
+}
+h2 .deepLink {
+	background: url(../images/link_16.png);
+	width: 16px;
+	height: 16px;
+	margin-top: -8px;
+	/*left: -24px;*/
+	right: 3px;
+}
+
+/* === TABLE OF CONTENTS === */
 #toc {
 	position: fixed;
 	top: 0;
@@ -97,6 +133,8 @@ p code {
 	color: #f5faff;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
 }
+
+
 
 /* === RESPONSIVE LAYOUT STUFF === */
 @media screen and (max-width: 950px){
