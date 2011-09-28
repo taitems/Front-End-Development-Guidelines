@@ -716,6 +716,74 @@
 		
 		
 		
+		<div id="javascriptReflow" class="entry">
+			<h2>Minimising Repaints &amp; Reflows</h2>
+			
+			<p>
+				Repaints and reflows relate to the process of re-rendering the DOM when particular properties or elements are altered. Repaints are triggered when an element's look is changed without altering its layout. Nicole Sullivan describes these changes in a thorough <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a> as style changes such as visibility or background-color.	Reflows are the more costly alternative, caused by changes that alter the layout of the page. Examples include the addition or removal of elements, changes to an element's width or height, and even resizing the browser window. Worst yet is the domino effect of reflows that cause ancestor, sibling and child elements to reflow.
+			</p>
+			
+			<p>
+				There is no doubt that both reflows and repaints should be avoided if possible, but how?
+			</p>
+			
+			<h3>A Reflow Example</h3>
+			
+			<p>
+				It's not that the following snippet is "bad code" exactly. But let's assume that the array <code>arr</code> has 10 items.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
+			
+				var myList = document.getElementById("myList");
+				
+				for (var i = 0, len = arr.length; i < len; i++) {
+					
+					myList.innerHTML += "<li>" + arr[i].title + "</li>"; //reflow - appending to element
+					
+				}
+				
+				
+			]]></script>
+			
+			<p>
+				In the above <code>for</code> loop, a reflow will be triggered for every iteration of the loop. 10 iterations cause 10 reflows. 
+			</p>
+			
+			<p>
+				Now consider the following:
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
+				
+				var constructedHTML = "";
+				
+				for (var i = 0, len = arr.length; i < len; i++) {
+					
+					constructedHTML += "<li>" + arr[i].title + "</li>"; //no reflow - appending to string
+					
+				}
+				
+				document.getElementById("myList").innerHTML = constructedHTML; //reflow
+				
+				
+			]]></script>
+			
+			<p>
+				In this scenario, the elements are being constructed within a string. Not a single reflow is created by the loop, as the DOM is not being altered. Only once the array has been completely looped through is the string then applied as the <code>innerHTML</code> of an object, causing the only reflow of the function.
+			</p>
+			
+			<p>
+				There are endless types of reflows and repaints that can be avoided, and lucky you gets to go on an read about them. Reading material on the subject matter is plentiful, but most of it is linked to from the excellent starting point that is Nicole Sullivan's <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a>. There are important lessons to be taken away from this when it comes to a multitude of technologies synonymous with "web 3.0" and HTML5. The lesson above can be directly applied to writing jQuery. It's also important to consider when fiddling with <code>canvas</code>, and trying to keep a frame rate in the 30-60 range.
+			</p>
+			
+		</div>
+		
+		
+		
+		
+		
+		
 		
 		<div id="javascriptFeatureSniff" class="entry">
 			<h2>Feature Sniff, Don't Browser Sniff</h2>
@@ -807,6 +875,61 @@
 		
 		
 		
+		<div id="jqueryData" class="entry">
+			<h2>Using data-* Attributes</h2>
+			
+			<p>
+				Those of you who have been writing JavaScript (and not jQuery) for a good length of time are most likely familiar with attributes. Setting them. Getting them. Abusing <code>rel</code> and <code>title</code> instead...
+			</p>
+			
+			<p>
+				So when <em>isn't</em> HTML5 or jQuery coming the rescue? New specs allow the use of <code>data-</code> prefixes on HTML elements to indicate attributes which can hold data, and jQuery does an awesome job of converting the designated string into the correct JavaScript type. It's a beautiful partnership. Let's create a <code>DIV</code> with some data attributes.
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<div id="test" data-is-bool="true" data-some-number="123"></div>
+			]]></script>
+			
+			<p>
+				Now even though our values are wrapped in quotation marks, they won't be handled as strings:
+			</p>
+			
+			<script type="syntaxhighlighter" class="brush: js;  toolbar: false; gutter: false;"><![CDATA[
+				
+				typeof $("#test").data("isBool"); // boolean
+					
+				typeof $("#test").data("someNumber"); // number
+				
+			]]></script>
+			
+			<h3>Special Casing</h3>
+			
+			<p>
+				It's also important to notice the lower casing required to get these snippets to work. But if you're a great front end developer, you will still want to camel case your data variables. Like many places in JavaScript, a preceding hyphen signifies camel casing of the next letter. The following camel casing  of the HTML attribute <strong>does not work</strong> and the same JavaScript used above will return <code>undefined</code>.
+			</p>
+			
+			<p>
+				<strong>Does not work :(</strong>
+			</p>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<div id="test" data-isBool="true" data-someNumber="123"></div>
+			]]></script>
+			
+			<p>
+				<strong>Does work :)</strong>
+			</p>
+			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
+				<div id="test" data-is-bool="true" data-some-number="123"></div>
+			]]></script>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
 		<div id="jqueryStop" class="entry">
 			<h2>&lsquo;.stop()&rsquo; Collaborate &amp; Listen</h2>
 			
@@ -833,10 +956,6 @@
 					queue: false
 				}
 			]]></script>
-			
-			<p>
-				Tangentially, I find it odd that what I can only assume is an American authored library uses such a profoundly British word as <code>queue</code>.
-			</p>
 			
 		</div>
 		
@@ -1108,8 +1227,8 @@
 			<h2>Clearing Floats</h2>
 			
 			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
-				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
+				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element ("auto" doesn't work in all browsers and scenarios) and an overflow value of either "auto" or "hidden". 
+				"Hidden" obviously degrades better, but there are some IE compatibility versions where "auto" works better.
 			</p>
 			
 			<h3>The HTML:</h3>
@@ -1144,59 +1263,7 @@
 				It also prevents top margins from collapsing which is an absolute life saver.
 			</p>
 			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssClearingFloats" class="entry">
-			<h2>Clearing Floats</h2>
-			
-			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element (it doesn't work if it is "auto") and an overflow value of either auto or hidden. 
-				"Hidden" obviously degrades better, but there are some IE compatibility versions where auto works better.
-			</p>
-			
-			<h3>The HTML:</h3>
-			
-			<script type="syntaxhighlighter" class="brush: xml;  toolbar: false; gutter: false;"><![CDATA[
-				
-				<div class="parentElement">
-					<div class="childElement">
-						I'm floated left!
-					</div>
-					I'm normal text that wraps around the float
-				</div>
-				
-			]]></script>
-			
-			<h3>The CSS:</h3>
-			
-			<script type="syntaxhighlighter" class="brush: css;  toolbar: false; gutter: false;"><![CDATA[
-				.parentElement {
-					width: 100%;
-					overflow: hidden;
-				}
-				.childElement {
-					float: left;
-				}
-			]]></script>
-			
-			<p>
-				Contributors have also brough the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
-				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
-				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
-				It also prevents top margins from collapsing which is an absolute life saver.
-			</p>
-			
-		</div>
-		
+		</div>		
 		
 		
 		
