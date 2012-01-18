@@ -1,0 +1,87 @@
+body {
+	padding: 20px 0 5em 0;
+}
+.container {
+	width: 800px;
+}
+h1, h2, h3, h4, h5 {
+	font-family: 'Ubuntu Condensed';
+	color: #23262d;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.01);
+}
+
+.topbar .brand {
+	font-family: 'Ubuntu Condensed';
+}
+
+h2 {
+	font-family: 'Ubuntu';
+	margin: 0;
+	padding: 2em 0 0 0;
+	font-size: 3em;
+}
+
+h3 {
+	padding-bottom: 4px;
+	border-bottom: 2px solid #23262d;
+	font-size: 1.8em;
+	position: relative;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 1em;
+	margin: 1.2em 0;
+}
+
+p {
+	font-size: 1.1em;
+	margin: 1.3em 0;
+	line-height: 1.7em;
+}
+
+li {
+	font-size: 1.1em;
+	line-height: 2em;
+}
+
+p code {
+	background: rgba(255,248,68,0.15);
+	padding: 0 2px;
+}
+.nav {
+	float: right !important;
+}
+.syntaxhighlighter {
+	padding: 1em;
+}
+
+.entry {
+	padding-top: 6em;
+}
+
+
+/* === DEEP LINKING === */
+.deepLink {
+	position: absolute;
+	right: 3px;
+	top: 0;
+	width: 32px;
+	height: 32px;
+	background: url(../images/link_16.png) center center no-repeat;
+	opacity: 0;
+	filter:alpha(opacity=0);
+		-webkit-transition: opacity 0.3s linear;
+		-moz-transition: opacity 0.3s linear;
+		-o-transition: opacity 0.3s linear;
+		transition: opacity 0.3s linear;
+}
+.entry:hover .deepLink {
+	opacity: 1;
+	filter:alpha(opacity=100);
+}
+
+p.imageFeature {
+	text-align: center;
+	padding: 1em 0;
+}
