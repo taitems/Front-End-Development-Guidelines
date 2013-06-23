@@ -2,110 +2,110 @@
 
 <html>
 
-	<head>
-		<title>Front End Development Guidelines</title>
-		<meta charset="utf-8" />
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Signika:400,700' rel='stylesheet' type='text/css'>
-		<link href="includes/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="includes/css/styles.css" rel="stylesheet" />
-		<link href="includes/css/prettify.css" rel="stylesheet" />
-	</head>
+    <head>
+        <title>Front End Development Guidelines</title>
+        <meta charset="utf-8" />
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Signika:400,700' rel='stylesheet' type='text/css'>
+        <link href="includes/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="includes/css/styles.css" rel="stylesheet" />
+        <link href="includes/css/prettify.css" rel="stylesheet" />
+    </head>
 
 <body>
 
-	<div class="topbar" data-scrollspy="scrollspy">
-		<div class="topbar-inner">
-			<div class="container">
-				<a class="brand" href="#">Front End Dev Guidelines</a>
-				<ul class="nav">
-					<li><a href="#accessiblitySection">Accessibility</a></li>
-					<li><a href="#javascriptSection">JavaScript</a></li>
-					<li><a href="#jquerySection">jQuery</a></li>
-					<li><a href="#cssSection">CSS</a></li>
-					<li><a href="#cssHtmlSection">CSS3 &amp; HTML5</a></li>
-					<li><a href="#resourcesSection">Resources</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    <div class="topbar" data-scrollspy="scrollspy">
+        <div class="topbar-inner">
+            <div class="container">
+                <a class="brand" href="#">Front End Dev Guidelines</a>
+                <ul class="nav">
+                    <li><a href="#accessiblitySection">Accessibility</a></li>
+                    <li><a href="#javascriptSection">JavaScript</a></li>
+                    <li><a href="#jquerySection">jQuery</a></li>
+                    <li><a href="#cssSection">CSS</a></li>
+                    <li><a href="#cssHtmlSection">CSS3 &amp; HTML5</a></li>
+                    <li><a href="#resourcesSection">Resources</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-	<div class="container">
+    <div class="container">
 
-		<h2 id="accessiblitySection">Accessibility</h2>
-		
-		
-		
-		<div id="accessibilityDoctype" class="entry">
-			<h3>What's Up, DOCTYPE?</h3>
-			
-			<p>
-				The absence of a DOCTYPE is a crime punishable by death. You may have relied on the following DOCTYPE in the past, but it's important to know that this is now being superseded by a leaner and meaner snippet.
-			</p>
-			
-			<pre class="prettyprint lang-html">
+        <h2 id="accessiblitySection">Accessibility</h2>
+        
+        
+        
+        <div id="accessibilityDoctype" class="entry">
+            <h3>What's Up, DOCTYPE?</h3>
+            
+            <p>
+                The absence of a DOCTYPE is a crime punishable by death. You may have relied on the following DOCTYPE in the past, but it's important to know that this is now being superseded by a leaner and meaner snippet.
+            </p>
+            
+            <pre class="prettyprint lang-html">
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</pre>
-			
-			<p>
-				Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
-			</p>
-			
-			<pre class="prettyprint">
+    "http://w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</pre>
+            
+            <p>
+                Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
+            </p>
+            
+            <pre class="prettyprint">
 &lt;!DOCTYPE html&gt;</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilitySemanticMarkup" class="entry">
-			<h3>Write Valid Semantic Markup</h3>
-			
-			<p>
-				Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The validity of the HTML should never be compromised, even if to solve a browser specific bug.
-			</p>
-			
-			<p>
-				Headings should be heirarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
-			</p>
-			
-			<h4>Which do you think looks cleaner, this?:</h4>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        <div id="accessibilitySemanticMarkup" class="entry">
+            <h3>Write Valid Semantic Markup</h3>
+            
+            <p>
+                Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The validity of the HTML should never be compromised, even if to solve a browser specific bug.
+            </p>
+            
+            <p>
+                Headings should be heirarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
+            </p>
+            
+            <h4>Which do you think looks cleaner, this?:</h4>
+            
+            <pre class="prettyprint">
 &lt;span class=&quot;sectionHeading&quot;&gt;A Heading&lt;/span&gt;
 &lt;br /&gt; &lt;br /&gt;
 Lorem ipsum dolor sit amet. ...
 &lt;br /&gt; &lt;br /&gt;</pre>
-			
-			<h4>Or this?</h4>
-			
-			<pre class="prettyprint">
+            
+            <h4>Or this?</h4>
+            
+            <pre class="prettyprint">
 &lt;h2&gt;A Heading&lt;/h2&gt;
 &lt;p&gt;
-	Lorem ipsum dolor sit amet. ...
+    Lorem ipsum dolor sit amet. ...
 &lt;/p&gt;</pre>
-		</div>
-				
-				
-				
-				
-				
-				
-		<div id="accessibilityMiddleMouse" class="entry">
-			<h3>Fallbacks for Middle Mouse Clicks</h3>
-			
-			<p>
-				One of the most frustrating accessibility and usability flaws of the modern web stems from the remapping of hyperlink click functions. Elements that appear to be hyperlinks may have their single click functionality remapped via JavaScript, breaking middle mouse click (open in new tab) functionality. If they can be opened in a new tab, their href of a single hash sends you back to the same page.
-			</p>
-			
-			<p>
-				A modern example of a popular website that is contributing to this problem is the Twitter web app. Middle mouse clicking of names or user avatars yields completely different results throughout the web app.
-			</p>
-			
-			<pre class="prettyprint">
+        </div>
+                
+                
+                
+                
+                
+                
+        <div id="accessibilityMiddleMouse" class="entry">
+            <h3>Fallbacks for Middle Mouse Clicks</h3>
+            
+            <p>
+                One of the most frustrating accessibility and usability flaws of the modern web stems from the remapping of hyperlink click functions. Elements that appear to be hyperlinks may have their single click functionality remapped via JavaScript, breaking middle mouse click (open in new tab) functionality. If they can be opened in a new tab, their href of a single hash sends you back to the same page.
+            </p>
+            
+            <p>
+                A modern example of a popular website that is contributing to this problem is the Twitter web app. Middle mouse clicking of names or user avatars yields completely different results throughout the web app.
+            </p>
+            
+            <pre class="prettyprint">
 &lt;!-- The old way, breaking the web --&gt;
 &lt;a href=&quot;#&quot;&gt;&lt;/a&gt;
 
@@ -113,55 +113,55 @@ Lorem ipsum dolor sit amet. ...
 &lt;span class=&quot;link&quot; role=&quot;link&quot;&gt;&lt;/span&gt;
 </pre>
 
-			<p>
-				Another alternative is the use of "hashbangs", that remap normal URLs to hash links and fetch pages via AJAX. Libraries that provide hashbang functionality should be able to display the page normally when middle mouse clicked, or load the content from that page into a designated area when clicked normally. But tread carefully, there are plenty of people who believe <a href="http://isolani.co.uk/blog/javascript/BreakingTheWebWithHashBangs" target="_blank">hashbangs are breaking the web</a>.   
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="accessibilityMicroformats" class="entry">
-			<h3>Use Microformats</h3>
-			
-			<p>
-				Microformats are a way of making contact information machine readable. hCard classes (not vCard) are used to define the type of content contained within elements. These are then extracted or highlighted by the browser.
-			</p>
-			
-			<pre class="prettyprint">
+            <p>
+                Another alternative is the use of "hashbangs", that remap normal URLs to hash links and fetch pages via AJAX. Libraries that provide hashbang functionality should be able to display the page normally when middle mouse clicked, or load the content from that page into a designated area when clicked normally. But tread carefully, there are plenty of people who believe <a href="http://isolani.co.uk/blog/javascript/BreakingTheWebWithHashBangs" target="_blank">hashbangs are breaking the web</a>.   
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="accessibilityMicroformats" class="entry">
+            <h3>Use Microformats</h3>
+            
+            <p>
+                Microformats are a way of making contact information machine readable. hCard classes (not vCard) are used to define the type of content contained within elements. These are then extracted or highlighted by the browser.
+            </p>
+            
+            <pre class="prettyprint">
 &lt;span class=&quot;tel&quot;&gt;
-	&lt;span class=&quot;type&quot;&gt;home&lt;/span&gt;:
-	&lt;span class=&quot;value&quot;&gt;+1.415.555.1212&lt;/span&gt;
+    &lt;span class=&quot;type&quot;&gt;home&lt;/span&gt;:
+    &lt;span class=&quot;value&quot;&gt;+1.415.555.1212&lt;/span&gt;
 &lt;/span&gt;</pre>
-			
-			<p>
-				If you were to navigate to a page that uses this, you would notice that a program like Skype will easily detect what numbers on the page are phone numbers. Mobile Safari does something similar on iOS devices.
-			</p>
-			
-			<p>
-				For more information: <a href="http://microformats.org/wiki/hcard" target="_blank">http://microformats.org/wiki/hcard</a>
-			</p>
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilityAltText" class="entry">
-			<h3>Images Need &lsquo;Alt&rsquo; Text</h3>
-			
-			<p>
-				The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
-			</p>
-			<p>
-				If the image is of a list bullet or other trivial icons, it is recommended to simply leave the <code>alt</code> attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                If you were to navigate to a page that uses this, you would notice that a program like Skype will easily detect what numbers on the page are phone numbers. Mobile Safari does something similar on iOS devices.
+            </p>
+            
+            <p>
+                For more information: <a href="http://microformats.org/wiki/hcard" target="_blank">http://microformats.org/wiki/hcard</a>
+            </p>
+        </div>
+        
+        
+        
+        
+        
+        <div id="accessibilityAltText" class="entry">
+            <h3>Images Need &lsquo;Alt&rsquo; Text</h3>
+            
+            <p>
+                The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
+            </p>
+            <p>
+                If the image is of a list bullet or other trivial icons, it is recommended to simply leave the <code>alt</code> attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
+            </p>
+            
+            <pre class="prettyprint">
 &lt;img src=&quot;dog.gif&quot; alt=&quot;Fido and I at the park!&quot; /&gt; 
 &lt;!-- good, descriptive --&gt;
 
@@ -170,273 +170,273 @@ Lorem ipsum dolor sit amet. ...
 
 &lt;img src=&quot;bullet.gif&quot; alt=&quot;&quot; /&gt;
 &lt;!-- good --&gt;</pre>
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilityTables" class="entry">
-			<h3>Use Tables for Tabular Data Only</h3>
-			
-			<p>
-				Tables should only ever be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
-			</p>
-			<p>
-				For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. Remember to also set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
-			</p>
-			
-			<pre class="prettyprint">
+        </div>
+        
+        
+        
+        
+        
+        <div id="accessibilityTables" class="entry">
+            <h3>Use Tables for Tabular Data Only</h3>
+            
+            <p>
+                Tables should only ever be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
+            </p>
+            <p>
+                For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. Remember to also set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
+            </p>
+            
+            <pre class="prettyprint">
 &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
-	&lt;thead&gt;
-		&lt;tr&gt;
-			&lt;th&gt;
-				Cell Header
-			&lt;/th&gt;
-		&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;
-			&lt;td&gt;
-				Cell Item
-			&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/tbody&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;
+                Cell Header
+            &lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Cell Item
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
 &lt;/table&gt;
-			</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		<div id="accessibilityJqueryWidgets" class="entry">
-			<h3>Use jQuery &amp; jQuery UI Widgets</h3>
-			
-			<p>
-				jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
-				jQuery UI is designed to be WAI WCAG 2.0 and WAI ARIA compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
-			</p>
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
+            </pre>
+            
+        </div>
+        
+        
+        
+        
+        
+        <div id="accessibilityJqueryWidgets" class="entry">
+            <h3>Use jQuery &amp; jQuery UI Widgets</h3>
+            
+            <p>
+                jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
+                jQuery UI is designed to be WAI WCAG 2.0 and WAI ARIA compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
+            </p>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
 
-		<h2 id="javascriptSection">JavaScript</h2>
-		
-		
-		
-		<div id="javascriptWhitespace" class="entry">
-			<h3>Whitespacing &amp; Formatting</h3>
-			
-			<p>
-				Any discussion about formatting, whitespacing and the placement of braces is going to be hotly debated. I guess the simplest rule is that, unless you're willing to completely format a whole document, <strong>respect and maintain the formatting of an existing document</strong>. 
-				That means: see same-line braces throughout a JS file, continue to write code with same-line braces. Your code should fail the code review process if it doesn't maintain consistency with the rest of the document.
-			</p>
-			
-			<p>
-				Consistent formatting makes code more readable, and also means the code can be easily modified with find and replace commands. The coding habits we have picked up are thankfully very similar to what jQuery officially encourages. There are a few minor discrepencies, but again, these are personal issues or things that we think cannot be maintained.
-				<a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines" target="_blank">Further Reading</a>
-			</p>
-			
-			<h4>Character Spacing</h4>
-			
-			<pre class="prettyprint">
+        <h2 id="javascriptSection">JavaScript</h2>
+        
+        
+        
+        <div id="javascriptWhitespace" class="entry">
+            <h3>Whitespacing &amp; Formatting</h3>
+            
+            <p>
+                Any discussion about formatting, whitespacing and the placement of braces is going to be hotly debated. I guess the simplest rule is that, unless you're willing to completely format a whole document, <strong>respect and maintain the formatting of an existing document</strong>. 
+                That means: see same-line braces throughout a JS file, continue to write code with same-line braces. Your code should fail the code review process if it doesn't maintain consistency with the rest of the document.
+            </p>
+            
+            <p>
+                Consistent formatting makes code more readable, and also means the code can be easily modified with find and replace commands. The coding habits we have picked up are thankfully very similar to what jQuery officially encourages. There are a few minor discrepencies, but again, these are personal issues or things that we think cannot be maintained.
+                <a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines" target="_blank">Further Reading</a>
+            </p>
+            
+            <h4>Character Spacing</h4>
+            
+            <pre class="prettyprint">
 // Bad
 if(blah==="foo"){
-	foo("bar");
+    foo("bar");
 }
 
 // Good :)
 if (blah === "foo") {
-	foo("bar");
+    foo("bar");
 }</pre>
-			
-			<h4>Same Line Braces</h4>
-			
-			<pre class="prettyprint">
+            
+            <h4>Same Line Braces</h4>
+            
+            <pre class="prettyprint">
 // Bad
 if (foo)
 {
-	bar();
+    bar();
 }
 
 // Good :)
 if (foo) {
-	bar();
+    bar();
 }</pre>
-			
-			<h4>Always Using Braces</h4>
-			
-			<pre class="prettyprint">
+            
+            <h4>Always Using Braces</h4>
+            
+            <pre class="prettyprint">
 // Bad
 if (foo)
-	bar();
+    bar();
 
 // Good :)
 if (foo) {
-	bar();
+    bar();
 }</pre>
-			
-			<h4>String Handling</h4>
-			<p>
-				<strong>Strings should always use double quotes</strong>. Some people are very fond of their C style strings (single quotes), but this leads to conflicting styles within a script.
-				C style string handling dictates that empty and single character strings should be wrapped in single quotations, while phrases and words should be wrapped in double quotations.
-			</p>
-			
-		</div>
-		
-		
-		
-		<div id="javascriptCommenting" class="entry">
-			<h3>Commenting</h3>
-			
-			<p>
-				The requirement to comment code obsessively was pioneered by managers, team leaders and other people that interact with code infrequently. 
-				It is sought merely as a check box for an employee's <abbr title="Key Performance Indicators">KPI</abbr>s, and provides little return for the time spent doing so.
-			</p>
-			
-			<p>
-				If a best-practice oriented developer follows the guidelines established in this document, their code should become so readable and obvious that the need to comment what it is doing is embarassingly redundant.
-				Consider the following example. In this: booleans are posed as questions, and functions are named intuitively.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <h4>String Handling</h4>
+            <p>
+                <strong>Strings should always use double quotes</strong>. Some people are very fond of their C style strings (single quotes), but this leads to conflicting styles within a script.
+                C style string handling dictates that empty and single character strings should be wrapped in single quotations, while phrases and words should be wrapped in double quotations.
+            </p>
+            
+        </div>
+        
+        
+        
+        <div id="javascriptCommenting" class="entry">
+            <h3>Commenting</h3>
+            
+            <p>
+                The requirement to comment code obsessively was pioneered by managers, team leaders and other people that interact with code infrequently. 
+                It is sought merely as a check box for an employee's <abbr title="Key Performance Indicators">KPI</abbr>s, and provides little return for the time spent doing so.
+            </p>
+            
+            <p>
+                If a best-practice oriented developer follows the guidelines established in this document, their code should become so readable and obvious that the need to comment what it is doing is embarassingly redundant.
+                Consider the following example. In this: booleans are posed as questions, and functions are named intuitively.
+            </p>
+            
+            <pre class="prettyprint">
 if (user.hasPermission) {
-	editPage();
+    editPage();
 }</pre>
-			
-			<p>
-				Commenting, in this scenario at least, is completely unnecessary.
-			</p>
-			
-			<h4>SITUATIONS WHERE COMMENTING IS IMPORTANT</h4>
-			
-			<p>
-				Some parts of a project will never be easy to scan and understand. Consider a complicated regular expression, or a math function calculating angles or switching between degrees and radians.
-				Without the comment above, beginner and intermediate readers will be fairly clueless to the scripts' meaning.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                Commenting, in this scenario at least, is completely unnecessary.
+            </p>
+            
+            <h4>SITUATIONS WHERE COMMENTING IS IMPORTANT</h4>
+            
+            <p>
+                Some parts of a project will never be easy to scan and understand. Consider a complicated regular expression, or a math function calculating angles or switching between degrees and radians.
+                Without the comment above, beginner and intermediate readers will be fairly clueless to the scripts' meaning.
+            </p>
+            
+            <pre class="prettyprint">
 // RegEx for validating US phone numbers, can be (XXX) XXX-XXXX (with or without dashes, spaces or brackets)
 var phoneRegEx = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;</pre>
-			
-			
-		</div>
-		
-		
-		<div id="javascriptComparison" class="entry">
-			<h3>Always Use === Comparison</h3>
-			
-			<p>
-				The use of the == equality operator allows for frustrating bugs to slip through almost undetected. It allows for weak typing that is best explained by <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a>.
-				The use of the strict equality operator === does not run type coercion and therefore strictly evaluates the difference between two objects. Again, consult <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a> for more information
-			</p>
-			<pre class="prettyprint">
+            
+            
+        </div>
+        
+        
+        <div id="javascriptComparison" class="entry">
+            <h3>Always Use === Comparison</h3>
+            
+            <p>
+                The use of the == equality operator allows for frustrating bugs to slip through almost undetected. It allows for weak typing that is best explained by <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a>.
+                The use of the strict equality operator === does not run type coercion and therefore strictly evaluates the difference between two objects. Again, consult <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a> for more information
+            </p>
+            <pre class="prettyprint">
 var zeroAsAString = "0";
 
 if (zeroAsAString == 0) {
-	// gets in here lolwut
+    // gets in here lolwut
 }
 
 if (zeroAsAString === 0) {
-	// never gets in here
+    // never gets in here
 }</pre>
-			
-			<h4>The Exception</h4>
-			<p>
-				Double equals comparison is allowed when comparing to null, because it will detect both null or undefined properties. If you don't fully understand this, I still suggest you use triple equals.
-			</p>
-			<pre class="prettyprint ">
+            
+            <h4>The Exception</h4>
+            <p>
+                Double equals comparison is allowed when comparing to null, because it will detect both null or undefined properties. If you don't fully understand this, I still suggest you use triple equals.
+            </p>
+            <pre class="prettyprint ">
 var foo = null;
 
 // foo is null, but bar is undefined as it has not been declared
 if (foo == null && bar == null) {
-	// still got in here
+    // still got in here
 }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		<div id="javascriptParseInt" class="entry">
-			<h3>Always Specify the Second &lsquo;radix&rsquo; Parameter When Using .parseInt()</h3>
-			
-			<p>
-				When parsing a string to an integer, it is considered good practice to specify the second 'radix' parameter - which determines to what base the string should be converted to. 
-				The default setting will trigger a radix of 16 whenever the string is lead by a <code>0</code>. Most beginner and intermediate users are only ever going to be using a radix of <code>10</code>. Thanks to Jo&atilde;o Moreno for logging the <a href="https://github.com/taitems/Front-End-Development-Guidelines/issues/23" target="_blank">correction</a>.
-			</p>
-			
-			<pre class="prettyprint">				
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <div id="javascriptParseInt" class="entry">
+            <h3>Always Specify the Second &lsquo;radix&rsquo; Parameter When Using .parseInt()</h3>
+            
+            <p>
+                When parsing a string to an integer, it is considered good practice to specify the second 'radix' parameter - which determines to what base the string should be converted to. 
+                The default setting will trigger a radix of 16 whenever the string is lead by a <code>0</code>. Most beginner and intermediate users are only ever going to be using a radix of <code>10</code>. Thanks to Jo&atilde;o Moreno for logging the <a href="https://github.com/taitems/Front-End-Development-Guidelines/issues/23" target="_blank">correction</a>.
+            </p>
+            
+            <pre class="prettyprint">               
 alert( parseInt("08") ); // alerts: 2
 
 alert( parseInt("08", 10) ); // alerts: 8</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="javascriptTrueFalse" class="entry">
-			<h3>Avoid Comparing to true and false</h3>
-			
-			<p>
-				Direct comparison to the values of true and false is unnecessary. Sometimes it might be good for clarity, but it's just extra code.
-			</p>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="javascriptTrueFalse" class="entry">
+            <h3>Avoid Comparing to true and false</h3>
+            
+            <p>
+                Direct comparison to the values of true and false is unnecessary. Sometimes it might be good for clarity, but it's just extra code.
+            </p>
+            
+            <pre class="prettyprint">
 if (foo === true) {
-	// good that they're using triple equals, bad as it's redundant
+    // good that they're using triple equals, bad as it's redundant
 }
 
 if (foo) {
-	// yay!
+    // yay!
 }
 
 if (!bar) {
-	// the opposite
+    // the opposite
 }</pre>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		<div id="javascriptGlobalNamespace" class="entry">
-			<h3>Avoid Polluting the Global Namespace</h3>
-			
-			<p>
-				An over-reliance on global variables is something all of us, myself especially, are guilty of. Arguments as to why globals are bad are fairly straight forward: the chance of script and variable conflicts is increased, 
-				and both the source file and the namespace itself become littered with countless ambiguously named variables.
-			</p>
-			
-			<p>
-				<a href="http://yuiblog.com/" target="_blank">Douglas Crockford</a> believes that the quality of a JavaScript application can be assessed by the number of global variables it uses; the less the better. Given that not everything can be a local 
-				(but let's be honest, that one you're thinking about right now, it can, don't be lazy) you need to find a way of structuring your variables to prevent clashes and minimise the bloat.
-				The easiest way is to employ a single variable or a minimal amount of modules on which the variables are set. Crockford mentions that <abbr>YUI</abbr> uses a single global, <code>YAHOO</code>.
-				He discusses this in more detail in his blog post <a href="http://yuiblog.com/blog/2006/06/01/global-domination/" target="_blank">"Global Domination"</a>.
-			</p>
-			
-			<p>
-				Considering that, in the case of small web apps, globals are generally used to store application-wide settings: it's generally better to namespace your project or settings as objects.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <div id="javascriptGlobalNamespace" class="entry">
+            <h3>Avoid Polluting the Global Namespace</h3>
+            
+            <p>
+                An over-reliance on global variables is something all of us, myself especially, are guilty of. Arguments as to why globals are bad are fairly straight forward: the chance of script and variable conflicts is increased, 
+                and both the source file and the namespace itself become littered with countless ambiguously named variables.
+            </p>
+            
+            <p>
+                <a href="http://yuiblog.com/" target="_blank">Douglas Crockford</a> believes that the quality of a JavaScript application can be assessed by the number of global variables it uses; the less the better. Given that not everything can be a local 
+                (but let's be honest, that one you're thinking about right now, it can, don't be lazy) you need to find a way of structuring your variables to prevent clashes and minimise the bloat.
+                The easiest way is to employ a single variable or a minimal amount of modules on which the variables are set. Crockford mentions that <abbr>YUI</abbr> uses a single global, <code>YAHOO</code>.
+                He discusses this in more detail in his blog post <a href="http://yuiblog.com/blog/2006/06/01/global-domination/" target="_blank">"Global Domination"</a>.
+            </p>
+            
+            <p>
+                Considering that, in the case of small web apps, globals are generally used to store application-wide settings: it's generally better to namespace your project or settings as objects.
+            </p>
+            
+            <pre class="prettyprint">
 // polluted global name space
 var settingA = true;
 var settingB = false;
@@ -444,570 +444,570 @@ var settingC = "test";
 
 // a settings namespace
 var settings = {
-	settingA: true,
-	settingB: false,
-	settingC: "test"
+    settingA: true,
+    settingB: false,
+    settingC: "test"
 }</pre>
-			
-			<p>
-				But if we're avoiding globals to reduce the chance of conflicts, isn't standardising the namespaces to be the same going to increase chance of one app's settings overwriting anothers? Well, it would make sense.
-				It is instead suggested that you namespace your globals to your own specific app name, or reassign your namespace much in the same way that jQuery uses <code>$.noConflict()</code> mode.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                But if we're avoiding globals to reduce the chance of conflicts, isn't standardising the namespaces to be the same going to increase chance of one app's settings overwriting anothers? Well, it would make sense.
+                It is instead suggested that you namespace your globals to your own specific app name, or reassign your namespace much in the same way that jQuery uses <code>$.noConflict()</code> mode.
+            </p>
+            
+            <pre class="prettyprint">
 var myAppName = {
-	settings: {
-		settingA: true
-	}
+    settings: {
+        settingA: true
+    }
 }
 
 //accessed as
 myAppName.settings.settingA; // true</pre>
-			
-		</div>
-			
-		
-		
-		
-		
-		
-		
-		<div id="javascriptCamelCase" class="entry">
-			<h3>Camel Case Variables</h3>
-			
-			<p>
-				The camel casing (or <em>camelCasing</em>) of JavaScript variables is accepted as the standard in most coding environments.
-				The only exception that was raised in the comment section is the use of uppercase and underscores to denote contants.
-			</p>
-			
-			<pre class="prettyprint">
+            
+        </div>
+            
+        
+        
+        
+        
+        
+        
+        <div id="javascriptCamelCase" class="entry">
+            <h3>Camel Case Variables</h3>
+            
+            <p>
+                The camel casing (or <em>camelCasing</em>) of JavaScript variables is accepted as the standard in most coding environments.
+                The only exception that was raised in the comment section is the use of uppercase and underscores to denote contants.
+            </p>
+            
+            <pre class="prettyprint">
 var X_Position = obj.scrollLeft;
 
 var xPosition = obj.scrollLeft; // tidier
 
 SCENE_GRAVITY = 1; // constant</pre>
 
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="javascriptLoopCacheArrayLength" class="entry">
-			<h3>Loop Performance - Cache Array Length</h3>
-			
-			<p>
-				Looping is arguably the most important part of JavaScript performance to get right. Shave a millisecond or two off inside of a loop, potentially gain seconds overall. One such way is to cache the length of an array so it doesnt have to be calculated every time the loop is iterated through.
-			</p>
-			
-			<pre class="prettyprint">
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="javascriptLoopCacheArrayLength" class="entry">
+            <h3>Loop Performance - Cache Array Length</h3>
+            
+            <p>
+                Looping is arguably the most important part of JavaScript performance to get right. Shave a millisecond or two off inside of a loop, potentially gain seconds overall. One such way is to cache the length of an array so it doesnt have to be calculated every time the loop is iterated through.
+            </p>
+            
+            <pre class="prettyprint">
 var toLoop = new Array(1000);
 
 for (var i = 0; i &lt; toLoop.length; i++) {
-	// BAD - the length has to be evaluated 1000 times
+    // BAD - the length has to be evaluated 1000 times
 }
 
 for (var i = 0, len = toLoop.length; i &lt; len; i++) {
-	// GOOD - the length is only looked up once and then cached
+    // GOOD - the length is only looked up once and then cached
 }</pre>
-			
-			<h4>The Exception</h4>
-			<p>
-				If you're looping through an array to find an remove a particular item, this will alter the array length. Any time you change the array length by either adding or removing items from inside the loop, you will get yourself into trouble. Consider either re-setting the length or avoid caching it for this particular situation
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="javascriptLoopBreakContinue" class="entry">
-			<h3>Loop Performance - Use &lsquo;break;&rsquo; &amp; &lsquo;continue;&rsquo;</h3>
-			
-			<p>
-				The ability to step over and out of loops is really useful in avoiding costly loop cycles.
-			</p>
-			
-			<p>
-				If you're looking for something inside of a loop, what do you do once you find it? Say the condition you're looking for is matched halfway through a 1000 item loop.
-				Do you execute whatever you intend to do, and allow the loop to continue to iterate over the remaining 500 items, knowing that there's no chance it will hit an if statement? Nope! You break out of your loop, literally!
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <h4>The Exception</h4>
+            <p>
+                If you're looping through an array to find and remove a particular item, this will alter the array length. Any time you change the array length by either adding or removing items from inside the loop, you will get yourself into trouble. Consider either re-setting the length or avoid caching it for this particular situation.
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="javascriptLoopBreakContinue" class="entry">
+            <h3>Loop Performance - Use &lsquo;break;&rsquo; &amp; &lsquo;continue;&rsquo;</h3>
+            
+            <p>
+                The ability to step over and out of loops is really useful in avoiding costly loop cycles.
+            </p>
+            
+            <p>
+                If you're looking for something inside of a loop, what do you do once you find it? Say the condition you're looking for is matched halfway through a 1000 item loop.
+                Do you execute whatever you intend to do, and allow the loop to continue to iterate over the remaining 500 items, knowing that there's no chance it will hit an if statement? Nope! You break out of your loop, literally!
+            </p>
+            
+            <pre class="prettyprint">
 var bigArray = new Array(1000);
 
 for (var i = 0, len = bigArray.length; i &lt; len; i++) {
-	if (i === 500) {
-		break;
-	}
-	console.log(i); // will only log out 0 - 499
+    if (i === 500) {
+        break;
+    }
+    console.log(i); // will only log out 0 - 499
 }</pre>
-			
-			<p>
-				Another problem is skipping over a particular iteration and then continuing on with the loop. While things like odds and evens are better managed by replacing <code>i++</code> with <code>i + 2</code>, 
-				some conditions need to be specifically listened for, to then trigger the skip. Anything that prevent's running through an entire iteration is pretty handy.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                Another problem is skipping over a particular iteration and then continuing on with the loop. While things like odds and evens are better managed by replacing <code>i++</code> with <code>i + 2</code>, 
+                some conditions need to be specifically listened for, to then trigger the skip. Anything that prevent's running through an entire iteration is pretty handy.
+            </p>
+            
+            <pre class="prettyprint">
 var bigArray = new Array(1000);
 
 for (var i = 0, len = bigArray.length; i &lt; len; i++) {
-	if (condition) {
-		continue;
-	}
-	doCostlyStuff();
+    if (condition) {
+        continue;
+    }
+    doCostlyStuff();
 }</pre>
 
-		</div>
-		
-		
-		
-		
-		
-		<div id="javascriptFunctionParameters" class="entry">
-			<h3>Don't Send Too Many Function Parameters</h3>
-			
-			<p>
-				This is a pretty bad idea, more for readability than anything:
-			</p>
-			
-			<pre class="prettyprint">
+        </div>
+        
+        
+        
+        
+        
+        <div id="javascriptFunctionParameters" class="entry">
+            <h3>Don't Send Too Many Function Parameters</h3>
+            
+            <p>
+                This is a pretty bad idea, more for readability than anything:
+            </p>
+            
+            <pre class="prettyprint">
 function greet(name, language, age, gender, hairColour, eyeColour) {
-	alert(name);
+    alert(name);
 }</pre>
-			
-			<p>
-				It's a much better idea to construct an object before-hand or to pass the object inline
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                It's a much better idea to construct an object before-hand or to pass the object inline
+            </p>
+            
+            <pre class="prettyprint">
 function greet(user) {
-	alert(user.name);
+    alert(user.name);
 }
 
 greet({
-	name: "Bob",
-	gender: "male"
+    name: "Bob",
+    gender: "male"
 });</pre>
 
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="javascriptRemapThis" class="entry">
-			<h3>Remap &lsquo;this&rsquo; to &lsquo;self&rsquo;</h3>
-			
-			<p>
-				When writing object-oriented (OO) JavaScript, the scope of <code>this</code> must be understood. Regardless of what design pattern you choose to structure your pseudo-classes, a reference to <code>this</code> is generally the
-				easiest way to refer back to an instance. The moment you begin integrating jQuery helper methods with your pseudo-classes is the moment you notice the changing scope of <code>this</code>.
-			</p>
-			
-			<pre class="prettyprint">
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="javascriptRemapThis" class="entry">
+            <h3>Remap &lsquo;this&rsquo; to &lsquo;self&rsquo;</h3>
+            
+            <p>
+                When writing object-oriented (OO) JavaScript, the scope of <code>this</code> must be understood. Regardless of what design pattern you choose to structure your pseudo-classes, a reference to <code>this</code> is generally the
+                easiest way to refer back to an instance. The moment you begin integrating jQuery helper methods with your pseudo-classes is the moment you notice the changing scope of <code>this</code>.
+            </p>
+            
+            <pre class="prettyprint">
 Bob.findFriend("Barry");
 
 Person.prototype.findFriend = function(toFind) {
-	// this = Bob
-	$(this.friends).each(function() {
-		// this = Bob.friends[i]
-		if (this.name === toFind) {
-			// this = Barry
-			return this;
-		}
-	});
+    // this = Bob
+    $(this.friends).each(function() {
+        // this = Bob.friends[i]
+        if (this.name === toFind) {
+            // this = Barry
+            return this;
+        }
+    });
 }</pre>
-			
-			<p>
-				In the above example, <code>this</code> has changed from a reference to <code>Bob</code>, to his friend <code>Barry</code>. It's important to understand what happened to the value of <code>this</code> over time. 
-				Inside of the prototyped function, <code>this</code> refers to the instance of the pseudo-class (in this case <code>Bob</code>). 
-				Once we step inside the <code>$.each()</code> loop, <code>this</code> is then re-mapped to be item <code>i</code> in the parsed array. 
-			</p>
-			
-			<p>
-				The solution is to remap the value of <code>this</code> to either <code>self</code> or <code>_self</code>. 
-				While <code>self</code> (sans underscore) is not exactly a <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words" target="_blank">reserved keyword</a>, it <em>is</em> a property of the <code>window</code> object.
-				Although my use of <code>self</code> was picked up from the jQuery source code, they have realised their mistake and are attempting to <a href="http://bugs.jqueryui.com/ticket/5404" target="_blank">rectify the situation</a> and instead use <code>_self</code>.
-				Personally, I prefer the use of <code>self</code> for the sheer cleanliness - but it can throw some pretty confusing bugs for people. Tread carefully.
-			</p>
-			
-			<p>
-				In the following example I will better utilise the parameters made available with the  <code>$.each()</code> helper, as well as re-mapping the value of <code>this</code>.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                In the above example, <code>this</code> has changed from a reference to <code>Bob</code>, to his friend <code>Barry</code>. It's important to understand what happened to the value of <code>this</code> over time. 
+                Inside of the prototyped function, <code>this</code> refers to the instance of the pseudo-class (in this case <code>Bob</code>). 
+                Once we step inside the <code>$.each()</code> loop, <code>this</code> is then re-mapped to be item <code>i</code> in the parsed array. 
+            </p>
+            
+            <p>
+                The solution is to remap the value of <code>this</code> to either <code>self</code> or <code>_self</code>. 
+                While <code>self</code> (sans underscore) is not exactly a <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words" target="_blank">reserved keyword</a>, it <em>is</em> a property of the <code>window</code> object.
+                Although my use of <code>self</code> was picked up from the jQuery source code, they have realised their mistake and are attempting to <a href="http://bugs.jqueryui.com/ticket/5404" target="_blank">rectify the situation</a> and instead use <code>_self</code>.
+                Personally, I prefer the use of <code>self</code> for the sheer cleanliness - but it can throw some pretty confusing bugs for people. Tread carefully.
+            </p>
+            
+            <p>
+                In the following example I will better utilise the parameters made available with the  <code>$.each()</code> helper, as well as re-mapping the value of <code>this</code>.
+            </p>
+            
+            <pre class="prettyprint">
 Bob.findFriend("Barry");
 
 Person.prototype.findFriend = function(toFind) {
 
-	// the only time "this" is used
-	var _self = this; 
-	
-	$(_self.friends).each(function(i,item) {
-		if (item.name === toFind) {
-			return item;
-		}
-	});
-	
+    // the only time "this" is used
+    var _self = this; 
+    
+    $(_self.friends).each(function(i,item) {
+        if (item.name === toFind) {
+            return item;
+        }
+    });
+    
 }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		<div id="javascriptBooleanNaming" class="entry">
-			<h3>CanIHaz Boolean?</h3>
-			
-			<p>
-				Booleans should be easily identifiable by the way they are named. Use prefixes like <code>is</code>, <code>can</code> or <code>has</code> to propose a question.
-			</p>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <div id="javascriptBooleanNaming" class="entry">
+            <h3>CanIHaz Boolean?</h3>
+            
+            <p>
+                Booleans should be easily identifiable by the way they are named. Use prefixes like <code>is</code>, <code>can</code> or <code>has</code> to propose a question.
+            </p>
+            
+            <pre class="prettyprint">
 isEditing = true;
 
 obj.canEdit = true;
 
-user.hasPermission = true;	</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		<div id="javascriptReflow" class="entry">
-			<h3>Minimising Repaints &amp; Reflows</h3>
-			
-			<p>
-				Repaints and reflows relate to the process of re-rendering the DOM when particular properties or elements are altered. Repaints are triggered when an element's look is changed without altering its layout. Nicole Sullivan describes these changes in a thorough <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a> as style changes such as visibility or background-color.	Reflows are the more costly alternative, caused by changes that alter the layout of the page. Examples include the addition or removal of elements, changes to an element's width or height, and even resizing the browser window. Worst yet is the domino effect of reflows that cause ancestor, sibling and child elements to reflow.
-			</p>
-			
-			<p>
-				There is no doubt that both reflows and repaints should be avoided if possible, but how?
-			</p>
-			
-			<h4>A Reflow Example</h4>
-			
-			<p>
-				It's not that the following snippet is "bad code" exactly. But let's assume that the array <code>arr</code> has 10 items.
-			</p>
-			
-			<pre class="prettyprint">
+user.hasPermission = true;  </pre>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <div id="javascriptReflow" class="entry">
+            <h3>Minimising Repaints &amp; Reflows</h3>
+            
+            <p>
+                Repaints and reflows relate to the process of re-rendering the DOM when particular properties or elements are altered. Repaints are triggered when an element's look is changed without altering its layout. Nicole Sullivan describes these changes in a thorough <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a> as style changes such as visibility or background-color.    Reflows are the more costly alternative, caused by changes that alter the layout of the page. Examples include the addition or removal of elements, changes to an element's width or height, and even resizing the browser window. Worst yet is the domino effect of reflows that cause ancestor, sibling and child elements to reflow.
+            </p>
+            
+            <p>
+                There is no doubt that both reflows and repaints should be avoided if possible, but how?
+            </p>
+            
+            <h4>A Reflow Example</h4>
+            
+            <p>
+                It's not that the following snippet is "bad code" exactly. But let's assume that the array <code>arr</code> has 10 items.
+            </p>
+            
+            <pre class="prettyprint">
 var myList = document.getElementById(&quot;myList&quot;);
 
 for (var i = 0, len = arr.length; i &lt; len; i++) {
-	
-	myList.innerHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //reflow - appending to element
-	
+    
+    myList.innerHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //reflow - appending to element
+    
 }</pre>
-			
-			<p>
-				In the above <code>for</code> loop, a reflow will be triggered for every iteration of the loop. 10 iterations cause 10 reflows. 
-			</p>
-			
-			<p>
-				Now consider the following:
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                In the above <code>for</code> loop, a reflow will be triggered for every iteration of the loop. 10 iterations cause 10 reflows. 
+            </p>
+            
+            <p>
+                Now consider the following:
+            </p>
+            
+            <pre class="prettyprint">
 var constructedHTML = &quot;&quot;;
 
 for (var i = 0, len = arr.length; i &lt; len; i++) {
-	constructedHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //no reflow - appending to string
+    constructedHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //no reflow - appending to string
 }
 
 document.getElementById(&quot;myList&quot;).innerHTML = constructedHTML; //reflow</pre>
-			
-			<p>
-				In this scenario, the elements are being constructed within a string. Not a single reflow is created by the loop, as the DOM is not being altered. Only once the array has been completely looped through is the string then applied as the <code>innerHTML</code> of an object, causing the only reflow of the function.
-			</p>
-			
-			<p>
-				There are endless types of reflows and repaints that can be avoided, and lucky you gets to go on an read about them. Reading material on the subject matter is plentiful, but most of it is linked to from the excellent starting point that is Nicole Sullivan's <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a>. There are important lessons to be taken away from this when it comes to a multitude of technologies synonymous with "web 3.0" and HTML5. The lesson above can be directly applied to writing jQuery. It's also important to consider when fiddling with <code>canvas</code>, and trying to keep a frame rate in the 30-60 range.
-			</p>
-			
-		</div>
-		
-		
-		
-		<div id="javascriptUniqueIDs" class="entry">
-			<h3>Don't Use Milliseconds to Generate Unique IDs</h3>
-		
-			<p>
-				There is a method for generating unique IDs that has hung around since the early days of web dev. It involved appending the elapsed milliseconds since January 1, 1970 to your static ID by way of:
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                In this scenario, the elements are being constructed within a string. Not a single reflow is created by the loop, as the DOM is not being altered. Only once the array has been completely looped through is the string then applied as the <code>innerHTML</code> of an object, causing the only reflow of the function.
+            </p>
+            
+            <p>
+                There are endless types of reflows and repaints that can be avoided, and lucky you gets to go on an read about them. Reading material on the subject matter is plentiful, but most of it is linked to from the excellent starting point that is Nicole Sullivan's <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a>. There are important lessons to be taken away from this when it comes to a multitude of technologies synonymous with "web 3.0" and HTML5. The lesson above can be directly applied to writing jQuery. It's also important to consider when fiddling with <code>canvas</code>, and trying to keep a frame rate in the 30-60 range.
+            </p>
+            
+        </div>
+        
+        
+        
+        <div id="javascriptUniqueIDs" class="entry">
+            <h3>Don't Use Milliseconds to Generate Unique IDs</h3>
+        
+            <p>
+                There is a method for generating unique IDs that has hung around since the early days of web dev. It involved appending the elapsed milliseconds since January 1, 1970 to your static ID by way of:
+            </p>
+            
+            <pre class="prettyprint">
 var myID = "static" + new Date().getTime();</pre>
 
-			<p>
-				This was a fairly foolproof method originally, because even if two ofthe above lines were performed one after the other, a few millisecondsnormally separated their execution. New browsers brought with them newJavaScript engines, coupled with ever increasing clock speed. Thesedays it's more likely that your milliseconds match than are slightlyincremented.
-			</p>
+            <p>
+                This was a fairly foolproof method originally, because even if two ofthe above lines were performed one after the other, a few millisecondsnormally separated their execution. New browsers brought with them newJavaScript engines, coupled with ever increasing clock speed. Thesedays it's more likely that your milliseconds match than are slightlyincremented.
+            </p>
 
 
-			<p>
-				This leads to bugs that are near impossible to debug by conventionalmeans. Because your DOM is created on the fly, traditional validationof the page source won't identify multiple IDs as an error. JavaScriptand iQuery error handling dictates that the first match for the IDwill be utilised and other matches ignored. So it doesn't even throw aJS error!
-			</p>
+            <p>
+                This leads to bugs that are near impossible to debug by conventionalmeans. Because your DOM is created on the fly, traditional validationof the page source won't identify multiple IDs as an error. JavaScriptand iQuery error handling dictates that the first match for the IDwill be utilised and other matches ignored. So it doesn't even throw aJS error!
+            </p>
 
 
-			<p>
-				No, the only real method to debug it is line by line breakpoint ingand logging - but "pause" at the wrong line and your milliseconds willno longer clash!
-			</p>
+            <p>
+                No, the only real method to debug it is line by line breakpoint ingand logging - but "pause" at the wrong line and your milliseconds willno longer clash!
+            </p>
 
 
-			<p>
-				The good thing is that there are plenty of alternatives. To be pedantic, it's worth noting that a computer's random function is not truly random as it is seeded by system time- but the probability of clashes is rather minuscule.
-			</p>
-			
-			<pre class="prettyprint">
+            <p>
+                The good thing is that there are plenty of alternatives. To be pedantic, it's worth noting that a computer's random function is not truly random as it is seeded by system time- but the probability of clashes is rather minuscule.
+            </p>
+            
+            <pre class="prettyprint">
 var myID = "static" + Math.round(Math.random() * 10000);</pre>
 
 
 
 
-			<p>
-				Personally, I'm partial to a bit of faux GUID generation. Technicallya GUID is generated according to your hardware, but this JavaScriptfunction does the next best thing. The following is a handy function I've pinched from a <a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript" target="_blank">stack overflow post</a>.
-			</p>
+            <p>
+                Personally, I'm partial to a bit of faux GUID generation. Technicallya GUID is generated according to your hardware, but this JavaScriptfunction does the next best thing. The following is a handy function I've pinched from a <a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript" target="_blank">stack overflow post</a>.
+            </p>
 
-			<pre class="prettyprint">
+            <pre class="prettyprint">
 function S4() {
    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
 }
 function guid() {
    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }</pre>
-	
-			<pre class="prettyprint">
+    
+            <pre class="prettyprint">
 var myID = "static" + guid();</pre>
 
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="javascriptFeatureSniff" class="entry">
-			<h3>Feature Sniff, Don't Browser Sniff</h3>
-			
-			<p>
-				Does the client's browser support geolocation? Does the client's browser support web workers? HTML5 video? HTML5 audio? The answer used to be:
-			</p>
-			
-			<pre class="prettyprint">
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="javascriptFeatureSniff" class="entry">
+            <h3>Feature Sniff, Don't Browser Sniff</h3>
+            
+            <p>
+                Does the client's browser support geolocation? Does the client's browser support web workers? HTML5 video? HTML5 audio? The answer used to be:
+            </p>
+            
+            <pre class="prettyprint">
 if ($.browser.msie) {
-	// no it doesn't
+    // no it doesn't
 }</pre>
-			
-			<p>
-				But things are rapidly changing. The latest version of IE is almost a modern browser, but as usual it's making front end development a pain. Earlier versions of IE were generally as equally sucky as their predecessors,
-				so it enabled lazy JavaScript developers to simply detect <code>if (ie)</code> and execute some proprietary Microsoft slops syntax. Now IE9 has done away with these functions, but that old <code>if (ie)</code> chestnut is throwing a spanner in the works.
-			</p>
-			
-			<p>
-				So what if you could detect support for individual features without sniffing the (unreliable and cloakable) user-agent? 
-			</p>
-			
-			<p>
-				If you answered <em>"that would be ghetto"</em>, then you are correct.
-			</p>
-			
-			<p>
-				In steps <a href="http://www.modernizr.com" target="_blank">Modernizr</a>, a JavaScript library developed in part by industry dream-boat Paul Irish. 
-				With wide adoption, tiny file-size and plenty of <a href="http://www.modernizr.com/docs/#s1" target="_blank">documentation</a>: implementing it is a no-brainer. 
-				It creates a <code>Modernizr</code> object that contains the results of its detection tests, so checking feature support is as simple as the following:
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                But things are rapidly changing. The latest version of IE is almost a modern browser, but as usual it's making front end development a pain. Earlier versions of IE were generally as equally sucky as their predecessors,
+                so it enabled lazy JavaScript developers to simply detect <code>if (ie)</code> and execute some proprietary Microsoft slops syntax. Now IE9 has done away with these functions, but that old <code>if (ie)</code> chestnut is throwing a spanner in the works.
+            </p>
+            
+            <p>
+                So what if you could detect support for individual features without sniffing the (unreliable and cloakable) user-agent? 
+            </p>
+            
+            <p>
+                If you answered <em>"that would be ghetto"</em>, then you are correct.
+            </p>
+            
+            <p>
+                In steps <a href="http://www.modernizr.com" target="_blank">Modernizr</a>, a JavaScript library developed in part by industry dream-boat Paul Irish. 
+                With wide adoption, tiny file-size and plenty of <a href="http://www.modernizr.com/docs/#s1" target="_blank">documentation</a>: implementing it is a no-brainer. 
+                It creates a <code>Modernizr</code> object that contains the results of its detection tests, so checking feature support is as simple as the following:
+            </p>
+            
+            <pre class="prettyprint">
 // old way of detecting canvas support
 if (!!document.createElement('canvas').getContext) { ... }
 
 // with Modernizr
 if (Modernizr.canvas) { ... }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="javascriptMilliseconds" class="entry">
-			<h3>Readable Milliseconds</h3>
-			
-			<p>
-				A handy way of writing milliseconds in a readable format. Great for beginners, but mostly a gimmick.
-			</p>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="javascriptMilliseconds" class="entry">
+            <h3>Readable Milliseconds</h3>
+            
+            <p>
+                A handy way of writing milliseconds in a readable format. Great for beginners, but mostly a gimmick.
+            </p>
+            
+            <pre class="prettyprint">
 // is this 3, 30 or 300 seconds?
 var timeout = 30000; 
 
 // an extra calculation, but easier to read and modify
 var timeout = 30 * 1000;</pre>
 
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
-		<h2 id="jquerySection">jQuery Specific</h2>
-		
-		
-		
-		
-		
-		
-		
-		<div id="jqueryChain" class="entry">
-			<h3>Chain Like a Mad Dog</h3>
-			
-			<p>
-				One of the best parts of jQuery is its function chaining. You've probably used it a bit, maybe a few simple calls one after another... but have you ever traversed the DOM like a mad dog? Take some time to familiarise yourself with the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function. It is critical for when you begin stepping up and down the DOM tree from your original selector.
-			</p>
-			
-			<pre class="prettyprint">
+        <h2 id="jquerySection">jQuery Specific</h2>
+        
+        
+        
+        
+        
+        
+        
+        <div id="jqueryChain" class="entry">
+            <h3>Chain Like a Mad Dog</h3>
+            
+            <p>
+                One of the best parts of jQuery is its function chaining. You've probably used it a bit, maybe a few simple calls one after another... but have you ever traversed the DOM like a mad dog? Take some time to familiarise yourself with the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function. It is critical for when you begin stepping up and down the DOM tree from your original selector.
+            </p>
+            
+            <pre class="prettyprint">
 $(".quote")
-	.hide()
-	.find("a").text("Click here").bind("click",doStuff).end()
-	.parent().removeClass().addClass("testimonial").draggable().end()
-	.fadeIn("slow");</pre>
-			
-			<p>
-			In the example above, the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function is used once we have finished doing things with a particular DOM object and want to traverse
-			back up the DOM to the original object we called. We then load back up and dive back into the DOM. 
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="jqueryData" class="entry">
-			<h3>Using data-* Attributes</h3>
-			
-			<p>
-				Those of you who have been writing JavaScript (and not jQuery) for a good length of time are most likely familiar with attributes. Setting them. Getting them. Abusing <code>rel</code> and <code>title</code> instead...
-			</p>
-			
-			<p>
-				So when <em>isn't</em> HTML5 or jQuery coming the rescue? New specs allow the use of <code>data-</code> prefixes on HTML elements to indicate attributes which can hold data, and jQuery does an awesome job of converting the designated string into the correct JavaScript type. It's a beautiful partnership. Let's create a <code>DIV</code> with some data attributes.
-			</p>
-			
-			<pre class="prettyprint">
+    .hide()
+    .find("a").text("Click here").bind("click",doStuff).end()
+    .parent().removeClass().addClass("testimonial").draggable().end()
+    .fadeIn("slow");</pre>
+            
+            <p>
+            In the example above, the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function is used once we have finished doing things with a particular DOM object and want to traverse
+            back up the DOM to the original object we called. We then load back up and dive back into the DOM. 
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="jqueryData" class="entry">
+            <h3>Using data-* Attributes</h3>
+            
+            <p>
+                Those of you who have been writing JavaScript (and not jQuery) for a good length of time are most likely familiar with attributes. Setting them. Getting them. Abusing <code>rel</code> and <code>title</code> instead...
+            </p>
+            
+            <p>
+                So when <em>isn't</em> HTML5 or jQuery coming the rescue? New specs allow the use of <code>data-</code> prefixes on HTML elements to indicate attributes which can hold data, and jQuery does an awesome job of converting the designated string into the correct JavaScript type. It's a beautiful partnership. Let's create a <code>DIV</code> with some data attributes.
+            </p>
+            
+            <pre class="prettyprint">
 &lt;div id=&quot;test&quot; data-is-bool=&quot;true&quot; data-some-number=&quot;123&quot;&gt;&lt;/div&gt;</pre>
-			
-			<p>
-				Now even though our values are wrapped in quotation marks, they won't be handled as strings:
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                Now even though our values are wrapped in quotation marks, they won't be handled as strings:
+            </p>
+            
+            <pre class="prettyprint">
 typeof $("#test").data("isBool"); // boolean
-	
+    
 typeof $("#test").data("someNumber"); // number</pre>
-			
-			<h4>Special Casing</h4>
-			
-			<p>
-				It's also important to notice the lower casing required to get these snippets to work. But if you're a great front end developer, you will still want to camel case your data variables. Like many places in JavaScript, a preceding hyphen signifies camel casing of the next letter. The following camel casing  of the HTML attribute <strong>does not work</strong> and the same JavaScript used above will return <code>undefined</code>.
-			</p>
-			
-			<p>
-				<strong>Does not work :(</strong>
-			</p>
-			<pre class="prettyprint">
+            
+            <h4>Special Casing</h4>
+            
+            <p>
+                It's also important to notice the lower casing required to get these snippets to work. But if you're a great front end developer, you will still want to camel case your data variables. Like many places in JavaScript, a preceding hyphen signifies camel casing of the next letter. The following camel casing  of the HTML attribute <strong>does not work</strong> and the same JavaScript used above will return <code>undefined</code>.
+            </p>
+            
+            <p>
+                <strong>Does not work :(</strong>
+            </p>
+            <pre class="prettyprint">
 &lt;div id=&quot;test&quot; data-isBool=&quot;true&quot; data-someNumber=&quot;123&quot;&gt;&lt;/div&gt;</pre>
-			
-			<p>
-				<strong>Does work :)</strong>
-			</p>
-			<pre class="prettyprint">
+            
+            <p>
+                <strong>Does work :)</strong>
+            </p>
+            <pre class="prettyprint">
 &lt;div id=&quot;test&quot; data-is-bool=&quot;true&quot; data-some-number=&quot;123&quot;&gt;&lt;/div&gt;</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="jqueryStop" class="entry">
-			<h3>&lsquo;.stop()&rsquo; Collaborate &amp; Listen</h3>
-			
-			<p>
-				Binding jQuery animations to mouse events is a key part of modern web-based user interaction. It's also something that you see done poorly on even the most famous of web sites. 
-				<a href="http://www.learningjquery.com/2009/01/quick-tip-prevent-animation-queue-buildup" target="_blank">This article</a> provides a straight forward example of built up animations and demonstrates how visually jarring they can be.
-				Thankfully it's easily fixed with a single function prefix or a parameter added to <code>$.animate</code> calls.
-			</p>
-			
-			<p>
-				When using <code>$.animate</code>, <code>queue: false</code> can be added to the parameters to prevent chaining. Animation shortcuts such as <code>$.fadeIn</code> or <code>$.slideDown</code> do not take <code>queue</code> settings.
-				Instead you have to pre-empt these animations with the <code>$.stop</code> method of pausing currently executing animations. Certain scenarios require the animation to stop dead in its tracks, or to jump to the end of the transition. 
-				It is recommended you familiarise yourself with the <a href="http://api.jquery.com/stop/" target="_blank">documentation</a> of the parameters <code>clearQueue</code> and <code>jumpToEnd</code>, because god knows I can't help you there.
-			</p>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="jqueryStop" class="entry">
+            <h3>&lsquo;.stop()&rsquo; Collaborate &amp; Listen</h3>
+            
+            <p>
+                Binding jQuery animations to mouse events is a key part of modern web-based user interaction. It's also something that you see done poorly on even the most famous of web sites. 
+                <a href="http://www.learningjquery.com/2009/01/quick-tip-prevent-animation-queue-buildup" target="_blank">This article</a> provides a straight forward example of built up animations and demonstrates how visually jarring they can be.
+                Thankfully it's easily fixed with a single function prefix or a parameter added to <code>$.animate</code> calls.
+            </p>
+            
+            <p>
+                When using <code>$.animate</code>, <code>queue: false</code> can be added to the parameters to prevent chaining. Animation shortcuts such as <code>$.fadeIn</code> or <code>$.slideDown</code> do not take <code>queue</code> settings.
+                Instead you have to pre-empt these animations with the <code>$.stop</code> method of pausing currently executing animations. Certain scenarios require the animation to stop dead in its tracks, or to jump to the end of the transition. 
+                It is recommended you familiarise yourself with the <a href="http://api.jquery.com/stop/" target="_blank">documentation</a> of the parameters <code>clearQueue</code> and <code>jumpToEnd</code>, because god knows I can't help you there.
+            </p>
+            
+            <pre class="prettyprint">
 $("selector").stop(true,true).fadeOut();
 
 $("selector").animate({
-	property: value
+    property: value
 }, {
-	duration: 1000,
-	queue: false
+    duration: 1000,
+    queue: false
 }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="jqueryOptimiseSelectors" class="entry">
-			<h3>Optimise Your Selectors</h3>
-			
-			<p>
-				jQuery is pretty chill. It can do pretty much everything but make you coffee, and I hear that's in the roadmap for 2.0. One thing you have to be careful about is abusing the power that is the <a href="http://sizzlejs.com/" target="_blank">sizzleJS</a> selector engine.
-				There are two strategies to overcome this: <em>caching the selector results</em> and <em>using efficient selectors</em>.
-			</p>
-			
-			<h4>Caching Selector Results</h4>
-			
-			<p>
-				Do a costly DOM query every time you want to change something, or store a reference to the element? Pretty clear choice.
-			</p>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="jqueryOptimiseSelectors" class="entry">
+            <h3>Optimise Your Selectors</h3>
+            
+            <p>
+                jQuery is pretty chill. It can do pretty much everything but make you coffee, and I hear that's in the roadmap for 2.0. One thing you have to be careful about is abusing the power that is the <a href="http://sizzlejs.com/" target="_blank">sizzleJS</a> selector engine.
+                There are two strategies to overcome this: <em>caching the selector results</em> and <em>using efficient selectors</em>.
+            </p>
+            
+            <h4>Caching Selector Results</h4>
+            
+            <p>
+                Do a costly DOM query every time you want to change something, or store a reference to the element? Pretty clear choice.
+            </p>
+            
+            <pre class="prettyprint">
 // before
 $(".quote a").bind("click", doStuff); // DOM query eww
 
@@ -1016,12 +1016,12 @@ $(".quote a").addClass("quoteLink"); // DOM query eww
 
 // later
 $(".quote a").fadeIn("slow"); // DOM query eww</pre>
-			
-			<p>
-				Ignoring chaining, this is better:
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <p>
+                Ignoring chaining, this is better:
+            </p>
+            
+            <pre class="prettyprint">
 // before
 var $quoteLinks = $(".quote a");  // the only DOM query
 $quoteLinks.bind("click", doStuff);
@@ -1031,251 +1031,251 @@ $quoteLinks.addClass("quoteLink");
 
 // later
 $quoteLinks.fadeIn("slow");</pre>
-			
-			<br />
-			
-			<h4>Using Efficient Selectors</h4>
-			
-			<p>
-				So jQuery/sizzleJS can use CSS3 selectors like a boss, but what's the real cost? Behind the scenes the browser is hopefully using <code>document.querySelector()</code>, but there's also a fair chance it will be breaking down your selector string and querying the DOM manually.
-			</p>
-			
-			<pre class="prettyprint">
+            
+            <br />
+            
+            <h4>Using Efficient Selectors</h4>
+            
+            <p>
+                So jQuery/sizzleJS can use CSS3 selectors like a boss, but what's the real cost? Behind the scenes the browser is hopefully using <code>document.querySelector()</code>, but there's also a fair chance it will be breaking down your selector string and querying the DOM manually.
+            </p>
+            
+            <pre class="prettyprint">
 // an ID search is the quickest possible query, then it just takes a list of the childNodes and matches the class
 $("#quoteList").children(".quotes"); 
 
 // looks for the "foo" class only in the pre-defined bar element
 $(".foo",bar); </pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		<div id="jqueryForEachLoops" class="entry">
-			<h3>A &lsquo;for&rsquo; Loop is Always Quicker Than a &lsquo;each()&rsquo; Loop</h3>
-			
-			<p>
-				No matter what happens in the next few years of browser development, a native <code>for</code> loop will always be quicker than a jQuery <code>$.each()</code> loop. 
-				When you think of what jQuery really is (a library wrapped around native JS functions) you begin to realise that the native underlying JavaScript is always going to be quicker. It's a tradeoff of run speed versus authoring speed.
-			</p>
-			
-			<p>
-				It is vital that a native <code>for</code> loop is always used for performance critical functions that could fire potentially hundreds of times per second. Examples include:
-			</p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        <div id="jqueryForEachLoops" class="entry">
+            <h3>A &lsquo;for&rsquo; Loop is Always Quicker Than a &lsquo;each()&rsquo; Loop</h3>
+            
+            <p>
+                No matter what happens in the next few years of browser development, a native <code>for</code> loop will always be quicker than a jQuery <code>$.each()</code> loop. 
+                When you think of what jQuery really is (a library wrapped around native JS functions) you begin to realise that the native underlying JavaScript is always going to be quicker. It's a tradeoff of run speed versus authoring speed.
+            </p>
+            
+            <p>
+                It is vital that a native <code>for</code> loop is always used for performance critical functions that could fire potentially hundreds of times per second. Examples include:
+            </p>
 
-			<ul>
-				<li>Mouse movement</li>
-				<li>Timer intervals</li>
-				<li>Loops within loops</li>
-			</ul>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
+            <ul>
+                <li>Mouse movement</li>
+                <li>Timer intervals</li>
+                <li>Loops within loops</li>
+            </ul>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
 
-		<h2 id="cssSection">CSS</h2>
-		
-		
-		<div id="cssBoxModel" class="entry">
-		
-			<h3>Understanding the Box Model is Key</h3>
-		
-			<p>
-				The "box model" is a key determining factor in how a browser renders your page. A healthy understanding of it's intricacies will make your job so indescribably easier. The box model denotes the way in which the physical dimensions of a HTML element are calculated. If a block element has a fixed width of say, 100px, then how should the padding, border and margin be placed?
-			</p>
-			
-			<p>
-				Plenty of websites offer in depth descriptions, but put simply: the standards compliant implementation places the border and padding outside of the specified width. It's best explained with a graphic. Consider this code:
-			</p>
-			
-			<pre class="prettyprint lang-css">
+        <h2 id="cssSection">CSS</h2>
+        
+        
+        <div id="cssBoxModel" class="entry">
+        
+            <h3>Understanding the Box Model is Key</h3>
+        
+            <p>
+                The "box model" is a key determining factor in how a browser renders your page. A healthy understanding of it's intricacies will make your job so indescribably easier. The box model denotes the way in which the physical dimensions of a HTML element are calculated. If a block element has a fixed width of say, 100px, then how should the padding, border and margin be placed?
+            </p>
+            
+            <p>
+                Plenty of websites offer in depth descriptions, but put simply: the standards compliant implementation places the border and padding outside of the specified width. It's best explained with a graphic. Consider this code:
+            </p>
+            
+            <pre class="prettyprint lang-css">
 /* the old way (178 + 20 + 2 = 200) */
 .foo {
-	width: 150px;
-	height: 150px;
-	padding: 25px;
-	border: 25px solid;
-	margin: 20px;
+    width: 150px;
+    height: 150px;
+    padding: 25px;
+    border: 25px solid;
+    margin: 20px;
 }</pre>
 
 
-			<h4>What You Would Expect (Quirks Mode)</h4>
+            <h4>What You Would Expect (Quirks Mode)</h4>
 
-			<p>
-				The padding and border are calucated inward, preserving the height and width specifically set to be 150px.
-			</p>
+            <p>
+                The padding and border are calucated inward, preserving the height and width specifically set to be 150px.
+            </p>
 
-			<p class="imageFeature">
-				<img src="includes/images/box-model-quirks.png" alt="Box Model - Quirks Mode">
-			</p>
+            <p class="imageFeature">
+                <img src="includes/images/box-model-quirks.png" alt="Box Model - Quirks Mode">
+            </p>
 
-			<h4>What You Get (Standards Compliant Mode)</h4>
+            <h4>What You Get (Standards Compliant Mode)</h4>
 
-			<p>
-				Instead, you get 250px. 150px + (2 * 25) + (2 * 25).
-			</p>
+            <p>
+                Instead, you get 250px. 150px + (2 * 25) + (2 * 25).
+            </p>
 
-			<p class="imageFeature">
-				<img src="includes/images/box-model-standard.png" alt="Box Model - Standards Mode">
-			</p>
-		
-		
-			<p>
-				If you think it seems odd, you're not alone. There is a fix at hand, and it involves a CSS property called <code>box-sizing</code>, and it works in <strong>IE8 and above</strong>. It allows you to choose the exact way in which an elements dimensions are calculated, and its a lifesaver. Parameter support varies and vendor prefixes apply, so consult <a href="http://caniuse.com/css3-boxsizing" target="_blank">caniuse</a> for specifics.
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            <p class="imageFeature">
+                <img src="includes/images/box-model-standard.png" alt="Box Model - Standards Mode">
+            </p>
+        
+        
+            <p>
+                If you think it seems odd, you're not alone. There is a fix at hand, and it involves a CSS property called <code>box-sizing</code>, and it works in <strong>IE8 and above</strong>. It allows you to choose the exact way in which an elements dimensions are calculated, and its a lifesaver. Parameter support varies and vendor prefixes apply, so consult <a href="http://caniuse.com/css3-boxsizing" target="_blank">caniuse</a> for specifics.
+            </p>
+            
+            <pre class="prettyprint lang-css">
 /* the old way (178 + 20 + 2 = 200) */
 .foo {
-	width: 178px;
-	padding: 10px;
-	border: 1px;
+    width: 178px;
+    padding: 10px;
+    border: 1px;
 }
 
 /* a better way */
 .foo {
-	width: 200px;
-	padding: 10px;
-	border: 1px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+    width: 200px;
+    padding: 10px;
+    border: 1px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
 }</pre>
 
-		<p>
-			While it was always possible to mentally calculate widths by removing pixel units from each other (as per the first method), it was never entirely clear how to do so with variable width units like percentages and EMs. There was no other solution at this point besides wrapping elements in parent elements to ensure widths and <code>padding/margin/borders</code> could all be separate.
-		</p>
-			
-		</div>
-		
-		
-		
-		<div id="cssFloatOrPosition" class="entry">
-		
-			<h3>Know when to Float, and when to Position</h3>
-		
-			<p>
-				Gone are the days of table based layouts. The moment we admit that we can concentrate our efforts into better understanding the way floats and positions work. There's a particular mental model that needs to be grasped, and I believe this is something best done with practise.
-			</p>
-			
-			<p>
-				Floats are great for sucking elements out of the DOM and forcing them hard up against a left or a right edge. They became the bread and butter of the post table layout stage in front end dev, possibly because of the poor browser support of <code>display: inline</code> and <code>inline-block</code>, as well as <code>z-index</code> bugs stemming from position support. These days there really is no excuse. Inline-block is fairly well supported, and a quick hack will get it working in IE7.
-			</p>
-			
-			<p>
-				The arguments that previously held back absolutely positioning elements with CSS have thankfully died down. In theory, positioning allows you to place elements on a page (or within any container for that matter) with Xs and Ys in a straightforward manner that should be familiar to people like Flash developers.
-			</p>
+        <p>
+            While it was always possible to mentally calculate widths by removing pixel units from each other (as per the first method), it was never entirely clear how to do so with variable width units like percentages and EMs. There was no other solution at this point besides wrapping elements in parent elements to ensure widths and <code>padding/margin/borders</code> could all be separate.
+        </p>
+            
+        </div>
+        
+        
+        
+        <div id="cssFloatOrPosition" class="entry">
+        
+            <h3>Know when to Float, and when to Position</h3>
+        
+            <p>
+                Gone are the days of table based layouts. The moment we admit that we can concentrate our efforts into better understanding the way floats and positions work. There's a particular mental model that needs to be grasped, and I believe this is something best done with practise.
+            </p>
+            
+            <p>
+                Floats are great for sucking elements out of the DOM and forcing them hard up against a left or a right edge. They became the bread and butter of the post table layout stage in front end dev, possibly because of the poor browser support of <code>display: inline</code> and <code>inline-block</code>, as well as <code>z-index</code> bugs stemming from position support. These days there really is no excuse. Inline-block is fairly well supported, and a quick hack will get it working in IE7.
+            </p>
+            
+            <p>
+                The arguments that previously held back absolutely positioning elements with CSS have thankfully died down. In theory, positioning allows you to place elements on a page (or within any container for that matter) with Xs and Ys in a straightforward manner that should be familiar to people like Flash developers.
+            </p>
 
-			<h4>Understanding Positions</h4>
-			
-			<p>
-				It's important to understand one fact when positioning elements with CSS: the position is always relative to the nearest positioned parent element. When people first start dabbling with CSS, there's a common misconception that <code>position: absolute;</code> positions right up to the page root. I think this stems from the fact that, yes, without any parent elements with position styles - this is true. It traverses up the DOM tree, not finding any positioned elements, and settles on the root of the page.
-			</p>
-			
-			<p>
-				So if <code>position: absolute;</code> pulls elements out of their normal flow, how do you position an element relative to it's parent? That's straight forward. The parent element needs to by styled  <code>position: relative;</code>, and then all child elements will draw from the top, right, bottom and left of this parent container. Using this knowledge, how would you go about achieving the following straightforward layout?
-			</p>
-			
-			<p class="imageFeature">
-				<img src="includes/images/float-or-position.png" alt="How would go about coding up this image?">
-			</p>
-			
-			<p>
-				Using <code>float</code>, you would need to wrap the items in a clearfix, float <code>.one</code> left, and fiddle with floats and margins on both <code>.two</code> and <code>.three</code>. You would end up with something similar to the following:
-			</p>
+            <h4>Understanding Positions</h4>
+            
+            <p>
+                It's important to understand one fact when positioning elements with CSS: the position is always relative to the nearest positioned parent element. When people first start dabbling with CSS, there's a common misconception that <code>position: absolute;</code> positions right up to the page root. I think this stems from the fact that, yes, without any parent elements with position styles - this is true. It traverses up the DOM tree, not finding any positioned elements, and settles on the root of the page.
+            </p>
+            
+            <p>
+                So if <code>position: absolute;</code> pulls elements out of their normal flow, how do you position an element relative to it's parent? That's straight forward. The parent element needs to by styled  <code>position: relative;</code>, and then all child elements will draw from the top, right, bottom and left of this parent container. Using this knowledge, how would you go about achieving the following straightforward layout?
+            </p>
+            
+            <p class="imageFeature">
+                <img src="includes/images/float-or-position.png" alt="How would go about coding up this image?">
+            </p>
+            
+            <p>
+                Using <code>float</code>, you would need to wrap the items in a clearfix, float <code>.one</code> left, and fiddle with floats and margins on both <code>.two</code> and <code>.three</code>. You would end up with something similar to the following:
+            </p>
 
-			<pre class="prettyprint lang-css">
+            <pre class="prettyprint lang-css">
 .parent {
-	/* ghetto clearfix */
-	width: 310px;
-	overflow: auto;
+    /* ghetto clearfix */
+    width: 310px;
+    overflow: auto;
 }
 .one {
-	width: 200px;
-	height: 210px;
-	float: left;
+    width: 200px;
+    height: 210px;
+    float: left;
 }
 .two {
-	width: 100px;
-	height: 100px;
-	float: right;
-	margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-bottom: 10px;
 }
 .three {
-	width: 100px;
-	height: 100px;
-	float: right;
+    width: 100px;
+    height: 100px;
+    float: right;
 }</pre>
-			
-			<p>
-				Using <code>position</code> allows us to, as described earlier, paint the elements on the screen with x and y co-ordinates in a very explicit way. While the above method with floats will break long lines down the page, the below method will keep everything in place, regardless of content.
-			</p>
+            
+            <p>
+                Using <code>position</code> allows us to, as described earlier, paint the elements on the screen with x and y co-ordinates in a very explicit way. While the above method with floats will break long lines down the page, the below method will keep everything in place, regardless of content.
+            </p>
 
-			<pre class="prettyprint lang-css">
+            <pre class="prettyprint lang-css">
 .parent {
-	position: relative;
-	width: 310px;
-	height: 210px;
+    position: relative;
+    width: 310px;
+    height: 210px;
 }
 .one, .two, .three {
-	position: absolute;
+    position: absolute;
 }
 .one {
-	top: 0;
-	left: 0;
-	width: 200px;
-	height: 210px;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 210px;
 }
 .two {
-	top: 0;
-	right: 0;
-	width: 100px;
-	height: 100px;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
 }
 .three {
-	bottom: 0;
-	right: 0;
-	width: 100px;
-	height: 100px;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
 }</pre>
-			
-			<p>
-				As mentioned earlier, there are <code>z-index</code> issues to be considered. While the above example might seem a bit excessive, once you start thinking with positions, it will opens a world of possibilities.
-			</p>
-		
-		</div>
-		
-		
-		
-		<div id="cssWhitespacing" class="entry">
-			<h3>Whitespacing</h3>
-			
-			<p>
-				Whitespacing of CSS can be difficult as we chop and change between single and multi line CSS arguments. I'm not going to get into that.
-			</p>
-			
-			<h4>Proper Spacing</h4>
-			
-			<pre class="prettyprint lang-css">
+            
+            <p>
+                As mentioned earlier, there are <code>z-index</code> issues to be considered. While the above example might seem a bit excessive, once you start thinking with positions, it will opens a world of possibilities.
+            </p>
+        
+        </div>
+        
+        
+        
+        <div id="cssWhitespacing" class="entry">
+            <h3>Whitespacing</h3>
+            
+            <p>
+                Whitespacing of CSS can be difficult as we chop and change between single and multi line CSS arguments. I'm not going to get into that.
+            </p>
+            
+            <h4>Proper Spacing</h4>
+            
+            <pre class="prettyprint lang-css">
 /* BAD */
 .selector {display:none;background:#ff0000;color:#000000;} 
 
@@ -1284,60 +1284,60 @@ $(".foo",bar); </pre>
 
 /* GOOD - MULTI-LINE */
 .selector {
-	display: none;
-	background: #ff0000;
-	color: #000000;
+    display: none;
+    background: #ff0000;
+    color: #000000;
 }</pre>
-			
-			<h4>Same Line Braces</h4>
-			
-			<pre class="prettyprint lang-css">
+            
+            <h4>Same Line Braces</h4>
+            
+            <pre class="prettyprint lang-css">
 .selector {
-	display: none;
-	background: #ff0000;
-	color: #000000;
+    display: none;
+    background: #ff0000;
+    color: #000000;
 }</pre>
-			
-			<h4>Indenting Child Elements</h4>
-			
-			<p>
-				Purely optional, and personally only employed when in a document with single line declarations.
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+            <h4>Indenting Child Elements</h4>
+            
+            <p>
+                Purely optional, and personally only employed when in a document with single line declarations.
+            </p>
+            
+            <pre class="prettyprint lang-css">
 .selector { display: none; background: #ff0000; color: #000000; }
-	.selector a { text-decoration: none; }
-	.selector span { font-weight: bold; }</pre>
-			
-			<h4>Grouping &amp; Indenting Vendor Prefixes</h4>
-			
-			<pre class="prettyprint lang-css">
+    .selector a { text-decoration: none; }
+    .selector span { font-weight: bold; }</pre>
+            
+            <h4>Grouping &amp; Indenting Vendor Prefixes</h4>
+            
+            <pre class="prettyprint lang-css">
 .selector { 
-	background: #FFF; border: 1px solid #000; color: #EAEAEA;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
+    background: #FFF; border: 1px solid #000; color: #EAEAEA;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
 }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssShorthand" class="entry">
-			<h3>CSS Shorthand</h3>
-			
-			<h4>Grouping Properties</h4>
-			
-			<p>
-				Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
-				and how they can be further shortened (top and bottom, left and right).
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssShorthand" class="entry">
+            <h3>CSS Shorthand</h3>
+            
+            <h4>Grouping Properties</h4>
+            
+            <p>
+                Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
+                and how they can be further shortened (top and bottom, left and right).
+            </p>
+            
+            <pre class="prettyprint lang-css">
 /* LONG CODE IS LONG */
 padding-top: 1px;
 padding-right: 2px;
@@ -1349,39 +1349,39 @@ padding: 1px 2px 1px 2px;
 
 /* BEST */
 padding: 1px 2px;</pre>
-			
-			<h4>From 0px to Hero</h4>
-			
-			<p>
-				Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+            <h4>From 0px to Hero</h4>
+            
+            <p>
+                Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
+            </p>
+            
+            <pre class="prettyprint lang-css">
 /* BAD */
 padding: 0px 10px;</pre>
-			
-			<pre class="prettyprint lang-css">
+            
+            <pre class="prettyprint lang-css">
 /* GOOD */
 padding: 0 10px;</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssCommenting" class="entry">
-			<h3>Commenting Blocks</h3>
-			
-			<p>
-				Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
-				Obviously it works better with single line CSS styles, but the effect is not entirely lost on multi-line either.
-				The use of dashes versus equals versus underscores are all up the individual, but this is how I like to manage my stylesheets.
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssCommenting" class="entry">
+            <h3>Commenting Blocks</h3>
+            
+            <p>
+                Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
+                Obviously it works better with single line CSS styles, but the effect is not entirely lost on multi-line either.
+                The use of dashes versus equals versus underscores are all up the individual, but this is how I like to manage my stylesheets.
+            </p>
+            
+            <pre class="prettyprint lang-css">
 /* === HORIZONTAL NAV === */
 #horizNav { width: 100%; display: block; }
 #horizNav li { display: block; float: left; position: relative; }
@@ -1392,125 +1392,125 @@ padding: 0 10px;</pre>
 #carousel { width: 960px; height: 150px; position: relative; }
 #carousel img { display: none; }
 #carousel .buttons { position: absolute; right: 10px; bottom: 10px; }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssClearingFloats" class="entry">
-			<h3>Clearing Floats</h3>
-			
-			<p>
-				Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element ("auto" doesn't work in all browsers and scenarios) and an overflow value of either "auto" or "hidden". 
-				"Hidden" obviously degrades better, but there are some IE compatibility versions where "auto" works better.
-			</p>
-			
-			<h4>The HTML:</h4>
-			
-			<pre class="prettyprint">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssClearingFloats" class="entry">
+            <h3>Clearing Floats</h3>
+            
+            <p>
+                Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element ("auto" doesn't work in all browsers and scenarios) and an overflow value of either "auto" or "hidden". 
+                "Hidden" obviously degrades better, but there are some IE compatibility versions where "auto" works better.
+            </p>
+            
+            <h4>The HTML:</h4>
+            
+            <pre class="prettyprint">
 &lt;div class=&quot;parentElement&quot;&gt;
-	&lt;div class=&quot;childElement&quot;&gt;
-		I'm floated left!
-	&lt;/div&gt;
-	I'm normal text that wraps around the float
+    &lt;div class=&quot;childElement&quot;&gt;
+        I'm floated left!
+    &lt;/div&gt;
+    I'm normal text that wraps around the float
 &lt;/div&gt;</pre>
-			
-			<h4>The CSS:</h4>
-			
-			<pre class="prettyprint lang-css">
+            
+            <h4>The CSS:</h4>
+            
+            <pre class="prettyprint lang-css">
 .parentElement {
-	width: 100%;
-	overflow: hidden;
+    width: 100%;
+    overflow: hidden;
 }
 .childElement {
-	float: left;
+    float: left;
 }</pre>
-			
-			<p>
-				Contributors have also brought the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
-				is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
-				Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
-				It also prevents top margins from collapsing which is an absolute life saver.
-			</p>
-			
-		</div>		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssCentering" class="entry">
-			<h3>Vertical &amp; Horizontal Centering</h3>
-			
-			<p>
-				Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+            <p>
+                Contributors have also brought the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
+                is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
+                Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
+                It also prevents top margins from collapsing which is an absolute life saver.
+            </p>
+            
+        </div>      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssCentering" class="entry">
+            <h3>Vertical &amp; Horizontal Centering</h3>
+            
+            <p>
+                Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
+            </p>
+            
+            <pre class="prettyprint lang-css">
 .class {
-	width: 960px;
-	margin: 0 auto;
+    width: 960px;
+    margin: 0 auto;
 }</pre>
-			
-			<p>
-				Front end devs have been using this snippet for a long time, without fully understanding why it didn't work vertically. From my understanding, it's important to remember that the parent element will generally have a <code>height: auto;</code> on it, and that there is no 100% height in which to vertically center the element. Applying the <code>position: absolute;</code> effectively moves the element out into position mode and responds to the pushing and pulling of auto margins and no specific location. 
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+            <p>
+                Front end devs have been using this snippet for a long time, without fully understanding why it didn't work vertically. From my understanding, it's important to remember that the parent element will generally have a <code>height: auto;</code> on it, and that there is no 100% height in which to vertically center the element. Applying the <code>position: absolute;</code> effectively moves the element out into position mode and responds to the pushing and pulling of auto margins and no specific location. 
+            </p>
+            
+            <pre class="prettyprint lang-css">
 .exactMiddle {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }</pre>
-			
-			<p>
-				The downsides of this method include its lack of support in IE6 and IE7, and the absence of a scroll bar if the browser is resized to be smaller than the centered object. There are more methods on <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">this page</a> (this is Method 4), but this is by far the best.
-			</p> 
-			
-			<p>
-				The vertical centering of text in an element is also straightforward. If the text is on a single line, like a horizontal navigation item, you can set the <code>line-height</code> to be that of the element's physical height.
-			</p> 
-			
-			<pre class="prettyprint lang-css">
+            
+            <p>
+                The downsides of this method include its lack of support in IE6 and IE7, and the absence of a scroll bar if the browser is resized to be smaller than the centered object. There are more methods on <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">this page</a> (this is Method 4), but this is by far the best.
+            </p> 
+            
+            <p>
+                The vertical centering of text in an element is also straightforward. If the text is on a single line, like a horizontal navigation item, you can set the <code>line-height</code> to be that of the element's physical height.
+            </p> 
+            
+            <pre class="prettyprint lang-css">
 #horizNav li {
-	height: 32px;
-	line-height: 32px;
+    height: 32px;
+    line-height: 32px;
 }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssFeatureSniff" class="entry">
-			<h3>Feature Sniff, Don't Browser Sniff</h3>
-			
-			<p>
-				In the earlier discusison of JavaScript feature detection, applying properties if a browser is <em>any version</em> of IE is increasingly problematic.
-				Man-of-steel Paul Irish pioneered the use of  <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">IE version sniffing</a> to address this problem, but <a href="http://www.modernizr.com" target="_blank">Modernizr</a> has since come to the rescue.
-				Modernizr places classes on the root <code>&lt;html&gt;</code> element specifying whether features are supported. Bleeding edge styles can then easily cascade from (or be removed from) these classes.
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssFeatureSniff" class="entry">
+            <h3>Feature Sniff, Don't Browser Sniff</h3>
+            
+            <p>
+                In the earlier discusison of JavaScript feature detection, applying properties if a browser is <em>any version</em> of IE is increasingly problematic.
+                Man-of-steel Paul Irish pioneered the use of  <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">IE version sniffing</a> to address this problem, but <a href="http://www.modernizr.com" target="_blank">Modernizr</a> has since come to the rescue.
+                Modernizr places classes on the root <code>&lt;html&gt;</code> element specifying whether features are supported. Bleeding edge styles can then easily cascade from (or be removed from) these classes.
+            </p>
+            
+            <pre class="prettyprint lang-css">
 .my_elem {
    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
@@ -1522,277 +1522,276 @@ padding: 0 10px;</pre>
    border: 1px solid #666;
    border-bottom-width: 2px;
 }</pre>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssImportant" class="entry">
-			<h3>You're Not !important</h3>
-			
-			<p>
-				A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
-				Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used as a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
-			</p>
-			
-			<p>
-				The use of the <code>!important</code> tag can be mostly avoided via the better understanding of CSS selector precedence, and how to better target elements. The more specific the selector, the more likely it will be accepted as the applicable style.
-				The following example from vanseodesign demonstrates the specificity at work.
-			</p>
-			
-			<pre class="prettyprint lang-css">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssImportant" class="entry">
+            <h3>You're Not !important</h3>
+            
+            <p>
+                A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
+                Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used as a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
+            </p>
+            
+            <p>
+                The use of the <code>!important</code> tag can be mostly avoided via the better understanding of CSS selector precedence, and how to better target elements. The more specific the selector, the more likely it will be accepted as the applicable style.
+                The following example from vanseodesign demonstrates the specificity at work.
+            </p>
+            
+            <pre class="prettyprint lang-css">
 p { font-size: 12px; }
 p.bio { font-size: 14px; }</pre>
-			
-			<p>
-				<a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">Their article</a> on style precedence does a better job explaining inheritence than I ever could, so please give it a go.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssDegradation" class="entry">
-			<h3>Aggressive Degradation</h3>
-			
-			<p>
-				It's worth noting that this is a personal opinion, and best suited to very specific situations. The stance of aggressive degradation will not be well received in large commercial projects or enterprise solutions relying upon older browsers.
-			</p>
-			
-			<p>
-				Aggressive degradation dictates that if a particular (older) browser cannot render a certain effect, it should simply be omitted. A CSS3 button is a good example. 
-				Effects such as <code>border-radius</code>, <code>box-shadow</code>, <code>text-shadow</code> and <code>gradients</code> will be displayed in cutting edge browsers.
-				A graceful fallback of a <code>.PNG</code> would be provided for slightly older browsers, and the most graceful of all solutions would include a PNG-Fix for IE6 or the use of <code>filter</code> arguments to replicate gradients and shadows.
-				However, aggressive degradation in this situation instructs you to neglect the older browsers and present them with a flat, satisfactory object.
-			</p>
-			
-			<p>
-				Put simply, aggressive degradation boils down to: <strong>if your browser can't render a gradient or a box shadow, tough luck</strong>.
-			</p>
-			
-			<p>
-				While not ideal for every situation, it ensures the timely delivery of projects and that the root product is still usable and not reliant on (validation breaking) hacks.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+            
+            <p>
+                <a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">Their article</a> on style precedence does a better job explaining inheritence than I ever could, so please give it a go.
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssDegradation" class="entry">
+            <h3>Aggressive Degradation</h3>
+            
+            <p>
+                It's worth noting that this is a personal opinion, and best suited to very specific situations. The stance of aggressive degradation will not be well received in large commercial projects or enterprise solutions relying upon older browsers.
+            </p>
+            
+            <p>
+                Aggressive degradation dictates that if a particular (older) browser cannot render a certain effect, it should simply be omitted. A CSS3 button is a good example. 
+                Effects such as <code>border-radius</code>, <code>box-shadow</code>, <code>text-shadow</code> and <code>gradients</code> will be displayed in cutting edge browsers.
+                A graceful fallback of a <code>.PNG</code> would be provided for slightly older browsers, and the most graceful of all solutions would include a PNG-Fix for IE6 or the use of <code>filter</code> arguments to replicate gradients and shadows.
+                However, aggressive degradation in this situation instructs you to neglect the older browsers and present them with a flat, satisfactory object.
+            </p>
+            
+            <p>
+                Put simply, aggressive degradation boils down to: <strong>if your browser can't render a gradient or a box shadow, tough luck</strong>.
+            </p>
+            
+            <p>
+                While not ideal for every situation, it ensures the timely delivery of projects and that the root product is still usable and not reliant on (validation breaking) hacks.
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
-		<h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssHtmlFeatureSniff" class="entry">
-			<h3>Feature Sniff with Modernizr</h3>
-			
-			<p>
-				I think I've gone on enough about this already. Use <a href="http://www.modernizr.com" target="_blank">Modernizr</a> to detect the availability of specific HTML5 and CSS3 features.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssHtmlFontFace" class="entry">
-			<h3>@font-face Use and Abuse</h3>
-			
-			<p>
-				Before you consider embedding a custom font, is important that you inspect the <abbr>EULA</abbr> and check if web embedding is allowed. Foundries are understandably reluctant to allow designers and developers
-				the ability to place font files directly on a server which can then be copied by a savvy end user. Particular foundries also prohibit the embedding of particular file types, such as <code>.TTF</code> and <code>.OTF</code>.
-			</p>
-			
-			<p>
-				If, after careful consideration, you believe the desired font is web embeddable: head on over to the Font Squirrel <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">@font-face Generator</a>. 
-				It utilises Fontspring's <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax" target="_blank">bulletproof @font-face structure</a> and automatically generates all the required file formats.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		<div id="cssHtmlDegradation" class="entry">
-			<h3>Degradation</h3>
-			
-			<p>
-				Thankfully browser handling of unsupported HTML5 and CSS3 is already that of a graceful nature. New additions to the list of <code>&lt;input /&gt;</code> types such as "email", "search" etc. will generally
-				degrade to normal <code>&lt;input type="text" /&gt;</code> when not natively supported. Similarly, CSS3 properties that aren't supported will simply not appear. Responsive layouts controlled by height and width
-				media queries are simply not applied. 
-			</p>
-			
-			<p>
-				<strong>
-					Subtle CSS3 effects should be employed as a reward for users who run a modern browser.
-				</strong>
-			</p>
-			
-			<p>
-				The resources section below includes a few libraries to help normalise HTML5 and CSS3 functionality across a range of older browsers.
-			</p>
-			
-		</div>
-		
-		
-				
-		
-		
-		
+        <h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssHtmlFeatureSniff" class="entry">
+            <h3>Feature Sniff with Modernizr</h3>
+            
+            <p>
+                I think I've gone on enough about this already. Use <a href="http://www.modernizr.com" target="_blank">Modernizr</a> to detect the availability of specific HTML5 and CSS3 features.
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssHtmlFontFace" class="entry">
+            <h3>@font-face Use and Abuse</h3>
+            
+            <p>
+                Before you consider embedding a custom font, is important that you inspect the <abbr>EULA</abbr> and check if web embedding is allowed. Foundries are understandably reluctant to allow designers and developers
+                the ability to place font files directly on a server which can then be copied by a savvy end user. Particular foundries also prohibit the embedding of particular file types, such as <code>.TTF</code> and <code>.OTF</code>.
+            </p>
+            
+            <p>
+                If, after careful consideration, you believe the desired font is web embeddable: head on over to the Font Squirrel <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">@font-face Generator</a>. 
+                It utilises Fontspring's <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax" target="_blank">bulletproof @font-face structure</a> and automatically generates all the required file formats.
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div id="cssHtmlDegradation" class="entry">
+            <h3>Degradation</h3>
+            
+            <p>
+                Thankfully browser handling of unsupported HTML5 and CSS3 is already that of a graceful nature. New additions to the list of <code>&lt;input /&gt;</code> types such as "email", "search" etc. will generally
+                degrade to normal <code>&lt;input type="text" /&gt;</code> when not natively supported. Similarly, CSS3 properties that aren't supported will simply not appear. Responsive layouts controlled by height and width
+                media queries are simply not applied. 
+            </p>
+            
+            <p>
+                <strong>
+                    Subtle CSS3 effects should be employed as a reward for users who run a modern browser.
+                </strong>
+            </p>
+            
+            <p>
+                The resources section below includes a few libraries to help normalise HTML5 and CSS3 functionality across a range of older browsers.
+            </p>
+            
+        </div>
+        
+        
+                
+        
+        
+        
 
-		<h2 id="resourcesSection">Resources</h2>
-		
-		
-		
-		
-		
-		
-		
-		<div id="resourcesSupport" class="entry">
-			<h3>Useful Resources</h3>
-			
-			<p>
-				The following resources are vital for the standardisation of code and interaction in a modern web page. They ensure that CSS3 and HTML5 features are made accessible across a range of browsers that previously lacked support.
-			</p>
-			
-			<ul>
-				<li>
-					<a href="http://www.jquery.com" target="_blank">
-						jQuery					
-					</a>
-					JavaScript helper library
-				</li>
-				<li>
-					<a href="http://www.jqueryui.com" target="_blank">
-						jQuery UI					
-					</a>
-					does for UX/UI what jQuery does for JavaScript
-				</li>
-				<li>
-					<a href="http://www.modernizr.com" target="_blank">
-						Modernizr
-					</a>
-					feature sniff, don't browser sniff!
-				</li>
-				<li>					
-					<a href="https://github.com/scottjehl/Respond" target="_blank">
-						RespondJS				
-					</a>
-					brings responsive layouts to older browsers
-				</li>
-				<li>
-					<a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">
-						@font-face Generator
-					</a>
-					font embedding for all!
-				</li>
-				<li>
-					<a href="http://www.raphaeljs.com" target="_blank">
-						RaphaelJS
-					</a>
-					 easy cross browser vector drawing
-				</li>
-				<li>
-					<a href="http://html5boilerplate.com/" target="_blank">
-						HTML5 Boilerplate
-					</a>
-					a good starting point for any project. Even the "stripped" version is still a bit bloated.
-				</li>
-				<li>
-					<a href="http://twitter.github.com/bootstrap/" target="_blank">
-						Twitter Bootstrap
-					</a>
-					allows you to rapidly prototype and style simple web apps.
-				</li>
-			</ul>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="resourcesSuggestions" class="entry">
-			<h3>Support and Suggestions</h3>
-			
-			<p>
-				This document was prepared by Tait Brown (<a href="http://www.twitter.com/taitems" target="_blank">@taitems</a>).
-			</p>
-			
-			<p>
-				Questions, corrections and suggestions can be lodged on the <a href="https://github.com/taitems/Front-End-Development-Guidelines/" target="_blank">GitHub repository</a> for this page. You can also fork your own branch and add your own company/product specific guidelines.
-			</p>
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	</div>
-		
-		
+        <h2 id="resourcesSection">Resources</h2>
+        
+        
+        
+        
+        
+        
+        
+        <div id="resourcesSupport" class="entry">
+            <h3>Useful Resources</h3>
+            
+            <p>
+                The following resources are vital for the standardisation of code and interaction in a modern web page. They ensure that CSS3 and HTML5 features are made accessible across a range of browsers that previously lacked support.
+            </p>
+            
+            <ul>
+                <li>
+                    <a href="http://www.jquery.com" target="_blank">
+                        jQuery                  
+                    </a>
+                    JavaScript helper library
+                </li>
+                <li>
+                    <a href="http://www.jqueryui.com" target="_blank">
+                        jQuery UI                   
+                    </a>
+                    does for UX/UI what jQuery does for JavaScript
+                </li>
+                <li>
+                    <a href="http://www.modernizr.com" target="_blank">
+                        Modernizr
+                    </a>
+                    feature sniff, don't browser sniff!
+                </li>
+                <li>                    
+                    <a href="https://github.com/scottjehl/Respond" target="_blank">
+                        RespondJS               
+                    </a>
+                    brings responsive layouts to older browsers
+                </li>
+                <li>
+                    <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">
+                        @font-face Generator
+                    </a>
+                    font embedding for all!
+                </li>
+                <li>
+                    <a href="http://www.raphaeljs.com" target="_blank">
+                        RaphaelJS
+                    </a>
+                     easy cross browser vector drawing
+                </li>
+                <li>
+                    <a href="http://html5boilerplate.com/" target="_blank">
+                        HTML5 Boilerplate
+                    </a>
+                    a good starting point for any project. Even the "stripped" version is still a bit bloated.
+                </li>
+                <li>
+                    <a href="http://twitter.github.com/bootstrap/" target="_blank">
+                        Twitter Bootstrap
+                    </a>
+                    allows you to rapidly prototype and style simple web apps.
+                </li>
+            </ul>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="resourcesSuggestions" class="entry">
+            <h3>Support and Suggestions</h3>
+            
+            <p>
+                This document was prepared by Tait Brown (<a href="http://www.twitter.com/taitems" target="_blank">@taitems</a>).
+            </p>
+            
+            <p>
+                Questions, corrections and suggestions can be lodged on the <a href="https://github.com/taitems/Front-End-Development-Guidelines/" target="_blank">GitHub repository</a> for this page. You can also fork your own branch and add your own company/product specific guidelines.
+            </p>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    </div>
+        
+        
 
-	<script src="includes/js/prettify.js"></script>
-	<script src="includes/js/lang-css.js"></script>
-	<script src="includes/js/jquery.min.js"></script>
-	<script src="includes/js/bootstrap-scrollspy.js"></script>
-	<script src="includes/js/jquery.scrollTo-min.js"></script>
-	<script src="includes/js/interact.js"></script>
-	<script>
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-28391759-1']);
-	_gaq.push(['_trackPageview']);
+    <script src="includes/js/prettify.js"></script>
+    <script src="includes/js/lang-css.js"></script>
+    <script src="includes/js/jquery.min.js"></script>
+    <script src="includes/js/bootstrap-scrollspy.js"></script>
+    <script src="includes/js/jquery.scrollTo-min.js"></script>
+    <script src="includes/js/interact.js"></script>
+    <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28391759-1']);
+    _gaq.push(['_trackPageview']);
 
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
 
 </body>
-
 </html>
