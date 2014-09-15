@@ -754,22 +754,22 @@ document.getElementById(&quot;myList&quot;).innerHTML = constructedHTML; //reflo
 var myID = "static" + new Date().getTime();</pre>
 
             <p>
-                This was a fairly foolproof method originally, because even if two ofthe above lines were performed one after the other, a few millisecondsnormally separated their execution. New browsers brought with them newJavaScript engines, coupled with ever increasing clock speed. Thesedays it's more likely that your milliseconds match than are slightlyincremented.
+                This was a fairly foolproof method originally, because even if two of the above lines were performed one after the other, a few milliseconds normally separated their execution. New browsers brought with them new JavaScript engines, coupled with ever increasing clock speed. These days it's more likely that your milliseconds match than are slightly incremented.
             </p>
 
 
             <p>
-                This leads to bugs that are near impossible to debug by conventionalmeans. Because your DOM is created on the fly, traditional validationof the page source won't identify multiple IDs as an error. JavaScriptand iQuery error handling dictates that the first match for the IDwill be utilised and other matches ignored. So it doesn't even throw aJS error!
+                This leads to bugs that are near impossible to debug by conventional means. Because your DOM is created on the fly, traditional validation of the page source won't identify multiple IDs as an error. JavaScript and iQuery error handling dictates that the first match for the ID will be utilised and other matches ignored. So it doesn't even throw a JS error!
             </p>
 
 
             <p>
-                No, the only real method to debug it is line by line breakpoint ingand logging - but "pause" at the wrong line and your milliseconds willno longer clash!
+                No, the only real method to debug it is line by line breakpoints and logging - but "pause" at the wrong line and your milliseconds will no longer clash!
             </p>
 
 
             <p>
-                The good thing is that there are plenty of alternatives. To be pedantic, it's worth noting that a computer's random function is not truly random as it is seeded by system time- but the probability of clashes is rather minuscule.
+                The good thing is that there are plenty of alternatives. To be pedantic, it's worth noting that a computer's random function is not truly random as it is seeded by system time - but the probability of clashes is rather minuscule.
             </p>
             
             <pre class="prettyprint">
@@ -779,7 +779,7 @@ var myID = "static" + Math.round(Math.random() * 10000);</pre>
 
 
             <p>
-                Personally, I'm partial to a bit of faux GUID generation. Technicallya GUID is generated according to your hardware, but this JavaScriptfunction does the next best thing. The following is a handy function I've pinched from a <a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript" target="_blank">stack overflow post</a>.
+                Personally, I'm partial to a bit of faux GUID generation. Technically a GUID is generated according to your hardware, but this JavaScript function does the next best thing. The following is a handy function I've pinched from a <a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript" target="_blank">stack overflow post</a>.
             </p>
 
             <pre class="prettyprint">
