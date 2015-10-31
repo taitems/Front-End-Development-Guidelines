@@ -3,11 +3,8 @@
 <html>
 
     <head>
-        <title>Front End Development Guidelines</title>
+        <title>前端开发指南</title>
         <meta charset="utf-8" />
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Signika:400,700' rel='stylesheet' type='text/css'>
         <link href="includes/css/bootstrap.min.css" rel="stylesheet" />
         <link href="includes/css/styles.css" rel="stylesheet" />
         <link href="includes/css/prettify.css" rel="stylesheet" />
@@ -18,14 +15,14 @@
     <div class="topbar" data-scrollspy="scrollspy">
         <div class="topbar-inner">
             <div class="container">
-                <a class="brand" href="#">Front End Dev Guidelines</a>
+                <a class="brand" href="#">前端开发指南</a>
                 <ul class="nav">
-                    <li><a href="#accessiblitySection">Accessibility</a></li>
+                    <li><a href="#accessiblitySection">可用性</a></li>
                     <li><a href="#javascriptSection">JavaScript</a></li>
                     <li><a href="#jquerySection">jQuery</a></li>
                     <li><a href="#cssSection">CSS</a></li>
-                    <li><a href="#cssHtmlSection">CSS3 &amp; HTML5</a></li>
-                    <li><a href="#resourcesSection">Resources</a></li>
+                    <li><a href="#cssHtmlSection">CSS3及HTML5</a></li>
+                    <li><a href="#resourcesSection">资源</a></li>
                 </ul>
             </div>
         </div>
@@ -33,159 +30,160 @@
 
     <div class="container">
 
-        <h2 id="accessiblitySection">Accessibility</h2>
-        
-        
-        
+        <h2 id="accessiblitySection">可用性</h2>
+
+
+
         <div id="accessibilityDoctype" class="entry">
-            <h3>What's Up, DOCTYPE?</h3>
-            
+            <h3>咋地了, DOCTYPE?</h3>
+
             <p>
-                The absence of a DOCTYPE is a crime punishable by death. You may have relied on the following DOCTYPE in the past, but it's important to know that this is now being superseded by a leaner and meaner snippet.
+                不定义DOCTYPE是一种可以被判死刑的罪行。 以前你可能用的是下面的DOCTYPE，不过你要知道现在已经有更简洁清晰的代码取而代之了。
             </p>
-            
+
             <pre class="prettyprint lang-html">
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</pre>
-            
+
             <p>
-                Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. <a href="http://ejohn.org/blog/html5-doctype/" target="_blank">Source</a>.
+                理想的状况是用HTML5 DOCTYPE，所有现代的浏览器都支持它，即使是不支持HTML5的浏览器，例如IE6,IE7，也会由此转入标准模式。 参见<a href="http://ejohn.org/blog/html5-doctype/" target="_blank">来源</a>。
             </p>
-            
+
             <pre class="prettyprint">
 &lt;!DOCTYPE html&gt;</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <div id="accessibilitySemanticMarkup" class="entry">
-            <h3>Write Valid Semantic Markup</h3>
-            
+            <h3>编写合法且语义清晰的标记</h3>
+
             <p>
-                Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The validity of the HTML should never be compromised, even if to solve a browser specific bug.
+                用整洁、语义清晰的HTML编写网站代码是我们一直孜孜以求的。有时我们会发现前人配置页面的方式限制了我们，或者有时我们编写的是HTML格式的email模板。但永远不要偏离HTML的规范，即使是为了解决特定浏览器兼容性的bug。
             </p>
-            
+
             <p>
-                Headings should be heirarchically created from <code>&lt;h2&gt;</code> onwards, paragraphs should always be in <code>&lt;p&gt;</code> tags and so on and so forth. If you write semantic HTML, the resultant page will be cleaner, lighter and easily parsed by search engine spiders. This is one of the simplest SEO fixes you can undertake.
+                所有的标题应该从<code>&lt;h2&gt;</code>开始分层级创建，文字段落应该总是放在<code>&lt;p&gt;</code>标签里，诸如此类。如果你编写的HTML的语义清晰，产生的页面会更整洁、简练，而且易于被搜索引擎爬虫解析。这是你能做到的最简单的SEO修补方式。
             </p>
-            
-            <h4>Which do you think looks cleaner, this?:</h4>
-            
+
+            <h4>来看看下面的段落，你觉得哪个更整洁？是这个？</h4>
+
             <pre class="prettyprint">
 &lt;span class=&quot;sectionHeading&quot;&gt;A Heading&lt;/span&gt;
 &lt;br /&gt; &lt;br /&gt;
 Lorem ipsum dolor sit amet. ...
 &lt;br /&gt; &lt;br /&gt;</pre>
-            
-            <h4>Or this?</h4>
-            
+
+            <h4>还是这个？</h4>
+
             <pre class="prettyprint">
 &lt;h2&gt;A Heading&lt;/h2&gt;
 &lt;p&gt;
     Lorem ipsum dolor sit amet. ...
 &lt;/p&gt;</pre>
         </div>
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
         <div id="accessibilityMiddleMouse" class="entry">
-            <h3>Fallbacks for Middle Mouse Clicks</h3>
-            
+            <h3>鼠标中键点击的应变方式</h3>
+
             <p>
-                One of the most frustrating accessibility and usability flaws of the modern web stems from the remapping of hyperlink click functions. Elements that appear to be hyperlinks may have their single click functionality remapped via JavaScript, breaking middle mouse click (open in new tab) functionality. If they can be opened in a new tab, their href of a single hash sends you back to the same page.
+                现代web应用最令人郁闷的可用性缺陷之一是超链接功能的变种。
+                一些看起来像是超链接的元素可能是通过Javascript映射的单击功能，这就破坏了鼠标中键点击（在新的tab中打开链接页面）的功能。即使它们能在新的标签页打开，它们只带有一个 <code>#</code> 的href又会把你带回到同样的页面。
             </p>
-            
+
             <p>
-                A modern example of a popular website that is contributing to this problem is the Twitter web app. Middle mouse clicking of names or user avatars yields completely different results throughout the web app.
+            	深刻诠释了该问题的一个现代热门网站的例子就是Twitter。在它的整个应用里，鼠标中键点击用户名或头像会得到完全不同的结果。
             </p>
-            
+
             <pre class="prettyprint">
-&lt;!-- The old way, breaking the web --&gt;
+&lt;!-- 旧的方式，破坏网页语义 --&gt;
 &lt;a href=&quot;#&quot;&gt;&lt;/a&gt;
 
-&lt;!-- If you can't deliver a page on mouse click, it's not a hyperlink --&gt;
+&lt;!-- 如果鼠标点击不能产生一个页面，那就不是超链接 --&gt;
 &lt;span class=&quot;link&quot; role=&quot;link&quot;&gt;&lt;/span&gt;
 </pre>
 
             <p>
-                Another alternative is the use of "hashbangs", that remap normal URLs to hash links and fetch pages via AJAX. Libraries that provide hashbang functionality should be able to display the page normally when middle mouse clicked, or load the content from that page into a designated area when clicked normally. But tread carefully, there are plenty of people who believe <a href="http://isolani.co.uk/blog/javascript/BreakingTheWebWithHashBangs" target="_blank">hashbangs are breaking the web</a>.   
+                另一个替代方案是使用 <code>#</code> 引导的路径，它会把普通的url映射为 <code>#</code> 引导的链接，然后通过AJAX来获取页面片段。提供此功能的库应该能够在鼠标中键点击的时候正常显示页面，或者在左键点击时把该页面内容加载到指定的区域。不过这样也要慎重行事，有很多人都认为 <a href="http://isolani.co.uk/blog/javascript/BreakingTheWebWithHashBangs" target="_blank">#链接正在破坏web应用</a>。
             </p>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="accessibilityMicroformats" class="entry">
-            <h3>Use Microformats</h3>
-            
+            <h3>用Microformats格式表示联系人信息</h3>
+
             <p>
-                Microformats are a way of making contact information machine readable. hCard classes (not vCard) are used to define the type of content contained within elements. These are then extracted or highlighted by the browser.
+                Microformat是一种便于机器读取联系人信息的方式。hCard类（不是vCard）用来定义元素里包含的内容类型。这些内容会被浏览器提取并突出显示。
             </p>
-            
+
             <pre class="prettyprint">
 &lt;span class=&quot;tel&quot;&gt;
     &lt;span class=&quot;type&quot;&gt;home&lt;/span&gt;:
     &lt;span class=&quot;value&quot;&gt;+1.415.555.1212&lt;/span&gt;
 &lt;/span&gt;</pre>
-            
+
             <p>
-                If you were to navigate to a page that uses this, you would notice that a program like Skype will easily detect what numbers on the page are phone numbers. Mobile Safari does something similar on iOS devices.
+                如果你曾经浏览采用此格式的网页，你会注意到类似skype的程序可以轻松检测到网页上的哪些数字是电话号码。在iOS设备上的Safari浏览器也可以做到类似的事情。
             </p>
-            
+
             <p>
-                For more information: <a href="http://microformats.org/wiki/hcard" target="_blank">http://microformats.org/wiki/hcard</a>
+                有关Microformat的更多信息请参阅<a href="http://microformats.org/wiki/hcard" target="_blank">http://microformats.org/wiki/hcard</a>
             </p>
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <div id="accessibilityAltText" class="entry">
-            <h3>Images Need &lsquo;Alt&rsquo; Text</h3>
-            
+            <h3>图片需要设 &lsquo;Alt&rsquo; 文本</h3>
+
             <p>
-                The <code>&lt;img&gt;</code> tag requires <code>alt</code> text to both validate and meet accessibility guidelines. The text in the <code>alt</code> attribute should be descriptive of what the image shows, or is trying to achieve, unless of course the image is not critical. 
+                <code>&lt;img&gt;</code> 标签需要 <code>alt</code> 文本，以便检查并满足可读性的要求。 在 <code>alt</code> 属性中的文本必须能够说明图片显示的内容或要达到的效果，除非该图片不重要。
             </p>
             <p>
-                If the image is of a list bullet or other trivial icons, it is recommended to simply leave the <code>alt</code> attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
+                如果图片只是一个列表中的着重号或者其他无关紧要的图标，最好是给 <code>alt</code> 属性一个空字符串，但还是留着它。这样屏幕阅读器会忽略它，而不是把“着重号”连读20次。
             </p>
-            
+
             <pre class="prettyprint">
-&lt;img src=&quot;dog.gif&quot; alt=&quot;Fido and I at the park!&quot; /&gt; 
-&lt;!-- good, descriptive --&gt;
+&lt;img src=&quot;dog.gif&quot; alt=&quot;Fido and I at the park!&quot; /&gt;
+&lt;!-- 很好，描述清晰 --&gt;
 
 &lt;img src=&quot;bullet.gif&quot; alt=&quot;bullet&quot; /&gt;
-&lt;!-- bad, as silly as it seems --&gt;
+&lt;!-- 不好，显得多余 --&gt;
 
 &lt;img src=&quot;bullet.gif&quot; alt=&quot;&quot; /&gt;
-&lt;!-- good --&gt;</pre>
+&lt;!-- 好 --&gt;</pre>
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <div id="accessibilityTables" class="entry">
-            <h3>Use Tables for Tabular Data Only</h3>
-            
+            <h3>只对表格数据用table标签</h3>
+
             <p>
-                Tables should only ever be used for the presentation of tabular data. The only exception is when composing HTML email, in which a table is almost the only thing supported by soul crushing email clients.
+                table标签永远只应该用在表格数据的展示上。唯一的例外是当编写HTML格式的邮件时，这种情况下可能table是某些坑爹的邮件客户端唯一支持的样式了。
             </p>
             <p>
-                For accessibility, table headers should always be presented using <code>&lt;th&gt;</code> elements. Remember to also set <code>cellpadding</code>, <code>cellspacing</code> and <code>border</code> values to <code>0</code> as these are more consistently controlled by CSS.
+                为了可读性，表格头永远要使用 <code>&lt;th&gt;</code> 元素。同时切记要设置<code>cellpadding</code>, <code>cellspacing</code> 和 <code>border</code> 的值为 <code>0</code> ， 因为这些样式由CSS来控制更容易确保一致性。
             </p>
-            
+
             <pre class="prettyprint">
 &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
     &lt;thead&gt;
@@ -204,256 +202,241 @@ Lorem ipsum dolor sit amet. ...
     &lt;/tbody&gt;
 &lt;/table&gt;
             </pre>
-            
+
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <div id="accessibilityJqueryWidgets" class="entry">
-            <h3>Use jQuery &amp; jQuery UI Widgets</h3>
-            
+            <h3>使用 jQuery 和 jQuery UI Widgets</h3>
+
             <p>
-                jQuery and jQuery UI are constructed to look and behave as close to identical as possible on different browsers. 
-                jQuery UI is designed to be WAI WCAG 2.0 and WAI ARIA compliant, so using the framework removes any uncertainty about plugins or scripts running on your site.
+                jQuery 和 jQuery UI 被做成尽可能在不同浏览器上表现出几乎相同的外观和功能。
+                jQuery UI 被设计为符合 WAI WCAG 2.0 及 WAI ARIA， 因此采用该框架可以避免在你的站点上运行的插件或脚本的所有不确定性。
             </p>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
 
         <h2 id="javascriptSection">JavaScript</h2>
-        
-        
-        
+
+
+
         <div id="javascriptWhitespace" class="entry">
-            <h3>Whitespacing &amp; Formatting</h3>
-            
+            <h3>代码留空和格式</h3>
+
             <p>
-                Any discussion about formatting, whitespacing and the placement of braces is going to be hotly debated. I guess the simplest rule is that, unless you're willing to completely format a whole document, <strong>respect and maintain the formatting of an existing document</strong>. 
-                That means: see same-line braces throughout a JS file, continue to write code with same-line braces. Your code should fail the code review process if it doesn't maintain consistency with the rest of the document.
-            </p>
-            
+                任何关于代码格式、留空和大括号位置的讨论都会引起激烈辩论。对此，我想最简单的规则就是，除非你愿意把整个代码文件重新格式化，不然还是尊重并保持已有代码文件的格式。这意味着如果你看到一个JS文件里的大括号没有换行写，那你的代码也要继续保持大括号不换行。如果你的代码没有和代码文件里的其他部分保持一致，那么你的代码就不应该通过代码审查流程。
+             </p>
+
             <p>
-                Consistent formatting makes code more readable, and also means the code can be easily modified with find and replace commands. The coding habits we have picked up are thankfully very similar to what jQuery officially encourages. There are a few minor discrepencies, but again, these are personal issues or things that we think cannot be maintained.
-                <a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines" target="_blank">Further Reading</a>
+                一致的代码格式让代码更加易读，同时也意味着代码容易用查找/替换命令进行修改。谢天谢地，我们自己形成的编程习惯和jQuery正式推荐的方式非常相似。细微的差异也是有的，不过，那些是个人问题或者我们觉得没法维护的一些东西。
+                参阅<a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines" target="_blank">jQuery核心样式指南</a>
             </p>
-            
-            <h4>Character Spacing</h4>
-            
+
+            <h4>字符间距</h4>
+
             <pre class="prettyprint">
-// Bad
+// 不好
 if(blah==="foo"){
     foo("bar");
 }
 
-// Good :)
+// 好 :)
 if (blah === "foo") {
     foo("bar");
 }</pre>
-            
-            <h4>Same Line Braces</h4>
-            
+
+            <h4>大括号不换行</h4>
+
             <pre class="prettyprint">
-// Bad
+// 不好
 if (foo)
 {
     bar();
 }
 
-// Good :)
+// 好 :)
 if (foo) {
     bar();
 }</pre>
-            
-            <h4>Always Using Braces</h4>
-            
+
+            <h4>总是用大括号</h4>
+
             <pre class="prettyprint">
-// Bad
+// 不好
 if (foo)
     bar();
 
-// Good :)
+// 好 :)
 if (foo) {
     bar();
 }</pre>
-            
-            <h4>String Handling</h4>
+
+            <h4>字符串处理</h4>
             <p>
-                <strong>Strings should always use double quotes</strong>. Some people are very fond of their C style strings (single quotes), but this leads to conflicting styles within a script.
-                C style string handling dictates that empty and single character strings should be wrapped in single quotations, while phrases and words should be wrapped in double quotations.
+                <strong>引用字符串永远要用双引号</strong>。 有些人非常喜欢用C语言风格的字符串（单引号），但这种习惯会导致脚本内部的风格冲突。C语言风格的字符串处理要求空字符串和单字符包在单引号里，而短语和单词必须包在双引号内。
             </p>
-            
+
         </div>
-        
-        
-        
+
+
+
         <div id="javascriptCommenting" class="entry">
-            <h3>Commenting</h3>
-            
+            <h3>注释</h3>
+
             <p>
-                The requirement to comment code obsessively was pioneered by managers, team leaders and other people that interact with code infrequently. 
-                It is sought merely as a check box for an employee's <abbr title="Key Performance Indicators">KPI</abbr>s, and provides little return for the time spent doing so.
+                往代码里玩命加注释的需求是由各种经理、主管及其他很少接触代码的人们引领的。这种需求无非是雇员们考核指标中的一个勾选栏，花在这上面的时间基本没有带来什么回报。
+                如果那些从善如流的开发者能遵循本文档中提出的建议，他们的代码会变得相当易于阅读，一目了然，以至于再用注释描述这些代码会多余得令人尴尬。来看下面的例子。在这里，布尔变量被作为问题提出，而函数也有直观的命名。
             </p>
-            
-            <p>
-                If a best-practice oriented developer follows the guidelines established in this document, their code should become so readable and obvious that the need to comment what it is doing is embarassingly redundant.
-                Consider the following example. In this: booleans are posed as questions, and functions are named intuitively.
-            </p>
-            
+
             <pre class="prettyprint">
 if (user.hasPermission) {
     editPage();
 }</pre>
-            
+
             <p>
-                Commenting, in this scenario at least, is completely unnecessary.
+                至少在这个场景中，注释是完全没有必要的。
             </p>
-            
-            <h4>SITUATIONS WHERE COMMENTING IS IMPORTANT</h4>
-            
+
+            <h4>注释重要的情况</h4>
+
             <p>
-                Some parts of a project will never be easy to scan and understand. Consider a complicated regular expression, or a math function calculating angles or switching between degrees and radians.
-                Without the comment above, beginner and intermediate readers will be fairly clueless to the scripts' meaning.
+                一个项目里，永远会有某些部分难以查阅和理解。比如一个复杂的正则表达式，或者一个对角度进行计算或在度和弧度单位之间切换的数学函数。没有上面的注释，初级或中级的读者将对脚本的含义毫无头绪。
             </p>
-            
+
             <pre class="prettyprint">
-// RegEx for validating US phone numbers, can be (XXX) XXX-XXXX (with or without dashes, spaces or brackets)
+// 校验美国电话号码的正则表达式，号码格式是 (XXX) XXX-XXXX (减号、空格和括号都是可选的，可以有也可以没有)
 var phoneRegEx = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;</pre>
-            
-            
+
+
         </div>
-        
-        
+
+
         <div id="javascriptComparison" class="entry">
-            <h3>Always Use === Comparison</h3>
-            
+            <h3>总是使用 === 比较符</h3>
+
             <p>
-                The use of the == equality operator allows for frustrating bugs to slip through almost undetected. It allows for weak typing that is best explained by <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a>.
-                The use of the strict equality operator === does not run type coercion and therefore strictly evaluates the difference between two objects. Again, consult <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript Garden</a> for more information
+                使用 == 比较符可以让令人郁闷的bug消失于无形。它允许在 <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript花园</a> 中有清楚解释的弱类型。使用严格的 === 比较符不会执行类型强制转换，从而能够严格地评估两个对象之间的差别。再说一遍，更多详细信息请参见 <a href="http://bonsaiden.github.com/JavaScript-Garden/#types.equality" target="_blank">JavaScript花园</a>。
             </p>
             <pre class="prettyprint">
 var zeroAsAString = "0";
 
 if (zeroAsAString == 0) {
-    // gets in here lolwut
+    // 这样也能判断为true，呵呵...
 }
 
 if (zeroAsAString === 0) {
-    // never gets in here
+    // 判断为false
 }</pre>
-            
-            <h4>The Exception</h4>
+
+            <h4>例外</h4>
             <p>
-                Double equals comparison is allowed when comparing to null, because it will detect both null or undefined properties. If you don't fully understand this, I still suggest you use triple equals.
+                在和null进行比较的时候，允许使用 == 比较符，因为它会检测null和undefined两个属性。如果你不完全理解这个原理，那我还是建议你用 === 比较符为好。
             </p>
             <pre class="prettyprint ">
 var foo = null;
 
-// foo is null, but bar is undefined as it has not been declared
+// foo 是 null, 但 bar 是 undefined ，因为它尚未被声明
 if (foo == null && bar == null) {
-    // still got in here
+    // 上面的判断还是成立的
 }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <div id="javascriptParseInt" class="entry">
-            <h3>Always Specify the Second &lsquo;radix&rsquo; Parameter When Using .parseInt()</h3>
-            
+            <h3>使用 .parseInt() 的时候，总是指定第二个 &lsquo;radix&rsquo; 参数</h3>
+
             <p>
-                When parsing a string to an integer, it is considered good practice to specify the second 'radix' parameter - which determines to what base the string should be converted to. 
-                The default setting will trigger a radix of 16 whenever the string is lead by a <code>0</code>. Most beginner and intermediate users are only ever going to be using a radix of <code>10</code>. Thanks to Jo&atilde;o Moreno for logging the <a href="https://github.com/taitems/Front-End-Development-Guidelines/issues/23" target="_blank">correction</a>.
+                把字符串解析为整数的时候，有个好习惯是指定第二个基数参数 -- 它会确定该字符串被转换成几进制。当字符串以 <code>0</code> 开头的时候，缺省情况下会触发 <code>16</code> 进制作为基数。大部分初级和中级用户只会用到 <code>10</code> 这个基数。 感谢 Jo&atilde;o Moreno 记录的这个 <a href="https://github.com/taitems/Front-End-Development-Guidelines/issues/23" target="_blank">勘误</a>。
             </p>
-            
-            <pre class="prettyprint">               
+
+            <pre class="prettyprint">
 alert( parseInt("08") ); // alerts: 2
 
 alert( parseInt("08", 10) ); // alerts: 8</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="javascriptTrueFalse" class="entry">
-            <h3>Avoid Comparing to true and false</h3>
-            
+            <h3>避免比较 true 和 false</h3>
+
             <p>
-                Direct comparison to the values of true and false is unnecessary. Sometimes it might be good for clarity, but it's just extra code.
+                直接比较 true 和 false 的值是没有必要的。有时候也许明确一下有好处，但它还是额外的代码。
             </p>
-            
+
             <pre class="prettyprint">
 if (foo === true) {
-    // good that they're using triple equals, bad as it's redundant
+    // 用了 === 倒是不错，可这是多余的
 }
 
 if (foo) {
-    // yay!
+    // 赞！
 }
 
 if (!bar) {
-    // the opposite
+    // 反过来也赞
 }</pre>
-            
-            
+
+
         </div>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <div id="javascriptGlobalNamespace" class="entry">
-            <h3>Avoid Polluting the Global Namespace</h3>
-            
+            <h3>避免污染全局命名空间</h3>
+
             <p>
-                An over-reliance on global variables is something all of us, myself especially, are guilty of. Arguments as to why globals are bad are fairly straight forward: the chance of script and variable conflicts is increased, 
-                and both the source file and the namespace itself become littered with countless ambiguously named variables.
+                过分依赖全局变量是我们组所有人 -- 特别是我自己 -- 特别有负罪感的一件事。关于为啥全局变量不好的讨论是相当直接的：这增加了脚本和变量冲突的概率，而且源文件和命名空间本身都会充斥着数不清的命名模糊的变量。
             </p>
-            
+
             <p>
-                <a href="http://yuiblog.com/" target="_blank">Douglas Crockford</a> believes that the quality of a JavaScript application can be assessed by the number of global variables it uses; the less the better. Given that not everything can be a local 
-                (but let's be honest, that one you're thinking about right now, it can, don't be lazy) you need to find a way of structuring your variables to prevent clashes and minimise the bloat.
-                The easiest way is to employ a single variable or a minimal amount of modules on which the variables are set. Crockford mentions that <abbr>YUI</abbr> uses a single global, <code>YAHOO</code>.
-                He discusses this in more detail in his blog post <a href="http://yuiblog.com/blog/2006/06/01/global-domination/" target="_blank">"Global Domination"</a>.
+                <a href="http://yuiblog.com/" target="_blank">Douglas Crockford</a> 坚信一个Javascript应用的代码质量可以用其中使用的全局变量数来评价，越少越好。由于并不是什么都可以定义成local的（不过要诚实，其实你现在考虑的那个是可以的，别偷懒），你需要想办法整理你的变量以避免冲突，并把命名空间的膨胀减到最小。最简单的方法就是采用单变量或者把用到这些全局变量的模块尽可能减少。 Crockford提到YUI只用了一个全局变量，YAHOO。他在他的博文 <a href="http://yuiblog.com/blog/2006/06/01/global-domination/" target="_blank">"全局统治"</a> 中讨论了更多的细节问题。
             </p>
-            
+
             <p>
-                Considering that, in the case of small web apps, globals are generally used to store application-wide settings: it's generally better to namespace your project or settings as objects.
+                考虑这种情况：对于小型web应用，全局变量通常用于保存应用级的设置，可以用你的项目名或者settings作为命名去定义一个对象，这样总的来说会更好。
             </p>
-            
+
             <pre class="prettyprint">
-// polluted global name space
+// 被污染的全局命名空间
 var settingA = true;
 var settingB = false;
 var settingC = "test";
 
-// a settings namespace
+// 用 settings 作为对象命名
 var settings = {
     settingA: true,
     settingB: false,
     settingC: "test"
 }</pre>
-            
+
             <p>
-                But if we're avoiding globals to reduce the chance of conflicts, isn't standardising the namespaces to be the same going to increase chance of one app's settings overwriting anothers? Well, it would make sense.
-                It is instead suggested that you namespace your globals to your own specific app name, or reassign your namespace much in the same way that jQuery uses <code>$.noConflict()</code> mode.
+                不过，如果我们可以通过避免使用全局变量来减少冲突概率，但是把命名空间标准化成一样的，岂不是会增加各个应用之间产生冲突的概率么？呃，这个担忧确实有道理。所以，建议你用自己特定的应用名作为全局变量的命名空间，或者用和jQuery采取的 <code>$.noConflict()</code> 模式相同的方法重新分配你的命名空间.
             </p>
-            
+
             <pre class="prettyprint">
 var myAppName = {
     settings: {
@@ -461,85 +444,83 @@ var myAppName = {
     }
 }
 
-//accessed as
+//访问全局变量
 myAppName.settings.settingA; // true</pre>
-            
+
         </div>
-            
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="javascriptCamelCase" class="entry">
-            <h3>Camel Case Variables</h3>
-            
+            <h3>驼峰法变量命名</h3>
+
             <p>
-                The camel casing (or <em>camelCasing</em>) of JavaScript variables is accepted as the standard in most coding environments.
-                The only exception that was raised in the comment section is the use of uppercase and underscores to denote contants.
+                JavaScript变量的驼峰法命名在大部分编程环境中都是作为标准的。有读者在评论中提出了唯一的例外，就是要用大写字母加下划线来指代常量。
             </p>
-            
+
             <pre class="prettyprint">
 var X_Position = obj.scrollLeft;
 
-var xPosition = obj.scrollLeft; // tidier
+var xPosition = obj.scrollLeft; // 更好，更简洁
 
-SCENE_GRAVITY = 1; // constant</pre>
+SCENE_GRAVITY = 1; // 常量</pre>
 
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
         <div id="javascriptLoopCacheArrayLength" class="entry">
-            <h3>Loop Performance - Cache Array Length</h3>
-            
+            <h3>循环的性能 - 缓存数组长度</h3>
+
             <p>
-                Looping is arguably the most important part of JavaScript performance to get right. Shave a millisecond or two off inside of a loop, potentially gain seconds overall. One such way is to cache the length of an array so it doesnt have to be calculated every time the loop is iterated through.
+                循环估计是Javascript性能调优最重要的部分了。在一个循环内部节省个一两毫秒的，说不定总体就省出好几秒来了。这里有一招就是把数组的长度缓存，这样在循环里就无需每次迭代的时候都计算一遍了。
             </p>
-            
+
             <pre class="prettyprint">
 var toLoop = new Array(1000);
 
 for (var i = 0; i &lt; toLoop.length; i++) {
-    // BAD - the length has to be evaluated 1000 times
+    // 败家玩意 - 长度会反复算 1000 次你知道不？
 }
 
 for (var i = 0, len = toLoop.length; i &lt; len; i++) {
-    // GOOD - the length is only looked up once and then cached
+    // 会过日子 - 长度只计算一次，然后缓存了
 }</pre>
-            
-            <h4>The Exception</h4>
+
+            <h4>例外</h4>
             <p>
-                If you're looping through an array to find and remove a particular item, this will alter the array length. Any time you change the array length by either adding or removing items from inside the loop, you will get yourself into trouble. Consider either re-setting the length or avoid caching it for this particular situation.
+                如果你对一个数组做循环来查找并删除某个元素，这就会改变数组长度。任何时候你只要会在循环内部增加或删除元素来改变数组的长度，你就给自己带来了麻烦。这种情况下，你要么每次改变后重新设置数组长度，要么就别缓存它了。
             </p>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
         <div id="javascriptLoopBreakContinue" class="entry">
-            <h3>Loop Performance - Use &lsquo;break;&rsquo; &amp; &lsquo;continue;&rsquo;</h3>
-            
+            <h3>循环的性能 - 使用 &lsquo;break;&rsquo; 和 &lsquo;continue;&rsquo;</h3>
+
             <p>
-                The ability to step over and out of loops is really useful in avoiding costly loop cycles.
+                跳过和跳出循环的能力对于避免开销很大的循环周期是非常有用的。
             </p>
-            
+
             <p>
-                If you're looking for something inside of a loop, what do you do once you find it? Say the condition you're looking for is matched halfway through a 1000 item loop.
-                Do you execute whatever you intend to do, and allow the loop to continue to iterate over the remaining 500 items, knowing that there's no chance it will hit an if statement? Nope! You break out of your loop, literally!
+            	如果你是在循环内部查找，查找成功以后你会做什么？比如1000个元素的循环执行到一半，你就找到了你要的东西。你不管三七二十一，即使知道后面的if语句不会再有符合的机会，还是让循环继续把剩下的500个元素迭代完么？不！你应该跳出循环，必须的！
             </p>
-            
+
             <pre class="prettyprint">
 var bigArray = new Array(1000);
 
@@ -547,14 +528,13 @@ for (var i = 0, len = bigArray.length; i &lt; len; i++) {
     if (i === 500) {
         break;
     }
-    console.log(i); // will only log out 0 - 499
+    console.log(i); // 这样只会输出 0 - 499
 }</pre>
-            
+
             <p>
-                Another problem is skipping over a particular iteration and then continuing on with the loop. While things like odds and evens are better managed by replacing <code>i++</code> with <code>i + 2</code>, 
-                some conditions need to be specifically listened for, to then trigger the skip. Anything that prevent's running through an entire iteration is pretty handy.
+                另一个问题是跳过某个特定的迭代，然后继续循环。虽然说类似于奇偶数这样的条件可以通过把 <code>i++</code> 替换成 <code>i + 2</code> 的办法来管理，有些条件还是需要具体检测，然后触发跳过操作。任何能够避免执行完整的迭代过程的东西都是很有用的。
             </p>
-            
+
             <pre class="prettyprint">
 var bigArray = new Array(1000);
 
@@ -566,27 +546,27 @@ for (var i = 0, len = bigArray.length; i &lt; len; i++) {
 }</pre>
 
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <div id="javascriptFunctionParameters" class="entry">
-            <h3>Don't Send Too Many Function Parameters</h3>
-            
+            <h3>函数调用不要传输太多的参数</h3>
+
             <p>
-                This is a pretty bad idea, more for readability than anything:
+                对于可读性而不是其他因素来说，下面这种方式真是糟透了：
             </p>
-            
+
             <pre class="prettyprint">
 function greet(name, language, age, gender, hairColour, eyeColour) {
     alert(name);
 }</pre>
-            
+
             <p>
-                It's a much better idea to construct an object before-hand or to pass the object inline
+                下面的例子预先构建了一个对象作为参数，或者把内联对象传递过去，这样就好多了。
             </p>
-            
+
             <pre class="prettyprint">
 function greet(user) {
     alert(user.name);
@@ -598,21 +578,20 @@ greet({
 });</pre>
 
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="javascriptRemapThis" class="entry">
-            <h3>Remap &lsquo;this&rsquo; to &lsquo;self&rsquo;</h3>
-            
+            <h3>把 &lsquo;this&rsquo; 映射为 &lsquo;self&rsquo;</h3>
+
             <p>
-                When writing object-oriented (OO) JavaScript, the scope of <code>this</code> must be understood. Regardless of what design pattern you choose to structure your pseudo-classes, a reference to <code>this</code> is generally the
-                easiest way to refer back to an instance. The moment you begin integrating jQuery helper methods with your pseudo-classes is the moment you notice the changing scope of <code>this</code>.
+                在编写面向对象（OO）Javascript代码的时候, 必须了解 <code>this</code> 的作用范围. 不管你用来构建伪类的设计模式是什么，对 <code>this</code> 的引用是指向一个实例的最简单办法。当你开始把jQuery的helper方法和你的伪类集成的时候，你就会注意到 <code>this</code> 的作用范围变化。
             </p>
-            
+
             <pre class="prettyprint">
 Bob.findFriend("Barry");
 
@@ -626,152 +605,149 @@ Person.prototype.findFriend = function(toFind) {
         }
     });
 }</pre>
-            
+
             <p>
-                In the above example, <code>this</code> has changed from a reference to <code>Bob</code>, to his friend <code>Barry</code>. It's important to understand what happened to the value of <code>this</code> over time. 
-                Inside of the prototyped function, <code>this</code> refers to the instance of the pseudo-class (in this case <code>Bob</code>). 
-                Once we step inside the <code>$.each()</code> loop, <code>this</code> is then re-mapped to be item <code>i</code> in the parsed array. 
+                在上面的例子里， <code>this</code> 经历了从对 <code>Bob</code> 的引用，变成对他的朋友 <code>Barry</code> 的引用的过程。 了解 <code>this</code> 的取值在一段时间发生的变化是很重要的。在原型函数内部， <code>this</code> 指向所在伪类的当前实例（这里是 <code>Bob</code> ）。而一旦我们进入 <code>$.each()</code> 循环， <code>this</code> 就会重新映射为被解析数组的第 <code>i</code> 个元素。
             </p>
-            
+
             <p>
-                The solution is to remap the value of <code>this</code> to either <code>self</code> or <code>_self</code>. 
-                While <code>self</code> (sans underscore) is not exactly a <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words" target="_blank">reserved keyword</a>, it <em>is</em> a property of the <code>window</code> object.
-                Although my use of <code>self</code> was picked up from the jQuery source code, they have realised their mistake and are attempting to <a href="http://bugs.jqueryui.com/ticket/5404" target="_blank">rectify the situation</a> and instead use <code>_self</code>.
-                Personally, I prefer the use of <code>self</code> for the sheer cleanliness - but it can throw some pretty confusing bugs for people. Tread carefully.
+                解决办法是把 <code>this</code> 的值重新映射为 <code>self</code> 或者 <code>_self</code>。虽然 <code>self</code> （不带下划线）并不是 <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words" target="_blank">保留字</a>, 但它 <em>确实是</em>  <code>window</code> 对象的一个属性。虽然我上面用到 <code>self</code> 的例子是从jQuery源代码中挑的，但他们也认识到了这个错误，正打算 <a href="http://bugs.jqueryui.com/ticket/5404" target="_blank">修正目前的状况</a> ，也就是改用 <code>_self</code>。我个人还是喜欢用 <code>self</code> ，不为别的，就因为它的简洁 -- 不过它可能会冒出一些非常令人困惑的bug。总之，用 <code>self</code> 有风险，使用需谨慎。
             </p>
-            
+
             <p>
-                In the following example I will better utilise the parameters made available with the  <code>$.each()</code> helper, as well as re-mapping the value of <code>this</code>.
+                在下面的例子中，我会更好地利用在 <code>$.each()</code> helper 中提供的参数，同时重新映射 <code>this</code> 的值。
             </p>
-            
+
             <pre class="prettyprint">
 Bob.findFriend("Barry");
 
 Person.prototype.findFriend = function(toFind) {
 
-    // the only time "this" is used
-    var _self = this; 
-    
+    // 就这一次用到了 "this"
+    var _self = this;
+
     $(_self.friends).each(function(i,item) {
         if (item.name === toFind) {
             return item;
         }
     });
-    
+
 }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <div id="javascriptBooleanNaming" class="entry">
-            <h3>CanIHaz Boolean?</h3>
-            
+            <h3>我能用 Boolean 吗？</h3>
+
             <p>
-                Booleans should be easily identifiable by the way they are named. Use prefixes like <code>is</code>, <code>can</code> or <code>has</code> to propose a question.
+                布尔变量必须能够很容易通过命名来识别。可以用类似于 <code>is</code>, <code>can</code> 或者 <code>has</code> 的前缀来形成一个问句。
             </p>
-            
+
             <pre class="prettyprint">
 isEditing = true;
 
 obj.canEdit = true;
 
 user.hasPermission = true;  </pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <div id="javascriptReflow" class="entry">
-            <h3>Minimising Repaints &amp; Reflows</h3>
-            
+            <h3>尽量减少重新绘制和重新布局</h3>
+
             <p>
-                Repaints and reflows relate to the process of re-rendering the DOM when particular properties or elements are altered. Repaints are triggered when an element's look is changed without altering its layout. Nicole Sullivan describes these changes in a thorough <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a> as style changes such as visibility or background-color.    Reflows are the more costly alternative, caused by changes that alter the layout of the page. Examples include the addition or removal of elements, changes to an element's width or height, and even resizing the browser window. Worst yet is the domino effect of reflows that cause ancestor, sibling and child elements to reflow.
+                重新绘制和重新布局与重新渲染DOM的过程关联，这个过程会在特定属性或元素被改变时发生。重新绘制是在某个元素的外观被改变但没有对布局进行调整的情况下触发的。
+                Nicole Sullivan 在一篇全面的 <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">博文</a>
+                中把这些改变描述为诸如是否可见或背景色变化之类的样式改变。重新布局则是开销更大的操作，由调整页面布局的一些改变引发。例如增加或删除元素，改变某个元素的宽度或高度，甚至是改变浏览器窗口的大小。最糟糕的情况是重新布局导致先辈、兄弟和孩子节点元素也需要重新布局的多米诺骨牌效应。
             </p>
-            
+
             <p>
-                There is no doubt that both reflows and repaints should be avoided if possible, but how?
+                毫无疑问，重新绘制和重新布局应该尽量避免，但是如何做到呢？
             </p>
-            
-            <h4>A Reflow Example</h4>
-            
+
+            <h4>重新布局的例子</h4>
+
             <p>
-                It's not that the following snippet is "bad code" exactly. But let's assume that the array <code>arr</code> has 10 items.
+                其实也不是说下面的代码就很糟糕啦。不过我们先假定数组 <code>arr</code> 有10个元素
             </p>
-            
+
             <pre class="prettyprint">
 var myList = document.getElementById(&quot;myList&quot;);
 
 for (var i = 0, len = arr.length; i &lt; len; i++) {
-    
-    myList.innerHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //reflow - appending to element
-    
+
+    myList.innerHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //重新布局 -- 增加到元素
+
 }</pre>
-            
+
             <p>
-                In the above <code>for</code> loop, a reflow will be triggered for every iteration of the loop. 10 iterations cause 10 reflows. 
+                在上面的 <code>for</code> 循环里，每次迭代会触发一次重新布局。10次迭代就是10次重新布局。
             </p>
-            
+
             <p>
-                Now consider the following:
+                现在考虑下面的代码：
             </p>
-            
+
             <pre class="prettyprint">
 var constructedHTML = &quot;&quot;;
 
 for (var i = 0, len = arr.length; i &lt; len; i++) {
-    constructedHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //no reflow - appending to string
+    constructedHTML += &quot;&lt;li&gt;&quot; + arr[i].title + &quot;&lt;/li&gt;&quot;; //没有重新布局 - 增加到字符串
 }
 
-document.getElementById(&quot;myList&quot;).innerHTML = constructedHTML; //reflow</pre>
-            
+document.getElementById(&quot;myList&quot;).innerHTML = constructedHTML; //在这里重新布局</pre>
+
             <p>
-                In this scenario, the elements are being constructed within a string. Not a single reflow is created by the loop, as the DOM is not being altered. Only once the array has been completely looped through is the string then applied as the <code>innerHTML</code> of an object, causing the only reflow of the function.
+                在这个场景里，需要增加的元素是在一个字符串里构建的。循环里边没有产生任何重新布局，因为DOM并没有变化。只有当数组被完全循环完毕，构建的字符串被应用到某个对象的 <code>innerHTML</code> ，这才产生函数里唯一的一次重新布局。
             </p>
-            
+
             <p>
-                There are endless types of reflows and repaints that can be avoided, and lucky you gets to go on an read about them. Reading material on the subject matter is plentiful, but most of it is linked to from the excellent starting point that is Nicole Sullivan's <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">blog post</a>. There are important lessons to be taken away from this when it comes to a multitude of technologies synonymous with "web 3.0" and HTML5. The lesson above can be directly applied to writing jQuery. It's also important to consider when fiddling with <code>canvas</code>, and trying to keep a frame rate in the 30-60 range.
+                有无数种重新布局和重新绘制是可以避免的，希望你幸运地了解了那些诀窍。这方面的阅读材料汗牛充栋，不过大部分的材料都会引用到 Nicole Sullivan的这篇 <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">博文</a> ，这是一个完美的起点。除了这里的经验，在涉及到"web 3.0"和HTML5时代的多种技术术语的时候，还有其他重要的经验教训值得汲取。上面的分析直接适用于写jQuery代码。在捣腾 <code>canvas</code> 的时候这些原则也很重要，另外尽量保持帧频在30-60的范围内。
             </p>
-            
+
         </div>
-        
-        
-        
+
+
+
         <div id="javascriptUniqueIDs" class="entry">
-            <h3>Don't Use Milliseconds to Generate Unique IDs</h3>
-        
+            <h3>不要用微秒来产生唯一的ID</h3>
+
             <p>
-                There is a method for generating unique IDs that has hung around since the early days of web dev. It involved appending the elapsed milliseconds since January 1, 1970 to your static ID by way of:
+                自打web开发早期开始，就流行一种产生唯一ID的方法。具体做法是把从1970年1月1日开始计算的微秒数加到你的静态ID后面，如下所示：
             </p>
-            
+
             <pre class="prettyprint">
 var myID = "static" + new Date().getTime();</pre>
 
             <p>
-                This was a fairly foolproof method originally, because even if two ofthe above lines were performed one after the other, a few millisecondsnormally separated their execution. New browsers brought with them newJavaScript engines, coupled with ever increasing clock speed. Thesedays it's more likely that your milliseconds match than are slightlyincremented.
+                这本来是相当万无一失的方法，因为即便两段这样的代码连续执行，在它们执行的间隙也会有几毫秒。可是现在新的浏览器带着新的Javascript引擎，伴随着一直在提升的主频。到现在，上面的代码产生相同的毫秒数的可能性会比产生间隙的可能性更大。
             </p>
 
 
             <p>
-                This leads to bugs that are near impossible to debug by conventionalmeans. Because your DOM is created on the fly, traditional validationof the page source won't identify multiple IDs as an error. JavaScriptand iQuery error handling dictates that the first match for the IDwill be utilised and other matches ignored. So it doesn't even throw aJS error!
+                这会导致传统方法难以debug的bug。因为你的DOM是在运行中创建的，对页面源代码进行传统的测试无法确定多个重复ID的错误。Javascript和jQuery的错误处理机制会把第一个匹配的作为ID并忽略其他的重复ID。所以它甚至都不会抛出JS错误！
             </p>
 
 
             <p>
-                No, the only real method to debug it is line by line breakpoint ingand logging - but "pause" at the wrong line and your milliseconds willno longer clash!
+                这样不行，唯一真正的方法是逐行设断点和log，但是如果断点的位置不对，你的毫秒数又不会冲突了！
             </p>
 
 
             <p>
-                The good thing is that there are plenty of alternatives. To be pedantic, it's worth noting that a computer's random function is not truly random as it is seeded by system time- but the probability of clashes is rather minuscule.
+                好消息是有很多产生唯一ID的替代方法。学究气一点的说法是，计算机的随机数函数其实并不是真正随机的，因为它还是来源于系统时间，虽然这一点值得注意，但是随机数冲突的可能性是微乎其微的。
             </p>
-            
+
             <pre class="prettyprint">
 var myID = "static" + Math.round(Math.random() * 10000);</pre>
 
@@ -779,7 +755,7 @@ var myID = "static" + Math.round(Math.random() * 10000);</pre>
 
 
             <p>
-                Personally, I'm partial to a bit of faux GUID generation. Technicallya GUID is generated according to your hardware, but this JavaScriptfunction does the next best thing. The following is a handy function I've pinched from a <a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript" target="_blank">stack overflow post</a>.
+                我个人更偏爱人工产生GUID方法。从技术角度说，GUID是根据你的硬件创建的，不过下面的Javascript函数做得相当棒。这是我从 <a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript" target="_blank">stack overflow 的一个帖子</a> 里偷来的，相当顺手的一个函数。
             </p>
 
             <pre class="prettyprint">
@@ -789,192 +765,186 @@ function S4() {
 function guid() {
    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }</pre>
-    
+
             <pre class="prettyprint">
 var myID = "static" + guid();</pre>
 
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="javascriptFeatureSniff" class="entry">
-            <h3>Feature Sniff, Don't Browser Sniff</h3>
-            
+            <h3>检测特性，而不是检测浏览器类型</h3>
+
             <p>
-                Does the client's browser support geolocation? Does the client's browser support web workers? HTML5 video? HTML5 audio? The answer used to be:
+                用户的浏览器是否支持地理信息？用户的浏览器是否支持web works？HTML5 视频？HTML5 音频？答案曾经是这样的：
             </p>
-            
+
             <pre class="prettyprint">
 if ($.browser.msie) {
-    // no it doesn't
+    // 哦，是IE啊，那肯定不支持
 }</pre>
-            
+
             <p>
-                But things are rapidly changing. The latest version of IE is almost a modern browser, but as usual it's making front end development a pain. Earlier versions of IE were generally as equally sucky as their predecessors,
-                so it enabled lazy JavaScript developers to simply detect <code>if (ie)</code> and execute some proprietary Microsoft slops syntax. Now IE9 has done away with these functions, but that old <code>if (ie)</code> chestnut is throwing a spanner in the works.
+                但是世界在快速变化。最新版的IE几乎能算是现代浏览器了，但它依旧给前端开发带来痛苦。更早版本的IE基本上和它之前的版本一样烂，这就让偷懒的Javascript程序员习惯于检测 <code>if (ie)</code> 然后执行一些微软专用的破语法。现在IE9已经废弃了这些专用函数，那些原来的 <code>if (ie)</code> 老古董就反而会坏事了。
             </p>
-            
+
             <p>
-                So what if you could detect support for individual features without sniffing the (unreliable and cloakable) user-agent? 
+                那么，如果能检测每个特性而不用检测（既不可靠又能伪装的）user-agent，你觉得咋样？
             </p>
-            
+
             <p>
-                If you answered <em>"that would be ghetto"</em>, then you are correct.
+                如果你的回答是 <em>"那相当靠谱"</em>, 那你就说对了。
             </p>
-            
+
             <p>
-                In steps <a href="http://www.modernizr.com" target="_blank">Modernizr</a>, a JavaScript library developed in part by industry dream-boat Paul Irish. 
-                With wide adoption, tiny file-size and plenty of <a href="http://www.modernizr.com/docs/#s1" target="_blank">documentation</a>: implementing it is a no-brainer. 
-                It creates a <code>Modernizr</code> object that contains the results of its detection tests, so checking feature support is as simple as the following:
+                用 <a href="http://www.modernizr.com" target="_blank">Modernizr</a> 吧，这是行业梦幻级大师Paul Irish参与开发的一个Javascript库。该库集广泛应用、轻量级和海量<a href="http://www.modernizr.com/docs/#s1" target="_blank">文档</a>三大优势于一身，实施无需动脑，实为居家旅行、杀人灭口必备。它会产生一个 <code>Modernizr</code> 对象，其中包含了它所有检测测试的结果，这样检测某个特性的支持与否就和下面的例子一样简单：
             </p>
-            
+
             <pre class="prettyprint">
-// old way of detecting canvas support
+// 检测浏览器是否支持canvas的老办法
 if (!!document.createElement('canvas').getContext) { ... }
 
-// with Modernizr
+// 用 Modernizr 检测
 if (Modernizr.canvas) { ... }</pre>
-            
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        <div id="javascriptMilliseconds" class="entry">
-            <h3>Readable Milliseconds</h3>
-            
-            <p>
-                A handy way of writing milliseconds in a readable format. Great for beginners, but mostly a gimmick.
-            </p>
-            
-            <pre class="prettyprint">
-// is this 3, 30 or 300 seconds?
-var timeout = 30000; 
 
-// an extra calculation, but easier to read and modify
+        </div>
+
+
+
+
+
+
+
+
+        <div id="javascriptMilliseconds" class="entry">
+            <h3>使用可读的毫秒数</h3>
+
+            <p>
+                毫秒数的一种方便的写法是写成可读的。对于初学者这很棒，但是大部分情况下其实只是一个噱头。
+            </p>
+
+            <pre class="prettyprint">
+// 这是3秒，30秒还是300秒啊？
+var timeout = 30000;
+
+// 增加了额外的计算开销，但是读和修改会更容易
 var timeout = 30 * 1000;</pre>
 
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
-        <h2 id="jquerySection">jQuery Specific</h2>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2 id="jquerySection">关于jQuery代码</h2>
+
+
+
+
+
+
+
         <div id="jqueryChain" class="entry">
-            <h3>Chain Like a Mad Dog</h3>
-            
+            <h3>像疯狗一样串接</h3>
+
             <p>
-                One of the best parts of jQuery is its function chaining. You've probably used it a bit, maybe a few simple calls one after another... but have you ever traversed the DOM like a mad dog? Take some time to familiarise yourself with the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function. It is critical for when you begin stepping up and down the DOM tree from your original selector.
+                jQuery最好的特性之一就是它的函数串接。你可能已经用过一点，也许把一些简单的调用一个接一个串起来...但是你是否曾经像头疯狗一样在DOM里上蹿下跳地遍历呢？还是花点时间来熟悉一下 <a href="http://api.jquery.com/end/" target="_blank">.end()</a> 函数。等你从起始选择器开始在DOM里上蹿下跳的时候，这个函数会很关键。
             </p>
-            
+
             <pre class="prettyprint">
 $(".quote")
     .hide()
     .find("a").text("Click here").bind("click",doStuff).end()
     .parent().removeClass().addClass("testimonial").draggable().end()
     .fadeIn("slow");</pre>
-            
+
             <p>
-            In the example above, the <a href="http://api.jquery.com/end/" target="_blank">.end()</a> function is used once we have finished doing things with a particular DOM object and want to traverse
-            back up the DOM to the original object we called. We then load back up and dive back into the DOM. 
+            	上例中，每次我们完成对某个DOM对象的操作，要反向遍历DOM返回我们引用的原始对象的时候，就需要使用 <a href="http://api.jquery.com/end/" target="_blank">.end()</a> 函数。然后我们就顺藤摸瓜扎回原来DOM里的位置了。
             </p>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="jqueryData" class="entry">
-            <h3>Using data-* Attributes</h3>
-            
+            <h3>使用 data-* 属性</h3>
+
             <p>
-                Those of you who have been writing JavaScript (and not jQuery) for a good length of time are most likely familiar with attributes. Setting them. Getting them. Abusing <code>rel</code> and <code>title</code> instead...
+            	你们当中那些已经写了很长时间Javascript（原生的，不是jQuery）代码的同学，很可能都熟悉各种属性吧。你们想办法设置它们，获取它们，或者滥用 <code>rel</code> 和 <code>title</code> ...
             </p>
-            
+
             <p>
-                So when <em>isn't</em> HTML5 or jQuery coming the rescue? New specs allow the use of <code>data-</code> prefixes on HTML elements to indicate attributes which can hold data, and jQuery does an awesome job of converting the designated string into the correct JavaScript type. It's a beautiful partnership. Let's create a <code>DIV</code> with some data attributes.
+                别说HTML5 或者 jQuery 没帮上忙哦。新的描述中允许在HTML元素中使用 <code>data-</code> 前缀来指明包含数据的属性，jQuery会把指定的字符串转换成正确的Javascript数据类型，这活干的非常漂亮。我们来创建一个带有某些数据属性的 <code>DIV</code> 。
             </p>
-            
+
             <pre class="prettyprint">
 &lt;div id=&quot;test&quot; data-is-bool=&quot;true&quot; data-some-number=&quot;123&quot;&gt;&lt;/div&gt;</pre>
-            
+
             <p>
-                Now even though our values are wrapped in quotation marks, they won't be handled as strings:
+                现在，即使我们的值被包装在引号里面，它们也不会被当做字符串处理：
             </p>
-            
+
             <pre class="prettyprint">
 typeof $("#test").data("isBool"); // boolean
-    
+
 typeof $("#test").data("someNumber"); // number</pre>
-            
-            <h4>Special Casing</h4>
-            
+
+            <h4>特殊的大小写</h4>
+
             <p>
-                It's also important to notice the lower casing required to get these snippets to work. But if you're a great front end developer, you will still want to camel case your data variables. Like many places in JavaScript, a preceding hyphen signifies camel casing of the next letter. The following camel casing  of the HTML attribute <strong>does not work</strong> and the same JavaScript used above will return <code>undefined</code>.
+                要注意，要让这些代码片段正常工作，（HTML里的属性定义）必须使用小写字母，这很重要。不过如果你是一位很强的前端开发者，你还是会想用驼峰法来命名你的数据变量。正如在Javascript里很多地方出现的，前置的连接符意味着下一个字母会适用于驼峰法大写。不过，下面的例子里在HTML属性定义中使用驼峰法是 <strong>不行的</strong> ，会让上面的Javascript代码返回 <code>undefined</code>。
             </p>
-            
+
             <p>
-                <strong>Does not work :(</strong>
+                <strong>不好使 :(</strong>
             </p>
             <pre class="prettyprint">
 &lt;div id=&quot;test&quot; data-isBool=&quot;true&quot; data-someNumber=&quot;123&quot;&gt;&lt;/div&gt;</pre>
-            
+
             <p>
-                <strong>Does work :)</strong>
+                <strong>好使 :)</strong>
             </p>
             <pre class="prettyprint">
 &lt;div id=&quot;test&quot; data-is-bool=&quot;true&quot; data-some-number=&quot;123&quot;&gt;&lt;/div&gt;</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="jqueryStop" class="entry">
-            <h3>&lsquo;.stop()&rsquo; Collaborate &amp; Listen</h3>
-            
+            <h3>&lsquo;.stop()&rsquo; 停止协作和监听</h3>
+
             <p>
-                Binding jQuery animations to mouse events is a key part of modern web-based user interaction. It's also something that you see done poorly on even the most famous of web sites. 
-                <a href="http://www.learningjquery.com/2009/01/quick-tip-prevent-animation-queue-buildup" target="_blank">This article</a> provides a straight forward example of built up animations and demonstrates how visually jarring they can be.
-                Thankfully it's easily fixed with a single function prefix or a parameter added to <code>$.animate</code> calls.
+                把jQuery动画效果和鼠标事件绑定是基于web的现代用户交互方式中的关键部分，可是这方面即便某些最有名的网站也做得很蹩脚。<a href="http://www.learningjquery.com/2009/01/quick-tip-prevent-animation-queue-buildup" target="_blank">这篇文章</a> 提供了一个实现动画的直接例子并且演示了这些动画放在一起在视觉上会产生多么不和谐的效果。
+                好在这个问题可以利用一个函数前缀或在 <code>$.animate</code> 调用中加入一个参数来轻松解决。
             </p>
-            
+
             <p>
-                When using <code>$.animate</code>, <code>queue: false</code> can be added to the parameters to prevent chaining. Animation shortcuts such as <code>$.fadeIn</code> or <code>$.slideDown</code> do not take <code>queue</code> settings.
-                Instead you have to pre-empt these animations with the <code>$.stop</code> method of pausing currently executing animations. Certain scenarios require the animation to stop dead in its tracks, or to jump to the end of the transition. 
-                It is recommended you familiarise yourself with the <a href="http://api.jquery.com/stop/" target="_blank">documentation</a> of the parameters <code>clearQueue</code> and <code>jumpToEnd</code>, because god knows I can't help you there.
+                在使用 <code>$.animate</code> 的时候， 可以在参数中加入 <code>queue: false</code> 来避免串接。诸如 <code>$.fadeIn</code> 或 <code>$.slideDown</code> 这样的动画快捷方式不接受 <code>queue</code> 设置，你必须用 <code>$.stop</code> 这个方法预先停止这些动画.。
+                在特定的场景下，需要某个动画直接停下，或跳转到变换的最终状态。推荐你先熟悉有关 <code>clearQueue</code> 和 <code>jumpToEnd</code> 这两个参数的相关 <a href="http://api.jquery.com/stop/" target="_blank">文档</a> ，因为老天在上，我没有其他办法帮你。
             </p>
-            
+
             <pre class="prettyprint">
 $("selector").stop(true,true).fadeOut();
 
@@ -984,46 +954,45 @@ $("selector").animate({
     duration: 1000,
     queue: false
 }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="jqueryOptimiseSelectors" class="entry">
-            <h3>Optimise Your Selectors</h3>
-            
+            <h3>优化你的选择器</h3>
+
             <p>
-                jQuery is pretty chill. It can do pretty much everything but make you coffee, and I hear that's in the roadmap for 2.0. One thing you have to be careful about is abusing the power that is the <a href="http://sizzlejs.com/" target="_blank">sizzleJS</a> selector engine.
-                There are two strategies to overcome this: <em>caching the selector results</em> and <em>using efficient selectors</em>.
+                jQuery 很高冷。它几乎无所不能，不过它目前还没法给你冲咖啡，我听说在2.0版的路线图里有才这个特性。你需要当心的一件事是别滥用它的 <a href="http://sizzlejs.com/" target="_blank">sizzleJS</a> 选择器引擎的能力。想避免这种问题可以有两个策略：<em>缓存选择器结果</em> 以及 <em>使用高效率的选择器</em>。
             </p>
-            
-            <h4>Caching Selector Results</h4>
-            
+
+            <h4>缓存选择器结果</h4>
+
             <p>
-                Do a costly DOM query every time you want to change something, or store a reference to the element? Pretty clear choice.
+                是每次你要修改一点东西的时候都先进行开销巨大的DOM查询，还是保存一份元素的索引？选择一目了然。
             </p>
-            
+
             <pre class="prettyprint">
 // before
-$(".quote a").bind("click", doStuff); // DOM query eww
+$(".quote a").bind("click", doStuff); // DOM查询
 
 // now
-$(".quote a").addClass("quoteLink"); // DOM query eww
+$(".quote a").addClass("quoteLink"); // DOM查询！！
 
 // later
-$(".quote a").fadeIn("slow"); // DOM query eww</pre>
-            
+$(".quote a").fadeIn("slow"); // 又一次DOM查询！！！</pre>
+
             <p>
-                Ignoring chaining, this is better:
+                忽略串接，这样做更好：
             </p>
-            
+
             <pre class="prettyprint">
 // before
-var $quoteLinks = $(".quote a");  // the only DOM query
+var $quoteLinks = $(".quote a");  // 只需一次DOM查询
 $quoteLinks.bind("click", doStuff);
 
 // now
@@ -1031,84 +1000,84 @@ $quoteLinks.addClass("quoteLink");
 
 // later
 $quoteLinks.fadeIn("slow");</pre>
-            
-            <br />
-            
-            <h4>Using Efficient Selectors</h4>
-            
-            <p>
-                So jQuery/sizzleJS can use CSS3 selectors like a boss, but what's the real cost? Behind the scenes the browser is hopefully using <code>document.querySelector()</code>, but there's also a fair chance it will be breaking down your selector string and querying the DOM manually.
-            </p>
-            
-            <pre class="prettyprint">
-// an ID search is the quickest possible query, then it just takes a list of the childNodes and matches the class
-$("#quoteList").children(".quotes"); 
 
-// looks for the "foo" class only in the pre-defined bar element
-$(".foo",bar); </pre>
-            
-        </div>
-        
-        
-        
-        
-        
-        
-        <div id="jqueryForEachLoops" class="entry">
-            <h3>A &lsquo;for&rsquo; Loop is Always Quicker Than a &lsquo;each()&rsquo; Loop</h3>
-            
+            <br />
+
+            <h4>使用高效率的选择器</h4>
+
             <p>
-                No matter what happens in the next few years of browser development, a native <code>for</code> loop will always be quicker than a jQuery <code>$.each()</code> loop. 
-                When you think of what jQuery really is (a library wrapped around native JS functions) you begin to realise that the native underlying JavaScript is always going to be quicker. It's a tradeoff of run speed versus authoring speed.
+
+                好了，jQuery/sizzleJS 可以轻松使用CSS3选择器，但是真正的开销是什么？ 在这种场景下浏览器有可能会使用 <code>document.querySelector()</code>, 但是它也有可能分拆你的选择器字符串，然后手工去查询DOM。
             </p>
-            
+
+            <pre class="prettyprint">
+// ID搜索是最快的查询方式，然后它获取孩子节点的列表，匹配其中class为'quotes'的元素
+$("#quoteList").children(".quotes");
+
+// 只在预先确定的bar元素下查找'foo'class
+$(".foo",bar); </pre>
+
+        </div>
+
+
+
+
+
+
+        <div id="jqueryForEachLoops" class="entry">
+            <h3>&lsquo;for&rsquo; 循环总是比 &lsquo;each()&rsquo; 循环快</h3>
+
             <p>
-                It is vital that a native <code>for</code> loop is always used for performance critical functions that could fire potentially hundreds of times per second. Examples include:
+                不管未来几年在浏览器开发领域会发生什么，本地的 <code>for</code> 循环永远会比jQuery的 <code>$.each()</code> 循环快。
+                当你思考jQuery到底是什么（把本地JS函数包装起来的一个库）这种高大上问题的时候，你就会开始认识到本地原生Javascript代码永远会更快。用库还是用原生，这是一个运行速度和编程速度之间的权衡。
+            </p>
+
+            <p>
+                很重要的一点是，对那些可能每秒调用数百次的性能关键的函数，总是要使用 <code>for</code> 循环。例如：
             </p>
 
             <ul>
-                <li>Mouse movement</li>
-                <li>Timer intervals</li>
-                <li>Loops within loops</li>
+                <li>鼠标移动</li>
+                <li>时间间隔</li>
+                <li>循环内部的循环</li>
             </ul>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <h2 id="cssSection">CSS</h2>
-        
-        
+
+
         <div id="cssBoxModel" class="entry">
-        
-            <h3>Understanding the Box Model is Key</h3>
-        
+
+            <h3>理解盒子模型是关键</h3>
+
             <p>
-                The "box model" is a key determining factor in how a browser renders your page. A healthy understanding of it's intricacies will make your job so indescribably easier. The box model denotes the way in which the physical dimensions of a HTML element are calculated. If a block element has a fixed width of say, 100px, then how should the padding, border and margin be placed?
+                "盒子模型"对于理解浏览器如何渲染页面是关键性决定性的因素。对其复杂性的全面理解有助于奇迹般地简化你的工作。盒子模型描述了对HTML元素的物理维度进行计算的方式。如果一个块元素具有固定宽度，比如说100px，那么应该如何确定它的 padding, border 和 margin 呢？
             </p>
-            
+
             <p>
-                Plenty of websites offer in depth descriptions, but put simply: the standards compliant implementation places the border and padding outside of the specified width. It's best explained with a graphic. Consider this code:
+                很多网站都有深入的描述，但咱们简单点说：在遵循标准的浏览器中，border和padding是被放在指定宽度之外的。最好是用图形来解释。比如下列代码：
             </p>
-            
+
             <pre class="prettyprint lang-css">
-/* the old way (178 + 20 + 2 = 200) */
 .foo {
     width: 150px;
     height: 150px;
@@ -1118,40 +1087,40 @@ $(".foo",bar); </pre>
 }</pre>
 
 
-            <h4>What You Would Expect (Quirks Mode)</h4>
+            <h4>你可能估计的情况（Quirks 模式）</h4>
 
             <p>
-                The padding and border are calucated inward, preserving the height and width specifically set to be 150px.
+                padding 和 border 都是往里算的，结果保持高度和宽度都是150px。
             </p>
 
             <p class="imageFeature">
                 <img src="includes/images/box-model-quirks.png" alt="Box Model - Quirks Mode">
             </p>
 
-            <h4>What You Get (Standards Compliant Mode)</h4>
+            <h4>你看到的情况（遵循标准模式）</h4>
 
             <p>
-                Instead, you get 250px. 150px + (2 * 25) + (2 * 25).
+                可是，实际上出来的宽度和高度都是250px。 也就是150px + (2 * 25) + (2 * 25)。
             </p>
 
             <p class="imageFeature">
                 <img src="includes/images/box-model-standard.png" alt="Box Model - Standards Mode">
             </p>
-        
-        
+
+
             <p>
-                If you think it seems odd, you're not alone. There is a fix at hand, and it involves a CSS property called <code>box-sizing</code>, and it works in <strong>IE8 and above</strong>. It allows you to choose the exact way in which an elements dimensions are calculated, and its a lifesaver. Parameter support varies and vendor prefixes apply, so consult <a href="http://caniuse.com/css3-boxsizing" target="_blank">caniuse</a> for specifics.
+                如果你觉得这个结果很奇怪，那你不是一个人（呃，你是人，只是说还有其他人也会这么想）。 现在手头有个修复办法，需要引入一个CSS属性叫 <code>box-sizing</code>，这个属性对于 <strong>IE8 及以上版本</strong> 都适用。它允许你选择计算元素维度的确切方式，这样就能救你于危难之中。具体支持的参数因浏览器而异，另外需要用到浏览器厂商的前缀，具体细节请参阅 <a href="http://caniuse.com/css3-boxsizing" target="_blank">caniuse.com</a> 。
             </p>
-            
+
             <pre class="prettyprint lang-css">
-/* the old way (178 + 20 + 2 = 200) */
+/* 旧方法 (178 + 20 + 2 = 200) */
 .foo {
     width: 178px;
     padding: 10px;
     border: 1px;
 }
 
-/* a better way */
+/* 更好的方法 */
 .foo {
     width: 200px;
     padding: 10px;
@@ -1162,45 +1131,45 @@ $(".foo",bar); </pre>
 }</pre>
 
         <p>
-            While it was always possible to mentally calculate widths by removing pixel units from each other (as per the first method), it was never entirely clear how to do so with variable width units like percentages and EMs. There was no other solution at this point besides wrapping elements in parent elements to ensure widths and <code>padding/margin/borders</code> could all be separate.
+           虽然说你也总是可以对宽度进行心算，在各个像素数中减来减去（就像第一个方法做的那样），但在涉及到不同的宽度单位时（比如百分比或者EM），就没人能搞清楚到底该怎么做了。目前，除了把元素包在父元素中，以确保宽度和 <code>padding/margin/borders</code> 可以全部分开之外，也没有别的解决办法。
         </p>
-            
+
         </div>
-        
-        
-        
+
+
+
         <div id="cssFloatOrPosition" class="entry">
-        
-            <h3>Know when to Float, and when to Position</h3>
-        
+
+            <h3>知道什么时候用float，什么时候用position</h3>
+
             <p>
-                Gone are the days of table based layouts. The moment we admit that we can concentrate our efforts into better understanding the way floats and positions work. There's a particular mental model that needs to be grasped, and I believe this is something best done with practise.
-            </p>
-            
-            <p>
-                Floats are great for sucking elements out of the DOM and forcing them hard up against a left or a right edge. They became the bread and butter of the post table layout stage in front end dev, possibly because of the poor browser support of <code>display: inline</code> and <code>inline-block</code>, as well as <code>z-index</code> bugs stemming from position support. These days there really is no excuse. Inline-block is fairly well supported, and a quick hack will get it working in IE7.
-            </p>
-            
-            <p>
-                The arguments that previously held back absolutely positioning elements with CSS have thankfully died down. In theory, positioning allows you to place elements on a page (or within any container for that matter) with Xs and Ys in a straightforward manner that should be familiar to people like Flash developers.
+                用table进行布局的时代过去了。现在要承认我们可以集中精力去理解float和position的工作原理。这里需要掌握一套特别的思维模型，我相信这件事最好是通过动手练习来进行。
             </p>
 
-            <h4>Understanding Positions</h4>
-            
             <p>
-                It's important to understand one fact when positioning elements with CSS: the position is always relative to the nearest positioned parent element. When people first start dabbling with CSS, there's a common misconception that <code>position: absolute;</code> positions right up to the page root. I think this stems from the fact that, yes, without any parent elements with position styles - this is true. It traverses up the DOM tree, not finding any positioned elements, and settles on the root of the page.
+                用float从DOM中提取元素并强制它们靠到左边或右边，那是相当靠谱。它们已成为前端开发的后table布局时代的万金油，这可能是因为以前浏览器对于 <code>display: inline</code> 和 <code>inline-block</code> 的支持不力，还有对position的支持中冒出的 <code>z-index</code> bug。可现在就真的没有借口了。 inline-block 已经支持得很好了，简单的一点修正就能让它在 IE7 里应用。
             </p>
-            
+
             <p>
-                So if <code>position: absolute;</code> pulls elements out of their normal flow, how do you position an element relative to it's parent? That's straight forward. The parent element needs to by styled  <code>position: relative;</code>, and then all child elements will draw from the top, right, bottom and left of this parent container. Using this knowledge, how would you go about achieving the following straightforward layout?
+                谢天谢地，以前那些阻挠用CSS对元素进行绝对定位的争论都消亡了。理论上，定位属性可以让你在页面上以X和Y坐标放置元素，这种方式简单直接，Flash开发者们都应该很熟悉。
             </p>
-            
+
+            <h4>理解 Position</h4>
+
+            <p>
+                用CSS定位元素的时候，理解一个事实非常重要：定位的位置总是相对于离它最近的有定位属性的父元素而言的。人们刚开始用CSS的时候会有一个常见的误解，认为 <code>position: absolute;</code> 是相对页面的root元素定位的。 我觉得这种误解来源于某些情况下，元素没有任何父元素具备position样式 -- 在这种情况下，他们的结论是对的。这样向上遍历DOM树没有找到任何有定位样式的元素，就会定位到页面的根元素上。
+            </p>
+
+            <p>
+                那么，如果 <code>position: absolute;</code> 是把元素从他们所在的流中抽取出来，那你如何相对一个元素的父元素对它进行定位呢？ 方法很直接。父元素需要定义 <code>position: relative;</code> 样式，然后所有的孩子元素就会按上、右、下、左的顺序依次摆放。利用这个知识，你会如何实现下面很直观的布局呢？
+            </p>
+
             <p class="imageFeature">
                 <img src="includes/images/float-or-position.png" alt="How would go about coding up this image?">
             </p>
-            
+
             <p>
-                Using <code>float</code>, you would need to wrap the items in a clearfix, float <code>.one</code> left, and fiddle with floats and margins on both <code>.two</code> and <code>.three</code>. You would end up with something similar to the following:
+                使用 <code>float</code>，你会需要把这些元素包在一个父元素中， 然后把<code>.one</code> float靠左，然后改动 <code>.two</code> 和 <code>.three</code> 的 <code>float</code> 和 <code>margin</code> 。最后你应该写出类似下面的东西：
             </p>
 
             <pre class="prettyprint lang-css">
@@ -1225,9 +1194,9 @@ $(".foo",bar); </pre>
     height: 100px;
     float: right;
 }</pre>
-            
+
             <p>
-                Using <code>position</code> allows us to, as described earlier, paint the elements on the screen with x and y co-ordinates in a very explicit way. While the above method with floats will break long lines down the page, the below method will keep everything in place, regardless of content.
+                正如我们前面所说，使用 <code>position</code> 让我们可以用很明确的方式，按照 X 和 Y 坐标把元素显示在屏幕上。 上面用float的方式会把页面上的长文字隔开，下面的方法则可以确保所有元素处于正常位置，无论页面上有什么内容。
             </p>
 
             <pre class="prettyprint lang-css">
@@ -1257,130 +1226,127 @@ $(".foo",bar); </pre>
     width: 100px;
     height: 100px;
 }</pre>
-            
+
             <p>
-                As mentioned earlier, there are <code>z-index</code> issues to be considered. While the above example might seem a bit excessive, once you start thinking with positions, it will opens a world of possibilities.
+                如前文所述，有些 <code>z-index</code> 的问题需要考虑。虽然上面的例子可能显得有点过分，不过一旦你开始思考定位，它会打开一个各种可能性的新世界.
             </p>
-        
+
         </div>
-        
-        
-        
+
+
+
         <div id="cssWhitespacing" class="entry">
-            <h3>Whitespacing</h3>
-            
+            <h3>留空</h3>
+
             <p>
-                Whitespacing of CSS can be difficult as we chop and change between single and multi line CSS arguments. I'm not going to get into that.
+                如果我们在单行和多行CSS参数的格式之间变来变去，CSS里的留空也会不一样。我不打算对这个说太细。
             </p>
-            
-            <h4>Proper Spacing</h4>
-            
+
+            <h4>合适的空白</h4>
+
             <pre class="prettyprint lang-css">
-/* BAD */
-.selector {display:none;background:#ff0000;color:#000000;} 
+/* 不好 */
+.selector {display:none;background:#ff0000;color:#000000;}
 
-/* GOOD - SINGLE LINE */
-.selector { display: none; background: #ff0000; color: #000000; } 
+/* 好 -- 单行 */
+.selector { display: none; background: #ff0000; color: #000000; }
 
-/* GOOD - MULTI-LINE */
+/* 好 -- 多行 */
 .selector {
     display: none;
     background: #ff0000;
     color: #000000;
 }</pre>
-            
-            <h4>Same Line Braces</h4>
-            
+
+            <h4>大括号不换行</h4>
+
             <pre class="prettyprint lang-css">
 .selector {
     display: none;
     background: #ff0000;
     color: #000000;
 }</pre>
-            
-            <h4>Indenting Child Elements</h4>
-            
+
+            <h4>子元素缩进</h4>
+
             <p>
-                Purely optional, and personally only employed when in a document with single line declarations.
+                这个用不用就见仁见智了，我个人只会在单行定义的CSS文档中用这种格式。
             </p>
-            
+
             <pre class="prettyprint lang-css">
 .selector { display: none; background: #ff0000; color: #000000; }
     .selector a { text-decoration: none; }
     .selector span { font-weight: bold; }</pre>
-            
-            <h4>Grouping &amp; Indenting Vendor Prefixes</h4>
-            
+
+            <h4>组合并缩进浏览器厂商前缀属性</h4>
+
             <pre class="prettyprint lang-css">
-.selector { 
+.selector {
     background: #FFF; border: 1px solid #000; color: #EAEAEA;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
 }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="cssShorthand" class="entry">
-            <h3>CSS Shorthand</h3>
-            
-            <h4>Grouping Properties</h4>
-            
+            <h3>CSS 速记格式</h3>
+
+            <h4>属性分组</h4>
+
             <p>
-                Grouping properties together is one of the single most effective methods to greatly reduce the size of a CSS file. It's important to understand how properties are ordered (clockwise - top, right, bottom, left) 
-                and how they can be further shortened (top and bottom, left and right).
+                把属性分组到一起是大大减少CSS文件大小的最有效方法。这里很重要的一点是要理解属性是如何排序的（顺时针 -- 上，右，下，左），以及如何进一步缩短它们（上和下，左和右）。
             </p>
-            
+
             <pre class="prettyprint lang-css">
-/* LONG CODE IS LONG */
+/* 逐个定义，太长了 */
 padding-top: 1px;
 padding-right: 2px;
 padding-bottom: 1px;
 padding-left: 2px;
 
-/* BETTER */
+/* 上，右，下，左，好很多 */
 padding: 1px 2px 1px 2px;
 
-/* BEST */
+/* 上和下，左和右，最优 */
 padding: 1px 2px;</pre>
-            
-            <h4>From 0px to Hero</h4>
-            
+
+            <h4>从 0px 到英雄</h4>
+
             <p>
-                Assigning a unit type to a property value of zero is redundant. It is not important to know whether an element should be <code>0px</code> from the left or <code>0 elephants</code> from the left, just that it's bang on the left.
+                给值为 <code>0</code> 的属性分配一个单位类型是多余的。一个元素是距离左边 <code>0px</code> 还是 <code>0 elephants</code> 根本不重要，只要知道它是贴着左边就行了。
             </p>
-            
+
             <pre class="prettyprint lang-css">
-/* BAD */
+/* 不好 */
 padding: 0px 10px;</pre>
-            
+
             <pre class="prettyprint lang-css">
-/* GOOD */
+/* 好 */
 padding: 0 10px;</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="cssCommenting" class="entry">
-            <h3>Commenting Blocks</h3>
-            
+            <h3>注释块</h3>
+
             <p>
-                Commenting large blocks of CSS is a great way of keeping track of multiple style areas within the one stylesheet. 
-                Obviously it works better with single line CSS styles, but the effect is not entirely lost on multi-line either.
-                The use of dashes versus equals versus underscores are all up the individual, but this is how I like to manage my stylesheets.
+                对于在一个样式表里维护多个样式区域的任务，给大段CSS加上注释是很好的办法。显然这和单行CSS风格配合使用效果更佳，不过这个效果在多行CSS风格里也不是完全没用。注释里用破折号、等号还是下划线起强调作用就见仁见智了，不过下面是我喜欢的方式：
             </p>
-            
+
             <pre class="prettyprint lang-css">
 /* === HORIZONTAL NAV === */
 #horizNav { width: 100%; display: block; }
@@ -1392,28 +1358,27 @@ padding: 0 10px;</pre>
 #carousel { width: 960px; height: 150px; position: relative; }
 #carousel img { display: none; }
 #carousel .buttons { position: absolute; right: 10px; bottom: 10px; }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
         <div id="cssClearingFloats" class="entry">
-            <h3>Clearing Floats</h3>
-            
+            <h3>清除浮动</h3>
+
             <p>
-                Clearing a <code>&lt;div&gt;</code> used to mean extra DOM, because it involved adding an extra clearer element. The better way is to set a specific width on the parent element ("auto" doesn't work in all browsers and scenarios) and an overflow value of either "auto" or "hidden". 
-                "Hidden" obviously degrades better, but there are some IE compatibility versions where "auto" works better.
+                清除一个 <code>&lt;div&gt;</code> 过去意味着额外的DOM，因为这会涉及到增加一个额外的清除元素。更好的办法是给父元素设置明确的宽度（'auto'并不是在所有浏览器和场景中有效）以及把overflow属性设为'auto'或者'hidden'。'hidden'显然兼容性更好，但在某些兼容IE的版本里'auto‘的效果好一些。
             </p>
-            
-            <h4>The HTML:</h4>
-            
+
+            <h4>HTML:</h4>
+
             <pre class="prettyprint">
 &lt;div class=&quot;parentElement&quot;&gt;
     &lt;div class=&quot;childElement&quot;&gt;
@@ -1421,9 +1386,9 @@ padding: 0 10px;</pre>
     &lt;/div&gt;
     I'm normal text that wraps around the float
 &lt;/div&gt;</pre>
-            
-            <h4>The CSS:</h4>
-            
+
+            <h4>CSS:</h4>
+
             <pre class="prettyprint lang-css">
 .parentElement {
     width: 100%;
@@ -1432,41 +1397,39 @@ padding: 0 10px;</pre>
 .childElement {
     float: left;
 }</pre>
-            
+
             <p>
-                Contributors have also brought the latest clearfix to my attention. The <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
-                is considered stable and cross browser compliant enough to make it to the latest HTML5 boiler plate release. I <strong>highly</strong> recommend you check it out. 
-                Although I am not a massive fan of browser-specific CSS and pseudo elements such as <code>:after</code>, the micro clearfix is definitely more robust. 
-                It also prevents top margins from collapsing which is an absolute life saver.
+                有本项目的贡献者提醒我注意最新的clearfix。 <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clear-fix</a>
+                被认为相当稳定且跨浏览器兼容，足以列入最新的HTML5 boilerplate发布了。 我 <strong>强烈</strong> 建议你去看看。虽然我不是浏览器特定CSS和 <code>:after</code> 这种伪元素的狂热粉丝，不过这个micro clearfix的确更健壮。它还能避免顶层margin缩回的问题。
             </p>
-            
-        </div>      
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        </div>
+
+
+
+
+
+
+
+
+
         <div id="cssCentering" class="entry">
-            <h3>Vertical &amp; Horizontal Centering</h3>
-            
+            <h3>垂直和水平居中</h3>
+
             <p>
-                Centering elements horizontally is not exactly rocket science, and I'm sure most of you are familiar with the following snippet:
+                水平居中元素实际上不是什么高精尖的科技，我敢肯定你们大部分人都熟悉下面的代码片段：
             </p>
-            
+
             <pre class="prettyprint lang-css">
 .class {
     width: 960px;
     margin: 0 auto;
 }</pre>
-            
+
             <p>
-                Front end devs have been using this snippet for a long time, without fully understanding why it didn't work vertically. From my understanding, it's important to remember that the parent element will generally have a <code>height: auto;</code> on it, and that there is no 100% height in which to vertically center the element. Applying the <code>position: absolute;</code> effectively moves the element out into position mode and responds to the pushing and pulling of auto margins and no specific location. 
+                前端开发者们使用这种代码很长时间了，也没搞明白为什么这种方式对垂直居中不起作用。从我的理解说，很重要的一点是记住父元素一般会有个 <code>height: auto;</code> 样式， 也没有垂直居中元素所需的100%高度。而应用 <code>position: absolute;</code> 能有效地把元素转移到定位模式，然后被设为auto的margin会自动帮助它调整位置，达到居中效果。
             </p>
-            
+
             <pre class="prettyprint lang-css">
 .exactMiddle {
     width: 100px;
@@ -1478,38 +1441,37 @@ padding: 0 10px;</pre>
     left: 0;
     margin: auto;
 }</pre>
-            
+
             <p>
-                The downsides of this method include its lack of support in IE6 and IE7, and the absence of a scroll bar if the browser is resized to be smaller than the centered object. There are more methods on <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">this page</a> (this is Method 4), but this is by far the best.
-            </p> 
-            
+                这种方法的不足之处包括在 IE6 和 IE7 中缺乏支持，以及当浏览器被缩小到比居中对象还小时不出现滚动条。 在 <a href="http://blog.themeforest.net/tutorials/vertical-centering-with-css/" target="_blank">这个网页</a> 里列出了更多的方法（现在这个是第4个），不过现在这个目前是最优方法。
+            </p>
+
             <p>
-                The vertical centering of text in an element is also straightforward. If the text is on a single line, like a horizontal navigation item, you can set the <code>line-height</code> to be that of the element's physical height.
-            </p> 
-            
+                在一个元素里垂直居中文字也是很直接的。如果文字是单行的，例如一个水平导航元素，你可以设置 <code>line-height</code> 为该元素的物理高度。
+            </p>
+
             <pre class="prettyprint lang-css">
 #horizNav li {
     height: 32px;
     line-height: 32px;
 }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="cssFeatureSniff" class="entry">
-            <h3>Feature Sniff, Don't Browser Sniff</h3>
-            
+            <h3>检测特性，而不是检测浏览器类型</h3>
+
             <p>
-                In the earlier discusison of JavaScript feature detection, applying properties if a browser is <em>any version</em> of IE is increasingly problematic.
-                Man-of-steel Paul Irish pioneered the use of  <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">IE version sniffing</a> to address this problem, but <a href="http://www.modernizr.com" target="_blank">Modernizr</a> has since come to the rescue.
-                Modernizr places classes on the root <code>&lt;html&gt;</code> element specifying whether features are supported. Bleeding edge styles can then easily cascade from (or be removed from) these classes.
+                在前面关于Javascript特性检测的讨论中，检测到浏览器是 <em>任何版本</em> 的 IE 然后就运用某些属性的做法越来越成问题了。铁人 Paul Irish 引领了使用 <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">IE 版本检测</a> 方法来解决这些问题的大潮，但是 <a href="http://www.modernizr.com" target="_blank">Modernizr</a> 从那时起拯救了我们。
+                Modernizr 在 root <code>&lt;html&gt;</code> 元素里放入一些class，描述某些特性是否得到支持. 然后前沿的样式就可以很容易从这些class级联出来或者删除掉。
             </p>
-            
+
             <pre class="prettyprint lang-css">
 .my_elem {
    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
@@ -1517,263 +1479,256 @@ padding: 0 10px;</pre>
    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
-/* when box shadow isn't supported, use borders instead */
+/* 如果 box shadow 不支持, 就应用 borders 属性 */
 .no-boxshadow .my_elem {
    border: 1px solid #666;
    border-bottom-width: 2px;
 }</pre>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="cssImportant" class="entry">
-            <h3>You're Not !important</h3>
-            
+            <h3>!important 不要乱用</h3>
+
             <p>
-                A reliance upon the <code>!important</code> tag is a dangerous thing. The cases that warrant its use are rare and specific. They revolve around the necessity to override another stylesheet which you do not have access or permission to edit.
-                Another scenario is hard coding an element's styles to prevent inline JavaScript styles from taking precedence. Instead <code>!important</code> is used as a lazy shortcut to set the priority of your style over another, causing headaches further down the line.
+                依赖于 <code>!important</code> 标签是个危险的现象。非用它不可的情况屈指可数，而且是特殊情况。这些情况大抵是需要覆盖另外一套样式表，而你没法或者没权限编辑它。另一个场景是对元素的样式硬编码以防止Javascript在线产生的样式有更大优先级。而实际情况是 <code>!important</code> 往往被用做偷懒的快捷方式，让某个样式优先于其他的样式，这样做将来会产生很多问题。
             </p>
-            
+
             <p>
-                The use of the <code>!important</code> tag can be mostly avoided via the better understanding of CSS selector precedence, and how to better target elements. The more specific the selector, the more likely it will be accepted as the applicable style.
-                The following example from vanseodesign demonstrates the specificity at work.
+                对 <code>!important</code> 标签的大部分使用是可以避免的，只要更好地理解CSS选择器优先级以及如何更准确地定位元素。选择器越具体，被接受为适用样式的可能性就越大。下面来自 vanseodesign 的例子展示了具体化起作用的情况。
             </p>
-            
+
             <pre class="prettyprint lang-css">
 p { font-size: 12px; }
 p.bio { font-size: 14px; }</pre>
-            
-            <p>
-                <a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">Their article</a> on style precedence does a better job explaining inheritence than I ever could, so please give it a go.
-            </p>
-            
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        <div id="cssDegradation" class="entry">
-            <h3>Aggressive Degradation</h3>
-            
-            <p>
-                It's worth noting that this is a personal opinion, and best suited to very specific situations. The stance of aggressive degradation will not be well received in large commercial projects or enterprise solutions relying upon older browsers.
-            </p>
-            
-            <p>
-                Aggressive degradation dictates that if a particular (older) browser cannot render a certain effect, it should simply be omitted. A CSS3 button is a good example. 
-                Effects such as <code>border-radius</code>, <code>box-shadow</code>, <code>text-shadow</code> and <code>gradients</code> will be displayed in cutting edge browsers.
-                A graceful fallback of a <code>.PNG</code> would be provided for slightly older browsers, and the most graceful of all solutions would include a PNG-Fix for IE6 or the use of <code>filter</code> arguments to replicate gradients and shadows.
-                However, aggressive degradation in this situation instructs you to neglect the older browsers and present them with a flat, satisfactory object.
-            </p>
-            
-            <p>
-                Put simply, aggressive degradation boils down to: <strong>if your browser can't render a gradient or a box shadow, tough luck</strong>.
-            </p>
-            
-            <p>
-                While not ideal for every situation, it ensures the timely delivery of projects and that the root product is still usable and not reliant on (validation breaking) hacks.
-            </p>
-            
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
-        <h2 id="cssHtmlSection">CSS3 &amp; HTML5</h2>
-        
-        
-        
-        
-        
-        
-        
+            <p>
+                关于样式优先级， <a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/" target="_blank">他们的文章</a> 在解释继承性方面比我能写出来的文章都好，所以请给它点个赞吧。
+            </p>
+
+        </div>
+
+
+
+
+
+
+
+        <div id="cssDegradation" class="entry">
+            <h3>进取性向下兼容</h3>
+
+            <p>
+                值得注意的是，这段是我的个人观点，只适用于特定情况。在依赖老版本浏览器的大型商业项目或企业级解决方案中，进取性向下兼容的立场将不容易被接受。
+            </p>
+
+            <p>
+                进取性向下兼容的意思是如果某个特定的（老版本）浏览器无法渲染某个特定效果，则应直接忽略它。CSS3 按钮就是一个好例子。诸如 <code>border-radius</code>， <code>box-shadow</code>， <code>text-shadow</code> 和 <code>gradients</code> 这些效果会在先进的浏览器里显示出来。对于版本稍微老一点的浏览器，可以用一个 <code>.PNG</code> 图片作为无伤大雅的补救办法，而所有解决办法中最优雅的应该是针对IE6提供一个PNG-Fix，或者用<code>filter</code> 参数来代替 gradients 和 shadows等属性。
+                不过，在这种情况下，进取性向下兼容方式会让你忽略老版本浏览器，而在其中展示一个平面的还过得去的对象。
+            </p>
+
+            <p>
+                简单地说，进取性向下兼容说白了就是：<strong>如果你的浏览器渲染不了渐变色或盒子阴影，那是你运气不好</strong>。
+            </p>
+
+            <p>
+                虽然这不是对所有情况都理想，这种方法能确保项目按时交付，且核心产品是可用的，而不需依赖于对浏览器的破解办法。
+            </p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <h2 id="cssHtmlSection">CSS3及HTML5</h2>
+
+
+
+
+
+
+
         <div id="cssHtmlFeatureSniff" class="entry">
-            <h3>Feature Sniff with Modernizr</h3>
-            
+            <h3>用Modernizr进行特性检测</h3>
+
             <p>
-                I think I've gone on enough about this already. Use <a href="http://www.modernizr.com" target="_blank">Modernizr</a> to detect the availability of specific HTML5 and CSS3 features.
+                这个话题我想我已经说的够多了。用 <a href="http://www.modernizr.com" target="_blank">Modernizr</a> 来检测特定的 HTML5 和 CSS3 特性是否可用。
             </p>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="cssHtmlFontFace" class="entry">
-            <h3>@font-face Use and Abuse</h3>
-            
+            <h3>@font-face的使用和滥用</h3>
+
             <p>
-                Before you consider embedding a custom font, is important that you inspect the <abbr>EULA</abbr> and check if web embedding is allowed. Foundries are understandably reluctant to allow designers and developers
-                the ability to place font files directly on a server which can then be copied by a savvy end user. Particular foundries also prohibit the embedding of particular file types, such as <code>.TTF</code> and <code>.OTF</code>.
+                在你考虑嵌入一套定制的字体之前，很重要的一点是你要查看 <abbr>EULA</abbr> 并检查是否允许web嵌入。 字体库厂商自然是不愿意让设计师和开发者有能力把字体库文件直接存放在服务器上，然后被熟练的终端用户拷贝走。某些厂商也禁止嵌入特定的文件类型，例如 <code>.TTF</code> 和 <code>.OTF</code>。
             </p>
-            
+
             <p>
-                If, after careful consideration, you believe the desired font is web embeddable: head on over to the Font Squirrel <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">@font-face Generator</a>. 
-                It utilises Fontspring's <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax" target="_blank">bulletproof @font-face structure</a> and automatically generates all the required file formats.
+                如果，经过慎重考虑，你相信想要的字体是可嵌入的，那就去看一下Font Squirrel的 <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">@font-face 生成器</a>。
+                它利用了 Fontspring的 <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax" target="_blank">防弹 @font-face 结构</a> 并能自动生成所有需要的文件格式。
             </p>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <div id="cssHtmlDegradation" class="entry">
-            <h3>Degradation</h3>
-            
+            <h3>向下兼容</h3>
+
             <p>
-                Thankfully browser handling of unsupported HTML5 and CSS3 is already that of a graceful nature. New additions to the list of <code>&lt;input /&gt;</code> types such as "email", "search" etc. will generally
-                degrade to normal <code>&lt;input type="text" /&gt;</code> when not natively supported. Similarly, CSS3 properties that aren't supported will simply not appear. Responsive layouts controlled by height and width
-                media queries are simply not applied. 
+                谢天谢地，浏览器对于它不支持的HTML5 和 CSS3 特性的处理已经达到了优雅的本色。加到 <code>&lt;input /&gt;</code> 标签的新类型例如 "email"， "search" 等等在浏览器本地不支持的情况下一般会向下兼容为正常的 <code>&lt;input type="text" /&gt;</code>。 类似的，不支持的CSS3 特性就不会出现，由高度和宽度媒体查询控制的响应式布局也不会被应用。
             </p>
-            
+
             <p>
                 <strong>
-                    Subtle CSS3 effects should be employed as a reward for users who run a modern browser.
+                    精巧的CSS3效果应该被应用为对使用现代浏览器的用户的一种奖励。
                 </strong>
             </p>
-            
-            <p>
-                The resources section below includes a few libraries to help normalise HTML5 and CSS3 functionality across a range of older browsers.
-            </p>
-            
-        </div>
-        
-        
-                
-        
-        
-        
 
-        <h2 id="resourcesSection">Resources</h2>
-        
-        
-        
-        
-        
-        
-        
-        <div id="resourcesSupport" class="entry">
-            <h3>Useful Resources</h3>
-            
             <p>
-                The following resources are vital for the standardisation of code and interaction in a modern web page. They ensure that CSS3 and HTML5 features are made accessible across a range of browsers that previously lacked support.
+                在下面的“资源”小节里包括了一些有助于让HTML5和CSS3功能在一批老版本浏览器中保持正常的库。
             </p>
-            
+
+        </div>
+
+
+
+
+
+
+
+        <h2 id="resourcesSection">资源</h2>
+
+
+
+
+
+
+
+        <div id="resourcesSupport" class="entry">
+            <h3>有用的资源</h3>
+
+            <p>
+                下列的资源对于代码标准化和现代web页面的互动是很重要的。它们确保了CSS3 和 HTML5 特性在以前缺乏支持能力的一批浏览器中能够使用。
+            </p>
+
             <ul>
                 <li>
                     <a href="http://www.jquery.com" target="_blank">
-                        jQuery                  
+                        jQuery
                     </a>
-                    JavaScript helper library
+                    JavaScript助手库
                 </li>
                 <li>
                     <a href="http://www.jqueryui.com" target="_blank">
-                        jQuery UI                   
+                        jQuery UI
                     </a>
-                    does for UX/UI what jQuery does for JavaScript
+                    为用户交互/界面做着jQuery为JavaScript做的同样的事
                 </li>
                 <li>
                     <a href="http://www.modernizr.com" target="_blank">
                         Modernizr
                     </a>
-                    feature sniff, don't browser sniff!
+                    检测特性，不要检测浏览器！
                 </li>
-                <li>                    
+                <li>
                     <a href="https://github.com/scottjehl/Respond" target="_blank">
-                        RespondJS               
+                        RespondJS
                     </a>
-                    brings responsive layouts to older browsers
+                    为老版本浏览器带来响应式布局
                 </li>
                 <li>
                     <a href="http://www.fontsquirrel.com/fontface/generator" target="_blank">
                         @font-face Generator
                     </a>
-                    font embedding for all!
+                    全面的字体内嵌
                 </li>
                 <li>
                     <a href="http://www.raphaeljs.com" target="_blank">
                         RaphaelJS
                     </a>
-                     easy cross browser vector drawing
+                     简单易用的跨浏览器向量图
                 </li>
                 <li>
                     <a href="http://html5boilerplate.com/" target="_blank">
                         HTML5 Boilerplate
                     </a>
-                    a good starting point for any project. Even the "stripped" version is still a bit bloated.
+                    对于任何项目都是一个好的起点。不过即使是它的“精简”版也还是有点臃肿
                 </li>
                 <li>
                     <a href="http://twitter.github.com/bootstrap/" target="_blank">
                         Twitter Bootstrap
                     </a>
-                    allows you to rapidly prototype and style simple web apps.
+                    让你能给简单的web应用迅速产生原型和样式
                 </li>
             </ul>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
         <div id="resourcesSuggestions" class="entry">
-            <h3>Support and Suggestions</h3>
-            
+            <h3>支持和建议</h3>
+
             <p>
-                This document was prepared by Tait Brown (<a href="http://www.twitter.com/taitems" target="_blank">@taitems</a>).
+                本文由 Tait Brown 编写 (<a href="http://www.twitter.com/taitems" target="_blank">@taitems</a>)，此中文版由 <a href="https://github.com/coderLMN"  target="_blank">coderLMN</a> 翻译。
             </p>
-            
+
             <p>
-                Questions, corrections and suggestions can be lodged on the <a href="https://github.com/taitems/Front-End-Development-Guidelines/" target="_blank">GitHub repository</a> for this page. You can also fork your own branch and add your own company/product specific guidelines.
+                有关的问题、勘误和建议可以提交到本页面所在的 <a href="https://github.com/taitems/Front-End-Development-Guidelines/" target="_blank">GitHub repository</a>。你也可以fork你自己的分支，再加上你自己公司或产品特定的准则。
             </p>
-            
+
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
-        
-        
+
+
 
     <script src="includes/js/prettify.js"></script>
     <script src="includes/js/lang-css.js"></script>
@@ -1781,17 +1736,6 @@ p.bio { font-size: 14px; }</pre>
     <script src="includes/js/bootstrap-scrollspy.js"></script>
     <script src="includes/js/jquery.scrollTo-min.js"></script>
     <script src="includes/js/interact.js"></script>
-    <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-28391759-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
 
 </body>
 </html>
